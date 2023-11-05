@@ -1,0 +1,4176 @@
+<!doctype html>
+<html lang="en-gb" dir="ltr">
+<head>
+<meta charset="utf-8" />
+	<base href="https://www.arista.com/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="David Cronin" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="apple-mobile-web-app-capable" content="YES" />
+	<meta name="Rating" content="General" />
+	<meta name="Classification" content="General" />
+	<meta name="Distribution" content="Global" />
+	<meta name="Audience" content="All" />
+	<meta name="revisit-after" content="1 days" />
+	<meta name="Author" content="Arista Networks" />
+	<meta name="Publisher" content="Arista Networks" />
+	<meta name="robots" content="All" />
+	<meta name="description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion." />
+	<title>Routing control functions - Attribute and builtin function reference - Arista</title>
+	<link href="https://www.arista.com/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference" rel="canonical" />
+	<link href="/templates/arista_v2/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/templates/arista_v2/css/bs337.min.css?v=1543082404" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anH5Set.css?v=1601533343" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anLayout.css?v=1676642446" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anStyle.css?v=1698911251" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anRespo.css?v=1698911353" rel="stylesheet" />
+	<link href="/custom_ui/css/jqueryUi-1.10.4.css?v=1522948259" rel="stylesheet" />
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"d2cf4c6bb2762a56d9e99072abb6039a","system.paths":{"root":"","base":""}}</script>
+	<script src="/media/jui/js/jquery.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/caption.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/mootools-core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/templates/arista_v2/js/jq331.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/bs337.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/cb164.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/anScript.js?v=1694698768"></script>
+	<script src="/templates/arista_v2/js/anLangPrefix.js?v=1698653165"></script>
+	<script src="/templates/arista_v2/js/anBrowserCheck.js?v=1582796951"></script>
+	<script src="/custom_ui/js/jqueryUi-1.10.4.min.js?v=1520261210"></script>
+	<script src="/templates/arista_v2/js/anSlideTabs.js?v=1524283288"></script>
+	<script>
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+	<script type="application/ld+json">
+[{"@context":"http://schema.org/","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.arista.com/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference"},"name":"Routing control functions - Attribute and builtin function reference - Arista","headline":"Routing control functions - Attribute and builtin function reference - Arista","author":{"@type":"Organization","name":"Arista Networks"},"publisher":{"@type":"Organization","name":"Arista Networks","logo":{"@type":"ImageObject","url":"https://www.arista.com/assets/images/logo/Arista_Logo.png"}},"image":"https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg","description":"Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.","datePublished":"2023-07-03 11:26:16","dateModified":"2023-07-03 11:26:16"}]
+	</script>
+	<meta property="og:title" content="Routing control functions - Attribute and builtin function reference - Arista" />
+	<meta property="og:description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion."/>
+	<meta property="og:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg"/>
+	<meta property="article:published_time" content="2023-07-03 11:26:16"/>
+	<meta name="twitter:title" content="Routing control functions - Attribute and builtin function reference - Arista">
+	<meta name="twitter:description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.">
+	<meta name="twitter:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg">
+	<meta property="og:type" content="Article"/>
+	<meta property="og:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference"/>
+	<meta property="og:site_name" content="Arista Networks"/>
+	<meta property="article:author" content="Arista Networks"/>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference">
+	<meta name="twitter:site" content="@AristaNetworks">
+
+<!--[if lt IE 9]><script src="/media/jui/js/html5.js"></script><![endif]-->
+<script>
+	jq = jQuery.noConflict();
+	jq(document).ready(function(){ setLangFile('en-GB'); browserSupport(); });
+</script>
+<script src="https://cdn.cookielaw.org/consent/0088c1d9-3411-49f6-bd71-0581b986ca8b/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="0088c1d9-3411-49f6-bd71-0581b986ca8b"></script>
+<script type="text/javascript">function OptanonWrapper(){}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59M58H58VM"></script>
+<script>
+	//Google Tag Code
+	window.dataLayer = window.dataLayer || []; 
+	function gtag(){ dataLayer.push(arguments); } 
+	gtag('js', new Date()); gtag('config', 'G-59M58H58VM'); 
+	
+	//Google Analytics Code
+	googleEventTrack('Eos-4-27-2f');
+	(function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)}, i[r].l=1*new Date(); a=s.createElement(o), m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g; m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create','UA-11521293-2','auto'); ga('require','linkid','linkid.js');
+	ga('set','anonymizeIp',true); ga('send','pageview');
+
+	//HubSpot Analytics Code
+	(function(d,s,i,r) { if(d.getElementById(i)){return;} var n=d.createElement(s), e=d.getElementsByTagName(s)[0]; n.id=i; n.src='https://js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/691113.js'; e.parentNode.insertBefore(n, e); })(document,"script","hs-analytics",300000);
+</script>
+</head>
+<body id="pgEos4272f" class="com-content view-article lg-engb">
+<div id="bodyContainer">
+
+	<!-- /headerContainer -->
+
+		<div  id="bannerContainer">
+		<div id="bannerSlider">
+						<!-- /topSubMenu -->
+
+						
+<ul class="bannerWrap autoplay staticWrap">
+				<li  style="background-image:url(/assets/images/banner/default/banner_inner_bg.jpg);" >
+				<div class="slider-item slider-fw">
+												<h1 class="main-head">EOS 4.27.2F TOI</h1>
+										</div>
+		</li>
+		</ul>
+<!-- /sliderWrap -->
+
+					</div>
+		<!-- /bannerSlider -->
+
+				<nav id="rightSubMenu">
+			<div class="rightSubBox"><a id="ctaSubMenu" href="#" class="btn-an btn-cta">View All Support</a></div>
+<div id="subChildNav" class="">
+	<a class="btn-closs">X</a>
+	
+<ul id="View All Support" class="nav menu">
+    	<li class="lml-support alias-parent-active"><a  href="/en/support"><span>Support Overview</span></a></li>
+	<li class="lml-customer-support"><a  href="/en/support/customer-support"><span>Customer Support</span></a></li>
+	<li class="lml-product-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation</span></a></li>
+	<li class="lml-product-certificate"><a  href="/en/support/product-certificate"><span>Product Certifications</span></a></li>
+	<li class="lml-advisories-notices"><a  href="/en/support/advisories-notices"><span>Advisories &amp; Notices</span></a></li>
+	<li class="lml-product-lifecycle"><a  href="/en/support/product-lifecycle"><span>Product Lifecycle</span></a></li>
+	<li class="lml-software-download"><a  href="/en/support/software-download"><span>Software Download</span></a></li>
+	<li class="lml-toi alias-parent-active"><a  href="/en/support/toi"><span>Transfer of Information</span></a></li>
+	<li class="lml-support-portal"><a  href="/en/community/support-portal"><span>Support Portal</span></a></li>
+	<li class="lml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="lml-software-bug-portal"><a  href="/en/support/software-bug-portal"><span>Software Bug Portal</span></a></li>
+	<li class="mlag-issu-check"><a  href="/en/support/mlag-portal"><span>MLAG ISSU Check</span></a></li>
+	<li class="lml-cvp-upgrade-path"><a  href="/en/support/cvp-upgrade-path"><span>CVP Upgrade Path</span></a></li>
+</ul>
+<!-- /nav -->
+</div>
+
+		</nav>
+				<!-- /rightSubMenu -->
+	</div>
+	<!-- /bannerContainer -->
+		<div id="dataContainer">
+				<div id="dataContainerBg">&nbsp;</div>
+				<div id="dataArea">
+			<div class="dataTabBg">&nbsp;</div>
+			<div  id="dataWrap">
+				<div class="dataTabBg">&nbsp;</div>
+								<!-- /position-left -->
+
+				<main id="contentWrap" role="main">
+										<div id="system-message-container">
+	</div>
+
+										
+					<div class="item-page">
+    
+    
+    <div class="page-header">
+        <h2 class="pageTitle"> Routing control functions - Attribute and builtin function reference            
+            
+            <span class="pdf-icon headLink"><a href="/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference?tmpl=component&amp;format=pdf" onclick="" target="_blank" title="PDF" rel="nofollow"> <span class="icon-book ico24-pdf"></span> PDF</a></span>
+          </h2>
+        
+        
+        
+      </div>
+    
+    
+    <div class="article-info muted">
+    <dl class="article-info">
+            
+            <dd class="createdby"><span class="icomoon-user"></span> 
+        Written by <a href="/en/support/toi/author/330-davidcronin" >David Cronin</a>      </dd>
+            
+            <dd class="published"> 
+        <span class="icomoon-calendar"></span> Posted on March 3, 2022 
+      </dd>
+            
+            
+            
+            <dd class="modified"> 
+        <span class="icomoon-calendar"></span> Updated on July 3, 2023 
+      </dd>
+            
+            
+            <dd class="hits"> 
+        <span class="icomoon-eye-open"></span> 8608 Views </dd>
+          </dl>
+  </div>
+    
+  	<div id="tagsBar">
+		    <span class="tag-22 tag-list0" itemprop="keywords">
+            <a href="/en/support/toi/tag/routing">Routing</a>
+          </span>
+		    <span class="tag-33 tag-list1" itemprop="keywords">
+            <a href="/en/support/toi/tag/bgp">BGP</a>
+          </span>
+		    <span class="tag-288 tag-list2" itemprop="keywords">
+            <a href="/en/support/toi/tag/policy">Policy</a>
+          </span>
+		    <span class="tag-540 tag-list3" itemprop="keywords">
+            <a href="/en/support/toi/tag/multiagent">Multiagent</a>
+          </span>
+		    <span class="tag-760 tag-list4" itemprop="keywords">
+            <a href="/en/support/toi/tag/rcf">RCF</a>
+          </span>
+		    <span class="tag-929 tag-list5" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-27-2f"> EOS 4.27.2F</a>
+          </span>
+		    <span class="tag-1090 tag-list6" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-30-1f">EOS 4.30.1F</a>
+          </span>
+			</div>
+  
+                        <div id="tocWrap">
+    <h5>Table of Content <span id="tocSH">Hide</span></h5>
+    <ul id="tocList">
+      <li>
+        </li>
+<li>-- <a href="#description">Description</a></li>
+<li>-- <a href="#routing-protocol-attributes-and-operations">Routing protocol attributes and operations</a>
+<ul>
+<li>-- <a href="#afi">afi</a></li>
+<li>-- <a href="#afi-safi">afi_safi</a></li>
+<li>-- <a href="#aigp-accumulation-metric">aigp.accumulation_metric</a></li>
+<li>-- <a href="#aigp-metric">aigp.metric</a></li>
+<li>-- <a href="#as-path">as_path</a></li>
+<li>-- <a href="#as-path-last-as">as_path.last_as</a></li>
+<li>-- <a href="#as-path-origin-as">as_path.origin_as</a></li>
+<li>-- <a href="#as-path-length">as_path.length</a></li>
+<li>-- <a href="#bgp-aggregate">bgp.aggregate</a></li>
+<li>-- <a href="#bgp-aggregate-contributor">bgp.aggregate_contributor</a></li>
+<li>-- <a href="#bgp-route-source">bgp.route_source</a></li>
+<li>-- <a href="#bgp-prefix-sid-index">bgp.prefix_sid.index</a></li>
+<li>-- <a href="#community">community</a></li>
+<li>-- <a href="#community-count">community.count</a></li>
+<li>-- <a href="#connected-interface">connected.interface</a></li>
+<li>-- <a href="#destination-session-local-as">destination_session.local.as</a></li>
+<li>-- <a href="#evpn-mac-ip-route-mac-address">evpn.mac_ip_route.mac_address</a></li>
+<li>-- <a href="#evpn-mac-ip-route-ip-address">evpn.mac_ip_route.ip_address</a></li>
+<li>-- <a href="#evpn-ip-prefix-route-gateway-address">evpn.ip_prefix_route.gateway_address</a></li>
+<li>-- <a href="#evpn-ip-prefix-route-gateway-address-ip-version">evpn.ip_prefix_route.gateway_address.ip_version</a></li>
+<li>-- <a href="#evpn-ip-prefix-route-prefix">evpn.ip_prefix_route.prefix</a></li>
+<li>-- <a href="#evpn-ip-prefix-route-prefix-ip-version">evpn.ip_prefix_route.prefix.ip_version</a></li>
+<li>-- <a href="#evpn-ip-prefix-route-prefix-length">evpn.ip_prefix_route.prefix.length</a></li>
+<li>-- <a href="#evpn-route-type">evpn.route_type</a></li>
+<li>-- <a href="#ext-community">ext_community</a></li>
+<li>-- <a href="#ext-community-count">ext_community.count</a></li>
+<li>-- <a href="#fec-recmp">fec.recmp</a></li>
+<li>-- <a href="#flowspec-destination-prefix">flowspec.destination.prefix</a></li>
+<li>-- <a href="#flowspec-destination-prefix-ip-version">flowspec.destination.prefix.ip_version</a></li>
+<li>-- <a href="#flowspec-destination-prefix-length">flowspec.destination.prefix.length</a></li>
+<li>-- <a href="#flowspec-source-prefix">flowspec.source.prefix</a></li>
+<li>-- <a href="#flowspec-source-prefix-ip-version">flowspec.source.prefix.ip_version</a></li>
+<li>-- <a href="#flowspec-source-prefix-length">flowspec.source.prefix.length</a></li>
+<li>-- <a href="#igp-metric">igp.metric</a></li>
+<li>-- <a href="#igp-tag">igp.tag</a></li>
+<li>-- <a href="#isis-levels">isis.levels</a></li>
+<li>-- <a href="#isis-metric">isis.metric</a></li>
+<li>-- <a href="#large-community">large_community</a></li>
+<li>-- <a href="#large-community-count">large_community.count</a></li>
+<li>-- <a href="#local-preference">local_preference</a></li>
+<li>-- <a href="#med">med</a></li>
+<li>-- <a href="#next-hop">next_hop</a></li>
+<li>-- <a href="#next-hop-ip-version">next_hop.ip_version</a></li>
+<li>-- <a href="#next-hop-best-path-metric">next_hop_best_path_metric</a></li>
+<li>-- <a href="#next-hop-metric">next_hop_metric</a></li>
+<li>-- <a href="#origin">origin</a></li>
+<li>-- <a href="#prefix">prefix</a></li>
+<li>-- <a href="#prefix-ip-version">prefix.ip_version</a></li>
+<li>-- <a href="#prefix-length">prefix.length</a></li>
+<li>-- <a href="#rpki-origin-as-validity">rpki.origin_as_validity</a></li>
+<li>-- <a href="#source-protocol">source_protocol</a></li>
+<li>-- <a href="#source-session-remote-as">source_session.remote.as</a></li>
+<li>-- <a href="#source-session-remote-router-id">source_session.remote.router_id</a></li>
+<li>-- <a href="#weight">weight</a></li>
+</ul>
+</li>
+<li>-- <a href="#built-in-functions">built-in functions</a>
+<ul>
+<li>-- <a href="#as-path-remove">as_path.remove</a>
+<ul>
+<li>-- <a href="#arguments">Arguments</a></li>
+<li>-- <a href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li>-- <a href="#as-path-replace">as_path.replace</a>
+<ul>
+<li>-- <a href="#arguments">Arguments</a></li>
+<li>-- <a href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li>-- <a href="#evpn-ip-prefix-route-set-overlay-index">evpn.ip_prefix_route.set_overlay_index</a>
+<ul>
+<li>-- <a href="#arguments">Arguments</a></li>
+<li>-- <a href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li>-- <a href="#set-next-hop-self">set_next_hop_self</a>
+<ul>
+<li>-- <a href="#arguments">Arguments</a></li>
+<li>-- <a href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li>-- <a href="#rpki-match-origin-as-validity">rpki.match_origin_as_validity</a>
+<ul>
+<li>-- <a href="#arguments">Arguments</a></li>
+<li>-- <a href="#return-value">Return value</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#resources">Resources</a>      </li>
+    </ul>
+  </div>
+  <!-- /tocWrap -->
+  <article id="toiContent">
+<h2><span id="description">Description</span></h2>
+<p>Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.</p>
+<p>This document serves as a reference guide for</p>
+<ul>
+<li>Routing protocol attributes </li>
+<li>Operators for comparing and modifying attributes</li>
+<li><span style="font-weight: 400;">built-in</span> functions provided in RCF</li>
+</ul>
+<p>Documents that cover other aspects of the language can be found in the “<a href="#pageLink-1">Resources</a>” section.</p>
+<h2><span id="routing-protocol-attributes-and-operations">Routing protocol attributes and operations</span></h2>
+<p>The following path attributes and their operations are supported.</p>
+<h3><span id="afi">afi</span></h3>
+<p>This attribute provides the AFI (address family identifier) value of the NLRI under evaluation.<br /> <code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p>Supported since EOS-4.26.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>afi is &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given prefix is part of address family IPv4 or IPv6 </td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IPV4_NLRI() {
+         return afi is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>afi is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given prefix is not part of the specified address family <br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_NOT_IPV4_NLRI() {
+         return afi is_not IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="afi-safi">afi_safi</span></h3>
+<p>This attribute provides the AFI (address family identifier) SAFI (subsequent address family identifier) value of the NLRI under evaluation.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">VALUE</th>
+<th class="w50">Supported since</th>
+</tr>
+<tr>
+<td><code> EVPN<br />
+        IPv4_LABELED_UNICAST<br />
+        IPv6_LABELED_UNICAST<br />
+        IPv4_UNICAST<br />
+        IPv6_UNICAST<br />
+        IPv4_VPN<br />
+        IPv6_VPN<br />
+        RT_MEMBERSHIP</code></td>
+<td>EOS-4.27.2F</td>
+</tr>
+<tr>
+<td><code>VPLS</code></td>
+<td>EOS-4.28.0F</td>
+</tr>
+<tr>
+<td><code>IPv4_UNICAST_FLOWSPEC<br />
+        IPv6_UNICAST_FLOWSPEC</code></td>
+<td>EOS-4.30.0F</td>
+</tr>
+</tbody>
+</table>
+<p>Supported since EOS-4.27.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>afi_safi is &lt;VALUE&gt;<br />
+        afi_safi is_not &lt;VALUE&gt;</code> <br /> <br /> Comparison operation to check if the given NLRI is or is not part of the specified AFI/SAFI </td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IPV4_UNICAST_NLRI() {
+         return afi_safi is IPv4_UNICAST;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="aigp-accumulation-metric">aigp.accumulation_metric</span></h3>
+<p>The <code>aigp.accumulation_metric</code> attribute represents the "IGP next hop cost" of a path. The attribute allows configuring adjustments to the next hop cost of a route. The <code>aigp.accumulation_metric</code> attribute is added to the AIGP attribute prior to an advertisement in <code>next-hop-self</code> configurations. The benefit of adjusting the <code>aigp.accumulation_metric</code> attribute (as opposed to the <code>aigp.metric</code> attribute directly) is that any change to the advertised AIGP metric only occurs for <code>next-hop-self</code> configurations. Therefore, a single RCF function can be defined for any iBGP/eBGP, <code>next-hop-self</code> or <code>next-hop-unchanged</code> configuration. Also, modifying the <code>aigp.metric</code> directly may result in originating a route with an AIGP attribute when it was not present on the received route, which may be undesirable. </p>
+<p>Note that any changes to <code>aigp.accumulation_metric</code> does not affect the “IGP next hop cost” of a path. It only affects the value that is added to the aigp.metric prior to advertisement.</p>
+<p>Use of the attribute is only functional with BGP neighbor specific configuration present (e.g. enabling AIGP session for desired address families). See the <a href="/en/support/toi/eos-4-24-1f/14532-accumulated-igp-metric-aigp" target="_blank" rel="noopener noreferrer">Accumulated IGP Metric (AIGP) TOI</a> for more information.</p>
+<p>Supported since EOS-4.28.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>aigp.accumulation_metric is &lt;VALUE&gt;<br />
+        aigp.accumulation_metric is_not &lt;VALUE&gt;<br />
+        aigp.accumulation_metric &gt; &lt;VALUE&gt;<br />
+        aigp.accumulation_metric &gt;= &lt;VALUE&gt;<br />
+        aigp.accumulation_metric &lt;= &lt;VALUE&gt;<br />
+        aigp.accumulation_metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>aigp.accumulation_metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>aigp.accumulation_metric</code> is initialized to the next hop cost (or 0 if the next hop cost of a route is not known.</td>
+<td>
+<pre>router general
+   control-functions
+     code
+     function IS_AIGP_ACCUM_METRIC_GE100() {
+       return aigp.accumulation_metric &gt;= 100;
+     }
+     EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>aigp.accumulation_metric = &lt;VALUE&gt;<br />
+        aigp.accumulation_metric += &lt;VALUE&gt;<br />
+        aigp.accumulation_metric *= &lt;VALUE&gt;<br />
+        aigp.accumulation_metric -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for the <code>aigp.accumulation_metric</code> attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The <code>aigp.accumulation_metric</code> value is capped between 0 and 18446744073709551614.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function AIGP_ACCUM_METRIC_MODIFY() {
+         aigp.accumulation_metric += 100;
+         return true;
+      }
+      EOF</pre>
+<br /> Assume a received path with the AIGP metric of 100  and a next hop cost of 50. The advertised AIGP metric value would be:<br /> 1. 250 for peers where next hop self configuration is in effect, e.g., eBGP neighbors (by default) or iBGP peers where next hop self is configured for the peer (or set by the RCF function).<br /> 2. 100 to peers where next hop self is not in effect, e.g., iBGP neighbors (by default) or eBGP peers where next hop unchanged is configured.</td>
+</tr>
+<tr>
+<td><code>aigp.accumulation_metric in<br />
+          {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+           &lt;VALUE3&gt;,<br />
+           &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>aigp.accumulation_metric</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise. <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function AIGP_ACCUM_METRIC_IN() {
+         return aigp.accumulation_metric in
+                  {100 to 200,
+                   300, 400,
+                   500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="aigp-metric">aigp.metric</span></h3>
+<p>The <code>aigp.metric</code> attribute represents the Accumulated IGP (AIGP) Metric path attribute. Use of the attribute is only functional with BGP neighbor specific configuration present (e.g. enabling AIGP session for desired address families).<br /> See the <a href="/en/support/toi/eos-4-24-1f/14532-accumulated-igp-metric-aigp" target="_blank" rel="noopener noreferrer">Accumulated IGP Metric (AIGP) TOI</a> for more information.</p>
+<p>Supported since EOS-4.28.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>aigp.metric is &lt;VALUE&gt;<br />
+        aigp.metric is_not &lt;VALUE&gt;<br />
+        aigp.metric &gt; &lt;VALUE&gt;<br />
+        aigp.metric &gt;= &lt;VALUE&gt;<br />
+        aigp.metric &lt;= &lt;VALUE&gt;<br />
+        aigp.metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>aigp.metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>aigp.metric</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_AIGP_METRIC_GE100() {
+         return aigp.metric &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>aigp.metric = &lt;VALUE&gt;<br />
+        aigp.metric += &lt;VALUE&gt;<br />
+        aigp.metric *= &lt;VALUE&gt;<br />
+        aigp.metric -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for the <code>aigp.metric</code> attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The <code>aigp.metric</code> value is capped between 0 and 18446744073709551614.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function AIGP_METRIC_MODIFY() {
+         aigp.metric = 100;
+         if prefix is 0.0.0.0/0 {
+            aigp.metric += 10;
+         } else {
+            aigp.metric -= 10;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>aigp.metric in {&lt;VALUE1&gt; to<br />
+                          &lt;VALUE2&gt;,</code><br /> <code>                &lt;VALUE3&gt;,<br />
+                          &lt;VALUE4&gt; to<br />
+                          &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>aigp.metric</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</p>
+</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function AIGP_METRIC_IN() {
+         return aigp.metric in {100 to 200,
+                                300, 400,
+                                500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="as-path">as_path</span></h3>
+<p>Supports asdot notation.</p>
+<p>Supported since EOS-4.21.1F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.as_path</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>as_path match as_path_list &lt;ASP_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the AS_PATH attribute of the path matches a permit sequence in the order of evaluation of the specified AS path access list. Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip as-path access-list ASPLIST permit 64500_64501_64502 any
+!
+router general
+   control-functions
+      code
+      function AS_PATH_TEST() {
+         return as_path match as_path_list ASPLIST;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path prepend &lt;ASN&gt;+</code><br /> <br /> Prepend AS numbers to the AS_PATH attribute</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function AS_PATH_PREPEND() {
+         as_path prepend 64500 64501 64502;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="as-path-last-as">as_path.last_as</span></h3>
+<p>The <code>as_path.last_as</code> attribute will contain the most recent AS added to the AS_PATH, thus, the last AS on the path. It may be used, for example, to match the neighbor's AS. In the AS path of <code>64500 64501 64502, as_path.last_as</code> matches <code>64500</code>.</p>
+<p>The <code>as_path.last_as</code> attribute assumes the value of 0 in an expression if the AS_PATH:</p>
+<ul>
+<li>is empty</li>
+<li>is in an <code>AS_SET</code></li>
+<li>is in a <code>AS_CONFED_SET</code></li>
+</ul>
+<p>Supports asdot notation.</p>
+<p>Supported since EOS-4.24.2F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.as_path.last_as</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>as_path.last_as is &lt;VALUE&gt;<br />
+        as_path.last_as &gt; &lt;VALUE&gt;<br />
+        as_path.last_as &gt;= &lt;VALUE&gt;<br />
+        as_path.last_as &lt;= &lt;VALUE&gt;<br />
+        as_path.last_as &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the last AS number in the AS_PATH: equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LAST_AS_64500() {
+         return as_path.last_as is 64500;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.last_as is_not &lt;VALUE&gt;</code> <br /> <br /> Comparison operation “not equal” for the last AS number in the AS_PATH<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_LAST_AS_64500() {
+         return as_path.last_as is_not 64500;
+      }
+     EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.last_as in {&lt;VALUE1&gt; to<br />
+                            &lt;VALUE2&gt;,<br />
+                            &lt;VALUE3&gt;,<br />
+                            &lt;VALUE4&gt; to<br />
+                            &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>as_path.last_as</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 64507, 64508) or an inclusive range of values (e.g. 64500 to 64505, 64510 to 64520).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.28.2F release.<br /> Support for ranges since EOS-4.29.1F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LAST_AS_IN_64500() {
+         return as_path.last_as in {64500 to
+                                    64505,
+                                    64507,
+                                    64508,
+                                    64510 to
+                                    64520};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="as-path-origin-as">as_path.origin_as</span></h3>
+<p>The <code>as_path.origin_as</code> attribute will contain the origin AS of the AS_PATH as defined in RFC6811:</p>
+<ul>
+<li>If the final segment is an <code>AS_SEQUENCE</code>, return its rightmost element.</li>
+<li>If the final segment is a confederation type, return the local AS</li>
+<li>If the AS_PATH is empty, return the local AS</li>
+<li>If the final segment is any other type, return the value 0</li>
+</ul>
+<p>Supports asdot notation.</p>
+<p>Supported since EOS-4.28.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>as_path.origin_as is &lt;VALUE&gt;<br />
+        as_path.origin_as is_not &lt;VALUE&gt;<br />
+        as_path.origin_as &gt; &lt;VALUE&gt;<br />
+        as_path.origin_as &gt;= &lt;VALUE&gt;<br />
+        as_path.origin_as &lt;= &lt;VALUE&gt;<br />
+        as_path.origin_as &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the origin AS number in the AS_PATH: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_ORIGIN_AS_64500() {
+         return as_path.origin_as is 64500;
+      }
+     EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as in {&lt;VALUE1&gt;,<br />
+                              &lt;VALUE2&gt;,<br />
+                              &lt;VALUE3&gt;,…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>as_path.origin_as</code> attribute is in the set of  values on the RHS.<br /> Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ORIGIN_AS_IN_64500() {
+         return as_path.origin_as in {64500
+                                      64501,
+                                      64502};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as in {&lt;VALUE1&gt; to<br />
+                              &lt;VALUE2&gt;,<br />
+                              &lt;VALUE3&gt;,<br />
+                              &lt;VALUE4&gt; to<br />
+                              &lt;VALUE5&gt;…}</code> <br /> Evaluates to <code>true</code> if the <code>as_path.origin_as</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 64507, 64508) or an inclusive range of values (e.g. 64500 to 64505, 64510 to 64520).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for ranges since EOS-4.29.1F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LAST_AS_IN_64500() {
+         return as_path.origin_as in {64500 to
+                                      64505,
+                                      64507,
+                                      64508,
+                                      64510 to
+                                      64520};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="as-path-length">as_path.length</span></h3>
+<p>For the length computation of an AS_PATH, AS_SET is treated as of length 1, and AS_CONFED_SEQ and AS_CONFED_SET as of length 0.</p>
+<p>Supported since EOS-4.24.2F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.as_path.length</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>as_path.length is &lt;VALUE&gt;<br />
+        as_path.length &gt; &lt;VALUE&gt;<br />
+        as_path.length &gt;= &lt;VALUE&gt;<br />
+        as_path.length &lt;= &lt;VALUE&gt;<br />
+        as_path.length &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the AS_PATH length: equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LENGTH_LE3() {
+         return as_path.length &lt;= 3;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.length is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation “not equal” for the AS_PATH length<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ASP_LENGTH_NOT_3() {
+         return as_path.length is_not 3;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>as_path.length in {&lt;VALUE1&gt; to<br />
+                           &lt;VALUE2&gt;,<br />
+                           &lt;VALUE3&gt;,<br />
+                           &lt;VALUE4&gt; to<br />
+                           &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>as_path.length</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ASP_LENGTH_IN() {
+         return as_path.length in {100 to 200,
+                                   300, 400,
+                                   500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="bgp-aggregate">bgp.aggregate</span></h3>
+<p>The <code>bgp.aggregate</code> attribute is <code>true</code> if the path is a locally originated aggregate in the current BGP instance.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>true</code></li>
+<li><code>false</code></li>
+</ul>
+<p>Supported since EOS-4.25.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>bgp.aggregate is &lt;VALUE&gt;</code><br /> <br /> Comparison operation for testing if the path is a locally originated BGP aggregate.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LOCAL_BGP_AGGREGATE() {
+         return bgp.aggregate is true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>bgp.aggregate is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation for testing if the path is not a locally originated BGP aggregate.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_LOCAL_BGP_AGGREGATE() {
+         return bgp.aggregate is_not true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="bgp-aggregate-contributor">bgp.aggregate_contributor</span></h3>
+<p>The <code>bgp.aggregate_contributor</code> attribute is <code>true</code> if the path is contributing to a BGP aggregate in the current BGP instance. <code>bgp.aggregate_contributor</code> is only available in an outbound RCF function and is <code>false</code> at all other points of RCF function application.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be</p>
+<ul>
+<li><code>true</code></li>
+<li><code>false</code></li>
+</ul>
+<p>Supported since EOS-4.25.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>bgp.aggregate_contributor is &lt;VALUE&gt;</code><br /> <br /> Comparison operation for testing if the path is a BGP aggregate contributor.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_AGGREGATE_CONTRIBUTOR() {
+         return bgp.aggregate_contributor is true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>bgp.aggregate_contributor is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation for testing if the path  is not a BGP aggregate contributor. <br /> <br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_AGGREGATE_CONTRIBUTOR() {
+         return bgp.aggregate_contributor is_not true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="bgp-route-source">bgp.route_source</span></h3>
+<p>The <code>bgp.route_source</code> attribute identifies if the route is learned from an IBGP peer, an EBGP peer, from a confederation EBGP peer, or is locally generated/learned (e.g., aggregates, redistributed routes, VPN imported routes).</p>
+<p><code>&lt;SOURCE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>LOCAL</code></li>
+<li><code>IBGP</code></li>
+<li><code>CONFED_EBGP</code></li>
+<li><code>EBGP</code></li>
+</ul>
+<p>Supported since EOS-4.25.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>bgp.route_source is &lt;SOURCE&gt;</code><br /> <br /> Evaluates to <code>true</code> if the BGP path is locally generated/learned, IBGP peer learned, confederation EBGP peer learned, or EBGP peer learned respectively; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LOCAL() {
+         return bgp.route_source is LOCAL;
+      }
+      function IS_IBGP_LEARNED() {
+         return bgp.route_source is IBGP;
+      }
+      function IS_CONFED_EBGP_LEARNED() {
+         return bgp.route_source is CONFED_EBGP;
+      }
+      function IS_EBGP_LEARNED() {
+         return bgp.route_source is EBGP;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>bgp.route_source is_not &lt;SOURCE&gt;</code><br /> <br /> Evaluates to <code>false</code> if the BGP path is locally generated/learned, IBGP peer learned, confederation EBGP peer learned, or EBGP peer learned respectively; evaluates to <code>true</code> otherwise.<br /> <br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_LOCAL() {
+         return bgp.route_source is_not LOCAL;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="bgp-prefix-sid-index">bgp.prefix_sid.index</span></h3>
+<p>This attribute modifies the index of the segment routing prefix SID attribute on Labeled-Unicast routes.</p>
+<p> </p>
+<p>Supported since EOS-4.27.2F release.</p>
+<p> </p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>bgp.prefix_sid.index is &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index is_not &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index &gt; &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index &gt;= &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index &lt;= &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for segment routing prefix SID: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>bgp.prefix_sid.index</code> assumes the value of 0 in an expression if the attribute is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_PREFIX_SID_GE100() {
+         return bgp.prefix_sid.index &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>bgp.prefix_sid.index= &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index += &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index *= &lt;VALUE&gt;<br />
+        bgp.prefix_sid.index -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for segment routing prefix SID: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The <code>bgp.prefix_sid.index</code> value is capped between 0 and 1048575.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function PREFIX_SID_MODIFY() {
+         bgp.prefix_sid.index = 100;
+         if prefix is 0.0.0.0/0 {
+            bgp.prefix_sid.index += 10;
+         } else {
+            bgp.prefix_sid.index -= 10;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>bgp.prefix_sid.index in<br />
+         
+           {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+              &lt;VALUE3&gt;,<br />
+              &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>bgp.prefix_sid.index</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function PREFIX_SID_IN() {
+         return bgp.prefix_sid.index in 
+                   {100 to 200,
+                    300, 400,
+                    500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="community">community</span></h3>
+<p><code>&lt;COMM&gt;</code> in the table below can be</p>
+<ul>
+<li>in U32 notation, e.g. <code>4227072100</code></li>
+<li>in U16:U16 notation, e.g. <code>64500:100</code></li>
+<li><code>INTERNET (0)</code></li>
+<li><code>GSHUT (65535:0)</code></li>
+<li><code>NO_EXPORT (65535:65281)</code></li>
+<li><code>NO_ADVERTISE (65535:65282)</code></li>
+<li><code>LOCAL_AS (65535:65283)</code></li>
+</ul>
+<p>Supported since EOS-4.21.1F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.community</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>community is empty</code><br /> <br /> Evaluates to <code>true</code> if there is no  COMMUNITIES attribute.<br /> <br /> Supported since EOS-4.25.0F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_COMMUNITY() {
+         return community is empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community is_not empty</code><br /> <br /> Evaluates to <code>true</code> if there is a COMMUNITIES attribute. <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_COMMUNITY() {
+         return community is_not empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community is {&lt;COMM&gt;, …}<br />
+        community all_in {&lt;COMM&gt;, …}<br />
+        community has_all {&lt;COMM&gt;, …}<br />
+        community has_any  {&lt;COMM&gt;, …}<br />
+        community has_none {&lt;COMM&gt;, …}</code><br /> <br /> Evaluates to <code>true</code>
+<ul>
+<li><code>is</code>: if the values in the COMMUNITIES attribute are the same values as the specified set of community values</li>
+<li><code>all_in</code>: if all the values in the COMMUNITIES attribute are contained in the specified set of community values</li>
+<li><code>has_all</code>: if the values in the COMMUNITIES attribute include all of  community values in the specified set</li>
+<li><code>has_any</code>: if the values in the COMMUNITIES attribute have at least one of the community values in the specified set</li>
+<li><code>has_none</code>: if the values in the COMMUNITIES attribute have none of the community values in the specified set</li>
+</ul>
+Evaluates to <code>false</code> otherwise.<br /> <br /> Supported since EOS-4.25.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COMMUNITY_IS() {
+         # Path communities must be exactly
+         # the same
+         return community is {64500:1, 64500:2};
+      }
+  
+      function COMMUNITY_ALL_IN() {
+         # Path with {64500:1} -&gt; true
+         # Path with {64500:1, 64500:2, 64500:3} -&gt; false
+         return community all_in {64500:1, 64500:2};
+      }
+  
+      function COMMUNITY_HAS_ALL() {
+         # Path with {64500:1} -&gt; false
+         # Path with {64500:1, 64500:2, 64500:3} -&gt; true
+         return community has_all {64500:1, 64500:2};
+      }
+  
+      function COMMUNITY_HAS_ANY() {
+         # Path with {64500:1, 64500:3} -&gt; true
+         return community has_any {64500:1, 64500:2};
+      }
+  
+      function COMMUNITY_HAS_NONE() {
+         # Path with {64500:1} -&gt; false
+         # Path with {64500:3} -&gt; true
+         return community has_none {64500:1, 64500:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community is_not {&lt;COMM&gt;, …}</code><br /> <br /> Evaluates to <code>true</code>
+<ul>
+<li><code>is_not</code>: if the values in the COMMUNITIES attribute are not the same value as the specified set of community values</li>
+</ul>
+Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COMMUNITY_IS_NOT() {
+         # Path communities must be different than the supplied set
+         return community is_not {64500:1, 64500:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community match community_list<br />
+        &lt;COMM_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the COMMUNITIES attribute of the path matches a permit statement in the order of evaluation of the specified community list. Evaluates to <code>false</code> if a deny statement is matched first or if no statement is matched. A match will occur if all of the communities in a community list statement are contained in the communities on the path. The path may have additional communities.</td>
+<td>
+<pre>ip community-list COMMLIST permit 64500:10 64500:20
+!
+router general
+   control-functions
+      code
+      function COMMUNITY_TEST() {
+         if community match community_list COMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community match_exact<br />
+        community_list &lt;COMM_LIST_NAME&gt;</code><br /> <br />
+<p>Evaluates to <code>true</code> if the COMMUNITIES attribute of the path matches all the communities of a permit statement exactly, in the order of evaluation of the specified community list. Evaluates to false if a deny statement is similarly matched first or if no statement is matched.</p>
+<p>An exact match will occur if the communities in a community list statement are the same as the communities on the path. The path and the matching community list statement must not have any additional communities.</p>
+</td>
+<td>
+<pre>ip community-list COMMLIST permit 64500:10 64500:20
+!
+router general
+   control-functions
+      code
+      function COMMUNITY_TEST() {
+         if community match_exact community_list COMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community = empty;</code><br /> <br /> Remove all communities.<br /> <br /> Supported since EOS-4.25.0F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function DROP_COMMUNITY() {
+         community = empty;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community = {&lt;COMM&gt;, …}<br />
+        community add {&lt;COMM&gt;, …}<br />
+        community remove {&lt;COMM&gt;, …}<br />
+        community retain {&lt;COMM&gt;, …}</code><br /> <br /> Modify the COMMUNITIES attribute according to the specified community values:
+<ul>
+<li><code>=</code>: replace or set community values</li>
+<li><code>add</code>: add community values</li>
+<li><code>remove</code>: remove community values</li>
+<li><code>retain</code>: remove all community values except the ones specified</li>
+</ul>
+Supported since EOS-4.25.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COMMUNITY_SET() {
+         # Replaces all existing communities
+         # with one community
+         community = {64500:1};
+      }
+ 
+      function COMMUNITY_ADD() {
+         # Add 64500:1 to the path's
+         # communities         
+         community add {64500:1};
+      }
+ 
+      function COMMUNITY_REMOVE() {
+         # Remove 64500:1 from the path's
+         # communities
+         community remove {64500:1};
+      }
+  
+      function COMMUNITY_RETAIN() {
+         # Keep only the communities
+         # 64500:1 or 64500:2
+         community retain {64500:1, 64500:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community = community_list<br />
+        &lt;COMM_LIST_NAME&gt;</code><br /> <br /> <code>community add community_list<br />
+        &lt;COMM_LIST_NAME&gt;</code><br /> <br /> <code>community remove community_list<br />
+        &lt;COMM_LIST_NAME&gt;</code><br /> <br /> Modify the COMMUNITIES attribute: replace or set community values, add community values, and remove community values respectively according to the specified community list</td>
+<td>
+<pre>ip community-list COMMLIST1 permit 64500:1 64500:2
+ip community-list COMMLIST2 permit 64500:5
+ip community-list COMMLIST3 permit 64500:2
+!
+router general
+   control-functions
+      code
+      function COMMUNITY_MODIFY() {
+         community = community_list COMMLIST1;
+         if prefix is 0.0.0.0/0 {
+            community add community_list COMMLIST2;
+         } else {
+            community remove community_list COMMLIST3;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community retain community_list<br />
+        &lt;COMM_LIST_NAME&gt;</code><br /> <br /> Retain the community values in the COMMUNITIES attribute that are in the specified community list. <br /> <br /> Supported since EOS-4.26.1F.</td>
+<td>
+<pre>ip community-list COMMLIST1 permit 64500:1 64500:2 64500:3
+!
+router general
+   control-functions
+      code
+      function COMMUNITY_RETAIN() {
+         community retain community_list COMMLIST1;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="community-count">community.count</span></h3>
+<p><code>input.community</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>community.count is &lt;VALUE&gt;<br />
+        community.count is_not &lt;VALUE&gt;<br />
+        community.count &gt; &lt;VALUE&gt;<br />
+        community.count &gt;= &lt;VALUE&gt;<br />
+        community.count &lt;= &lt;VALUE&gt;<br />
+        community.count &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the number of communities: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LESS_THAN_3_COMMUNITIES() {
+         return community.count &lt; 3;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>community.count in {&lt;VALUE1&gt; to<br />
+                            &lt;VALUE2&gt;,<br />
+                            &lt;VALUE3&gt;,<br />
+                            &lt;VALUE4&gt; to<br />
+                            &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>community.count</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COMMUNITY_COUNT_IN() {
+         return community.count in {100 to 200
+                                    300, 400,
+                                    500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="connected-interface">connected.interface</span></h3>
+<p>Supported since EOS-4.25.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>connected.interface is &lt;INTERFACE&gt;<br />
+        connected.interface is_not &lt;INTERFACE&gt;</code><br /> <br /> <code>&lt;INTERFACE&gt;</code> can be:
+<ul>
+<li><code>EthernetN</code> or <code>EtN</code></li>
+<li><code>EthernetN.X</code> or <code>EtN.X</code></li>
+<li><code>EthernetN/M</code> or <code>EtN/M</code></li>
+<li><code>EthernetN/M.X</code> or <code>EtN/M.X</code></li>
+<li><code>EthernetN/M/L</code> or <code>EtN/M/L</code></li>
+<li><code>EthernetN/M/L.X</code> or <code>EtN/M/L.X</code></li>
+<li><code>LoopbackN</code> or <code>LoN</code></li>
+<li><code>Port-ChannelN</code> or <code>PoN</code></li>
+<li><code>Port-ChannelN.X</code> or <code>PoN.X</code></li>
+<li><code>VlanN</code> or <code>VlN</code></li>
+</ul>
+<br /> If the RCF function is applied at the point of redistributing routes into BGP, the operation evaluates to <code>true</code> if the interface for a connected route is or is not the specified value; evaluates to <code>false</code> otherwise. <br /> <br /> If the RCF function is applied at any other point of application, it evaluates to <code>false</code>.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LOOPBACK0() {
+         return connected.interface is Lo0;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="destination-session-local-as">destination_session.local.as</span></h3>
+<p>The <code>destination_session.local.as</code> attribute returns the first applicable value of the following:</p>
+<ol>
+<li>the local AS number that is configured per neighbor</li>
+<li>VRF instance AS number</li>
+<li>the router AS number  </li>
+</ol>
+<p>Supports asdot notation.</p>
+<p>Supported since EOS-4.30.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>destination_session.local.as is &lt;VALUE&gt;<br />
+        destination_session.local.as is_not &lt;VALUE&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute is or is not exactly the same as the specified AS number; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LOCAL_AS_500() {
+         return destination_session.local.as is 500;
+      }
+      function IS_LOCAL_AS_DOT() {
+         return destination_session.local.as is 10.10;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as in<br />
+         
+           {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+              &lt;VALUE3&gt;,<br />
+              &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> <code>&lt;VALUE&gt;</code> can be written in asdot or 4-byte integer notation<br /> <br /> Evaluates to <code>true</code> if the <code>destination_session.local.as</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LOCAL_AS_IN() {
+         return destination_session.local.as in
+                  {64500.100 to 64500.200,
+                   64500.300, 400,
+                   500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-mac-ip-route-mac-address">evpn.mac_ip_route.mac_address</span></h3>
+<p>The <code>evpn.mac_ip_route.mac_address</code> attribute provides the mac address field contained in the NLRI attribute of the EVPN MAC IP route’s path.</p>
+<p> </p>
+<p>Supported since EOS-4.29.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.mac_address is<br />
+        &lt;ADDRESS&gt;<br />
+        evpn.mac_ip_route.mac_address is_not<br />
+        &lt;ADDRESS&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute is or is not exactly the same as the specified MAC address; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_1a_2b_3c_4d_5e_6f() {
+         return evpn.mac_ip_route.mac_address is 1a:2b:3c:4d:5e:6f;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-mac-ip-route-ip-address">evpn.mac_ip_route.ip_address</span></h3>
+<p>The <code>evpn.mac_ip_route.ip_address</code> attribute provides the ip address field contained in the NLRI attribute of the EVPN MAC IP route’s path.</p>
+<p> </p>
+<p>Supported since EOS-4.29.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.ip_address is none<br />
+        evpn.mac_ip_route.ip_address is_not none</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not set; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_IP_ADDRESS() {
+         return evpn.mac_ip_route.ip_address is none;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.ip_address is<br />
+        &lt;ADDRESS&gt;<br />
+        evpn.mac_ip_route.ip_address is_not<br />
+        &lt;ADDRESS&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not exactly the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_192_168_1_1() {
+         return evpn.mac_ip_route.ip_address is 192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.ip_address match prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+        <br />
+        evpn.mac_ip_route.ip_address match prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute of the path matches a permit sequence in the order of evaluation of the specified prefix list. Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list ANY_V4 seq 10 permit 0.0.0.0/0 le 32
+!
+ipv6 prefix-list ANY_V6
+   seq 10 permit ::/0 le 128
+!
+router general
+   control-functions
+      code
+      function IS_V4_IP_ADDRESS() {
+         return evpn.mac_ip_route.ip_address prefix_list_v4 ANY_V4;
+      }
+      function IS_V6_IP_ADDRESS() {
+         return evpn.mac_ip_route.ip_address match prefix_list_v6 ANY_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-ip-prefix-route-gateway-address">evpn.ip_prefix_route.gateway_address</span></h3>
+<p>The <code>evpn.ip_prefix_route.gateway_address</code> attribute modifies the gateway address field contained in the NLRI attribute of the EVPN IP prefix route’s path. <code>input.evpn.ip_prefix_route.gateway_address</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.29.0F release</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address is none<br />
+        evpn.ip_prefix_route.gateway_address is_not none</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not set; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_GATEWAY_ADDRESS() {
+         return evpn.ip_prefix_route.gateway_address is none;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address is &lt;ADDRESS&gt;<br />
+        evpn.ip_prefix_route.gateway_address is_not &lt;ADDRESS&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not exactly the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_192_168_1_1() {
+         return evpn.ip_prefix_route.gateway_address is 192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address match prefix_list_v4<br />
+        &lt;V4_PREFIX_LIST_NAME&gt;<br />
+        <br />
+        evpn.ip_prefix_route.gateway_address match prefix_list_v6<br />
+        &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute of the path matches a permit sequence in the order of evaluation of the specified prefix list.<br /> Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list ANY_V4 seq 10 permit 0.0.0.0/0 le 32
+!
+ipv6 prefix-list ANY_V6
+   seq 10 permit ::/0 le 128
+!
+router general
+   control-functions
+      code
+      function IS_V4_GATEWAY_ADDRESS() {
+         return evpn.ip_prefix_route.gateway_address prefix_list_v4 ANY_V4;
+      }
+      function IS_V6_GATEWAY_ADDRESS() {
+         return evpn.ip_prefix_route.gateway_address match prefix_list_v6 ANY_V6;
+      }
+      EOF
+</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address<br />
+        = &lt;ADDRESS&gt;</code><br /> <br /> Modify the attribute. The &lt;ADDRESS&gt; may be an IPv4 or an IPv6 address.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ASSIGN_GATEWAY_ADDRESS() {
+         if evpn.ip_prefix_route.prefix.ip_version is IPv4 {
+            evpn.ip_prefix_route.gateway_address = 192.168.1.10;<br />         } else
+         {<br />            evpn.ip_prefix_route.gateway_address = 2001:db8::10/128;
+         }
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-ip-prefix-route-gateway-address-ip-version">evpn.ip_prefix_route.gateway_address.ip_version</span></h3>
+<p>The <code>evpn.ip_prefix_route.gateway_address.ip_version</code> attribute will contain the address family for the gateway address attribute of the EVPN IP-prefix route.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p><code>input.evpn.ip_prefix_route.gateway_address.ip_version</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.29.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address.ip_version is &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given gateway address is an IPv4 address or an IPv6 address.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_GW_ADDR() {
+         return evpn.ip_prefix_route.gateway_address.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address.ip_version is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given gateway address is not an IPv4 address or not an IPv6 address.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_NOT_IPV4_GW_ADDR() {
+         return evpn.ip_prefix_route.gateway_address.ip_version is_not IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-ip-prefix-route-prefix">evpn.ip_prefix_route.prefix</span></h3>
+<p>The <code>evpn.ip_prefix_route.prefix</code> attribute accesses the IP prefix value contained in the NLRI attribute of the EVPN IP prefix route’s path.</p>
+<p>Supported since EOS-4.28.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix is<br />
+        &lt;PREFIX&gt;<br />
+        evpn.ip_prefix_route.prefix is_not<br />
+        &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not exactly the same as the specified IPv4 or IPv6 prefix; Evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return evpn.ip_prefix_route.prefix is 0.0.0.0/0;
+      }
+      function IS_DEFAULT_V6() {
+         return evpn.ip_prefix_route.prefix is ::/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix match<br />
+        prefix_list_v4<br />
+        &lt;V4_PREFIX_LIST_NAME&gt;<br />
+        <br />
+        evpn.ip_prefix_route.prefix match<br />
+        prefix_list_v6<br />
+        &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value matches a permit sequence in the order of evaluation of the specified prefix list.<br /> Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list DEFAULT_V4 seq 10 permit 0.0.0.0/0
+!
+ipv6 prefix-list DEFAULT_V6
+   seq 10 permit ::/0
+!
+router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return evpn.ip_prefix_route.prefix match prefix_list_v4 DEFAULT_V4;
+      }
+      function IS_DEFAULT_V6() {
+         return evpn.ip_prefix_route.prefix match prefix_list_v6 DEFAULT_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix<br />
+        match_covered prefix_list_v4<br />
+        &lt;V4_PREFIX_LIST_NAME&gt;<br />
+        <br />
+        evpn.ip_prefix_route.prefix<br />
+        match_covered prefix_list_v6<br />
+        &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> (or <code>false</code>) if the attribute value matches a permit (or deny) sequence first in the order of evaluation of the specified prefix list. Evaluates to <code>unknown</code> otherwise. Note that the attribute value matches a prefix list sequence if the prefix in the NLRI is covered by the subnet specified in the sequence. <b>The ge, le, and eq options are ignored for this operation.</b></td>
+<td>
+<pre>ip prefix-list PEER_SUBNETS seq 10 permit 192.168.1.0/24
+ip prefix-list PEER_SUBNETS seq 20 deny 192.168.2.0/24
+!
+router general
+   control-functions
+      code
+      function PEER_SUBNETS() {
+         return evpn.ip_prefix_route.prefix match_covered prefix_list_v4 PEER_SUBNETS;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix<br />
+        covered_by &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is contained in or equal to the specified IPv4 or IPv6 prefix. Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COVERED_BY_V4_DEFAULT() {
+         return evpn.ip_prefix_route.prefix covered_by 0.0.0.0/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-ip-prefix-route-prefix-ip-version">evpn.ip_prefix_route.prefix.ip_version</span></h3>
+<p>The <code>evpn.ip_prefix_route.prefix.ip_version</code> attribute will contain the address family of the IP prefix value contained in the NLRI attribute of the EVPN IP prefix route’s path.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p>Supported since EOS-4.28.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.ip_version is &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.ip_version is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the attribute value is or is not an IPv4 prefix or an IPv6 prefix.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_PFX() {
+         return evpn.ip_prefix_route.prefix.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-ip-prefix-route-prefix-length">evpn.ip_prefix_route.prefix.length</span></h3>
+<p>The <code>evpn.ip_prefix_route.prefix.length</code> attribute will contain the length of the IP prefix value contained in the NLRI attribute of the EVPN IP prefix route’s path.</p>
+<p>Supported since EOS-4.28.2 release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.length is &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.length is_not &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.length &gt; &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.length &gt;= &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.length &lt;= &lt;VALUE&gt;<br />
+        evpn.ip_prefix_route.prefix.length &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the mask length of the attribute value: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LENGTH_32_EVPN_PREFIX() {
+         return evpn.ip_prefix_route.prefix.length is 32;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.length<br />
+        in {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+            &lt;VALUE3&gt;,<br />
+            &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code> <br /> <br /> Evaluates to <code>true</code> if the <code>evpn.ip_prefix_route.prefix.length</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 7) or an inclusive range of values (e.g. 1 to 5).<br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function EVPN_PREFIX_LENGTH_IN() {
+         return evpn.ip_prefix_route.prefix.length in {1 to 5, 7};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn-route-type">evpn.route_type</span></h3>
+<p>The <code>evpn.route_type</code> attribute identifies the route type for an EVPN path.</p>
+<p><code>&lt;TYPE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>EVPN_AUTO_DISCOVERY</code></li>
+<li><code>EVPN_MAC_IP</code></li>
+<li><code>EVPN_IMET</code></li>
+<li><code>EVPN_ETHERNET_SEGMENT</code></li>
+<li><code>EVPN_IP_PREFIX</code></li>
+<li><code>EVPN_SMET</code></li>
+<li><code>EVPN_JOIN_SYNC</code></li>
+<li><code>EVPN_LEAVE_SYNC</code></li>
+<li><code>EVPN_SPMSI</code></li>
+</ul>
+<p>Supported since EOS-4.28.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>evpn.route_type is &lt;TYPE&gt;<br />
+        evpn.route_type is_not &lt;TYPE&gt;</code> <br /> <br /> Comparison operation to check if the path is or is not an EVPN path of the specified route type.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_EVPN_TYPE_5_ROUTE() {
+         return evpn.route_type is EVPN_IP_PREFIX;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="ext-community">ext_community</span></h3>
+<p><code>&lt;EXT_COMM&gt;</code> in the table below allows the following Extended Community sub-type notations:</p>
+<ul>
+<li>Color Extended Community (Supported since 4.26.2F):<br />
+<ul>
+<li><code>COLOR:CO_EXACT_MATCH:&lt;Assigned Value&gt;</code></li>
+<li><code>COLOR:CO_ENDPOINT_MATCH_ANY:&lt;Assigned Value&gt;</code></li>
+<li><code>COLOR:CO_ENDPOINT_MATCH_NULL:&lt;Assigned Value&gt;</code></li>
+<li><code><code>COLOR::&lt;Assigned Value&gt;<br />
+        </code></code>
+<ul>
+<li>When the “Color-Only” bits are not specified, <code>CO_EXACT_MATCH</code> is used</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Route Target (Supported since 4.26.2F):<br />
+<ul>
+<li><code>ROUTE-TARGET-AS:&lt;2-Octet ASN&gt;:&lt;Assigned Value&gt;</code></li>
+<li><code>ROUTE-TARGET-AS4:&lt;4-Octet ASN&gt;:&lt;Assigned Value&gt;</code></li>
+<li><code>ROUTE-TARGET-IP:&lt;IPv4 address&gt;:Assigned Value&gt;</code></li>
+</ul>
+</li>
+<li>Route Origin (Supported since 4.26.2F):<br />
+<ul>
+<li><code>ROUTE-ORIGIN-AS:&lt;2-Octet ASN&gt;:&lt;Assigned Value&gt;</code></li>
+<li><code>ROUTE-ORIGIN-AS4:&lt;4-Octet ASN&gt;:&lt;Assigned Value&gt;</code></li>
+<li><code>ROUTE-ORIGIN-IP:&lt;IPv4 address&gt;:Assigned Value&gt;</code></li>
+</ul>
+</li>
+<li>Link Bandwidth (Supported since 4.27.0F):<br />
+<ul>
+<li><code>LINK-BANDWIDTH-AS:&lt;2-Octet ASN&gt;:&lt;Assigned Value&gt;&lt;Assigned Unit&gt;</code><br />
+<ul>
+<li>Example: <code>LINK-BANDWIDTH-AS:64496:100.1KBps</code></li>
+</ul>
+</li>
+<li><code>LINK-BANDWIDTH-AS::&lt;Assigned Value&gt;&lt;Assigned Unit&gt;</code><br />
+<ul>
+<li>In comparison operations, matches all <code>ASN</code> values</li>
+<li>In modification operations, <code>ASN</code> value is automatically determined</li>
+<li>Example: <code>LINK-BANDWIDTH-AS::10Gbps</code></li>
+</ul>
+</li>
+<li><code>&lt;Assigned Unit&gt;</code> must be either <code>Bps</code> (Bytes per seconds) or bps (bits per second) and may have <code>K</code>, <code>M</code>, or <code>G</code> supplied as the unit multiplier</li>
+</ul>
+<p>A <code>&lt;4-Octet ASN&gt;</code> may be represented in the asdot notation</p>
+<p>Supported since EOS-4.25.0F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.ext_community</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>ext_community is empty</code> <br /> <br /> Evaluates to <code>true</code> if there is no  EXTENDED COMMUNITIES attribute.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_EXT_COMMUNITY() {
+         return ext_community is empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community is_not empty</code> <br /> <br /> Evaluates to <code>true</code> if there is an EXTENDED COMMUNITIES attribute. <br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_EXT_COMMUNITY() {
+         return ext_community is_not empty;
+      }</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community is {&lt;EXT_COMM&gt;, …}<br />
+            ext_community is_not {&lt;EXT_COMM&gt;, …}<br />
+            ext_community has_all {&lt;EXT_COMM&gt;, …}<br />
+            ext_community all_in {&lt;EXT_COMM&gt;, …<br />
+            ext_community has_any {&lt;EXT_COMM&gt;, …}<br />
+            ext_community has_none {&lt;EXT_COMM&gt;, …}</code><br /> <br /> Evaluates to <code>true</code>
+<ul>
+<li><code>is</code>: if the values in the EXTENDED COMMUNITIES attribute are the same values as the specified set of extended community values</li>
+<li><code>is_not</code>: if the values in the EXTENDED COMMUNITIES attribute are not the same values as the specified set of extended community values</li>
+<li><code>all_in</code>: if all the values in the EXTENDED COMMUNITIES attribute are contained in the specified set of extended community values</li>
+<li><code>has_all</code>: if the values in the EXTENDED COMMUNITIES attribute include all of extended community values in the specified set</li>
+<li><code>has_any</code>: if the values in the EXTENDED COMMUNITIES attribute have at least one of the extended community values in the specified set</li>
+<li><code>has_none</code>: if the values in the EXTENDED COMMUNITIES attribute have none of the extended community values in the specified set</li>
+</ul>
+<br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function EXT_COMM_IS() {
+         # Path extended communities must be 
+         # exactly the same
+         return ext_community is {ROUTE-TARGET-AS4:1.10:1, ROUTE-ORIGIN-IP:192.0.2.1:1, COLOR::1, LINK-BANDWIDTH-AS:64496:100Gbps};
+      }
+ 
+      function EXT_COMM_ALL_IN() {
+         # Path with {ROUTE-TARGET-AS4:65536:1} -&gt; true
+         # Path with {ROUTE-TARGET-AS4:65536:1,
+         #   COLOR:CO_ENDPOINT_MATCH_ANY:1,
+         #   ROUTE-ORIGIN-AS:64496:1} -&gt; false
+         return ext_community all_in {ROUTE-TARGET-AS4:65536:1, COLOR:CO_ENDPOINT_MATCH_ANY:1};
+      }
+ 
+      function EXT_COMM_HAS_ALL() {
+         # Path with {ROUTE-TARGET-AS4:65536:1} -&gt; false
+         # Path with {ROUTE-TARGET-AS4:65536:1,
+         #   COLOR:CO_ENDPOINT_MATCH_ANY:1,
+         #   ROUTE-ORIGIN-AS:65536:1} -&gt; true
+         return ext_community has_all {ROUTE-TARGET-AS4:65536:1, COLOR:CO_ENDPOINT_MATCH_ANY:1};
+      }
+ 
+      function EXT_COMM_HAS_ANY() {
+         # Path with {ROUTE-TARGET-AS:64496:1, COLOR:CO_EXACT_MATCH:1} -&gt; true
+         return ext_community has_any {ROUTE-TARGET-AS:64496:1, COLOR:CO_ENDPOINT_MATCH_ANY:1};
+      }
+ 
+      function EXT_COMM_HAS_NONE() {
+         # Path with {ROUTE-TARGET-IP:192.0.2.1:1} -&gt; false
+         # Path with {ROUTE-ORIGIN-IP:192.0.2.1:1} -&gt; true
+         return ext_community has_none {ROUTE-TARGET-IP:192.0.2.1:1, ROUTE-ORIGIN-AS:65535:1};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community match<br />
+            ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the EXTENDED COMMUNITIES attribute of the path matches a permit statement in the order of evaluation of the specified extended community list. <br /> Evaluates to <code>false</code> if a deny statement is matched first or if no statement is matched.<br /> A match will occur if all of the extended communities in a extended community list statement are contained in the extended communities on the path. The path may have additional extended communities.</td>
+<td>
+<pre>ip extcommunity-list EXTCOMMLIST permit color 100
+!
+router general
+   control-functions
+      code
+      function IS_COLOR_100() {
+         if ext_community match ext_community_list EXTCOMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community match_exact<br />
+            ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the EXTENDED COMMUNITIES attribute of the path matches all the extended communities of a permit statement exactly, in the order of evaluation of the specified extended community list. <br /> Evaluates to <code>false</code> if a deny statement is similarly matched first or if no statement is matched.<br /> An exact match will occur if the extended communities in a extended community list statement are the same as the extended communities on the path. The path and the matching extended community list statement must not have any additional extended communities.</td>
+<td>
+<pre>ip extcommunity-list EXTCOMMLIST permit rt 192.168.1.1:10
+!
+router general
+   control-functions
+      code
+      function RT_10() {
+         if ext_community match_exact ext_community_list EXTCOMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community = empty;</code> <br /> Remove all extended communities.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function DROP_EXT_COMMUNITY() {
+         ext_community = empty;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community = ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;<br />
+            <br />
+            ext_community add<br />
+            ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;<br />
+            <br />
+            ext_community remove<br />
+            ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;</code><br /> <br /> Modify the EXTENDED COMMUNITIES attribute: replace or set extended community values, add extended community values, and remove extended community values respectively according to the specified extended community list</td>
+<td>
+<pre>ip extcommunity-list regexp ANY_COLOR permit Color:
+ip extcommunity-list COLOR_100 permit color 100
+ip extcommunity-list RT_10 permit rt 192.168.1.1:10
+!
+router general
+   control-functions
+      code
+      function SET_COLOR_100() {
+         # Remove all existing colors
+         ext_community remove ext_community_list ANY_COLOR;
+<br />
+         # Add 'color 100'; Do not replace all
+         # other existing extended communities
+         ext_community add ext_community_list COLOR_100;
+      }
+<br />
+      function SET_RT_10() {
+         # Set extended communities. All existing
+         # extended communities are dropped.
+         ext_community = ext_community_list RT_10;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community retain<br />
+            ext_community_list<br />
+            &lt;EXT_COMM_LIST_NAME&gt;</code> <br /> <br /> Retain the extended community values in the EXTENDED COMMUNITIES attribute that are in the specified extended community list. <br /> <br /> Supported since EOS-4.26.1F.</td>
+<td>
+<pre>ip extcommunity-list RT_10 permit rt 192.168.1.1:10
+!
+router general
+   control-functions
+      code
+      function RETAIN_RT() {
+          # remove all ext_communities except rt 10:10
+          ext_community retain ext_community_list RT_10;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community = {&lt;EXT_COMM&gt;, …}<br />
+            ext_community add {&lt;EXT_COMM&gt;, …}<br />
+            ext_community remove {&lt;EXT_COMM&gt;, …}<br />
+            ext_community retain {&lt;EXT_COMM&gt;, …}</code><br /> <br /> Modify the EXTENDED COMMUNITIES attribute according to the specified extended community values:
+<ul>
+<li><code>=</code>: replace or set Extended Community values</li>
+<li><code>add</code>: add Extended Community values</li>
+<li><code>remove</code>: remove Extended Community values</li>
+<li><code>retain</code>: remove all Extended Community values except the ones specified</li>
+</ul>
+<br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function EXT_COMM_SET() {
+         # Replaces all extended communities
+         # with one extended community
+         ext_community = {ROUTE-TARGET-AS:64496:1};
+      }
+  
+      function EXT_COMM_ADD_COLOR() {
+         ext_community add {COLOR::1};
+      }
+  
+      function EXT_COMM_REMOVE() {
+         # Remove ROUTE-ORIGIN-IP:192.0.2.1:1 
+         # from the path's extended communities
+         ext_community remove {ROUTE-ORIGIN-IP:192.0.2.1:1};
+      }
+  
+      function EXT_COMM_RETAIN() {
+         # Keep only the  extended communities
+         # ROUTE-TARGET-AS4:1.10:1 or ROUTE-ORIGIN-IP:192.0.2.1:1
+         ext_community retain {ROUTE-TARGET-AS4:1.10:1, ROUTE-ORIGIN-IP:192.0.2.1:1};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="ext-community-count">ext_community.count</span></h3>
+<p><code>input.ext_community.count</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>ext_community.count is &lt;VALUE&gt;<br />
+            ext_community.count is_not &lt;VALUE&gt;<br />
+            ext_community.count &gt; &lt;VALUE&gt;<br />
+            ext_community.count &gt;= &lt;VALUE&gt;<br />
+            ext_community.count &lt;= &lt;VALUE&gt;<br />
+            ext_community.count &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the number of extended communities: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LESS_THAN_3_EXT_COMMUNITIES() {
+         return ext_community.count &lt; 3;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>ext_community.count in {&lt;VALUE1&gt;<br />
+             
+                                    to<br />
+                                    &lt;VALUE2&gt;,<br />
+                                    &lt;VALUE3&gt;,<br />
+                                    &lt;VALUE4&gt;<br />
+              
+                                    to<br />
+                                    &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>ext_community.count</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> <br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function EXT_COMMUNITY_COUNT_IN() {
+         return ext_community.count in {100 to 
+                                        200, 
+                                        300, 
+                                        400, 
+                                        500 to 
+                                        600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="fec-recmp">fec.recmp</span></h3>
+<p>The <code>fec.recmp</code> attribute allows marking of individual BGP routes for using Resilient ECMP resources in the FIB.<br /> See <a href="/support/toi/eos-4-29-2f/17199-bgp-policy-based-resilient-ecmp" target="_blank" rel="noopener noreferrer">BGP Policy based Resilient ECMP TOI</a> for more information.</p>
+<p><code>input.fec.recmp</code> is available to access the unmodified attribute value.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>RECMP_DEFAULT</code></li>
+<li><code>RECMP_ENABLED</code></li>
+</ul>
+<p>Supported since EOS-4.29.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>fec.recmp is &lt;VALUE&gt;<br />
+            fec.recmp is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation for RECMP: equal and not equal respectively. <br /> <code>fec.recmp</code> assumes the value of RECMP_DEFAULT in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_RECMP_ENABLED_METHOD1() {
+         return fec.recmp is RECMP_ENABLED;
+      }
+      function IS_RECMP_ENABLED_METHOD2() {
+         return fec.recmp is_not RECMP_DEFAULT;
+      }
+<br />
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>fec.recmp = &lt;VALUE&gt;</code> <br /> <br /> Modification operation for RECMP: assignment. <code>fec.recmp</code> value can be either RECMP_ENABLED or RECMP_DEFAULT.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ENABLE_RECMP() {
+         fec.recmp = RECMP_ENABLED;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-destination-prefix">flowspec.destination.prefix</span></h3>
+<p>The <code>flowspec.destination.prefix</code> attribute accesses the flowspec destination prefix value contained in the BGP flowspec NLRI path.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix is &lt;PREFIX&gt;<br />
+            flowspec.destination.prefix is_not &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not exactly the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return flowspec.destination.prefix is 0.0.0.0/0;
+      }
+      function IS_DEFAULT_V6() {
+         return flowspec.destination.prefix is ::/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix match prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            flowspec.destination.prefix match prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value matches a permit sequence in the order of evaluation of the specified prefix list. Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list DEFAULT_V4 seq 10 permit 0.0.0.0/0
+!
+ipv6 prefix-list DEFAULT_V6
+   seq 10 permit ::/0
+!
+router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return flowspec.destination.prefix match prefix_list_v4 DEFAULT_V4;
+      }
+      function IS_DEFAULT_V6() {
+         return flowspec.destination.prefix match prefix_list_v6 DEFAULT_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix match_covered prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            flowspec.destination.prefix match_covered prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> (or <code>false</code>) if the attribute value matches a permit (or deny) sequence first in the order of evaluation of the specified prefix list. Evaluates to <code>unknown</code> otherwise. Note that the attribute value matches a prefix list sequence if the prefix in the NLRI is covered by the subnet specified in the sequence. <b>The ge, le, and eq options are ignored for this operation.</b></td>
+<td>
+<pre>ip prefix-list PEER_SUBNETS seq 10 permit 192.168.1.0/24
+ip prefix-list PEER_SUBNETS seq 20 deny 192.168.2.0/24
+!
+router general
+   control-functions
+      code
+      function PEER_SUBNETS() {
+         return flowspec.destination.prefix match_covered prefix_list_v4 PEER_SUBNETS;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix covered_by &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is contained in or equal to the specified IPv4 or IPv6 prefix. Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COVERED_BY_V4_DEFAULT() {
+         return flowspec.destination.prefix covered_by 0.0.0.0/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-destination-prefix-ip-version">flowspec.destination.prefix.ip_version</span></h3>
+<p>The <code>flowspec.destination.prefix.ip_version</code> attribute will contain the address family of the flowspec destination prefix value contained in the NLRI attribute of the BGP Flowspec path.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix.ip_version is &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.ip_version is_not &lt;VALUE&gt;</code> <br /> <br /> Comparison operation to check if the attribute value is or is not an IPv4 prefix or an IPv6 prefix.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_PFX() {
+         return flowspec.destination.prefix.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-destination-prefix-length">flowspec.destination.prefix.length</span></h3>
+<p>The <code>flowspec.destination.prefix.length</code> attribute will contain the length of the flowspec destination prefix value contained in the NLRI attribute of the BGP Flowspec path.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code> flowspec.destination.prefix.length is &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length is_not &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length &gt; &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length &gt;= &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length &lt;= &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length &lt; &lt;VALUE&gt;<br />
+            flowspec.destination.prefix.length in {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                &lt;VALUE3&gt;,<br />
+             
+                &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Comparison operations for the mask length of the attribute value: equal, not equal, greater than, greater than or equal, less than or equal, less than, and in respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LENGTH_32_FLOWSPEC_DST_PREFIX() {
+         return flowspec.destination.prefix.length is 32;
+      }
+      function FLOWSPEC_DEST_PREFIX_LENGTH_IN() {
+         return flowspec.destination.prefix.length 
+in {1 to 5, 7};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-source-prefix">flowspec.source.prefix</span></h3>
+<p>The <code>flowspec.source.prefix</code> attribute accesses the flowspec source prefix value contained in the BGP flowspec NLRI path.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix is &lt;PREFIX&gt;<br />
+            flowspec.source.prefix is_not &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is or is not exactly the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return flowspec.source.prefix is 0.0.0.0/0;
+      }
+      function IS_DEFAULT_V6() {
+         return flowspec.source.prefix is ::/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix match prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            flowspec.source.prefix match prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the attribute value matches a permit sequence in the order of evaluation of the specified prefix list. Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list DEFAULT_V4 seq 10 permit 0.0.0.0/0
+!
+ipv6 prefix-list DEFAULT_V6
+   seq 10 permit ::/0
+!
+router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return flowspec.source.prefix match prefix_list_v4 DEFAULT_V4;
+      }
+      function IS_DEFAULT_V6() {
+         return flowspec.source.prefix match prefix_list_v6 DEFAULT_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix match_covered prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            flowspec.source.prefix match_covered prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> (or <code>false</code>) if the attribute value matches a permit (or deny) sequence first in the order of evaluation of the specified prefix list. Evaluates to <code>unknown</code> otherwise. Note that the attribute value matches a prefix list sequence if the prefix in the NLRI is covered by the subnet specified in the sequence. <b>The ge, le, and eq options are ignored for this operation.</b></td>
+<td>
+<pre>ip prefix-list PEER_SUBNETS seq 10 permit 192.168.1.0/24
+ip prefix-list PEER_SUBNETS seq 20 deny 192.168.2.0/24
+!
+router general
+   control-functions
+      code
+      function PEER_SUBNETS() {
+         return flowspec.source.prefix match_covered prefix_list_v4 PEER_SUBNETS;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix covered_by &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is contained in or equal to the specified IPv4 or IPv6 prefix. Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COVERED_BY_V4_DEFAULT() {
+         return flowspec.source.prefix covered_by 0.0.0.0/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-source-prefix-ip-version">flowspec.source.prefix.ip_version</span></h3>
+<p>The <code>flowspec.source.prefix.ip_version</code> attribute will contain the address family of the flowspec source prefix value contained in the NLRI attribute of the BGP Flowspec path.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix.ip_version is &lt;VALUE&gt;<br />
+            flowspec.source.prefix.ip_version is_not &lt;VALUE&gt;</code> <br /> <br /> Comparison operation to check if the attribute value is or is not an IPv4 prefix or an IPv6 prefix.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_PFX() {
+         return flowspec.source.prefix.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec-source-prefix-length">flowspec.source.prefix.length</span></h3>
+<p>The <code>flowspec.source.prefix.length</code> attribute will contain the length of the flowspec source prefix value contained in the NLRI attribute of the BGP Flowspec path.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td>
+<p><code> flowspec.source.prefix.length is &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length is_not &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length &gt; &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length &gt;= &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length &lt;= &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length &lt; &lt;VALUE&gt;<br />
+              flowspec.source.prefix.length in</code><code> {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                  &lt;VALUE3&gt;,<br />
+                  &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Comparison operations for the mask length of the attribute value: equal, not equal, greater than, greater than or equal, less than or equal, less than, and in respectively.</p>
+</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LENGTH_32_FLOWSPEC_SRC_PREFIX() {
+         return flowspec.source.prefix.length is 32;
+      }
+      function FLOWSPEC_SRC_PREFIX_LENGTH_IN() {
+         return flowspec.source.prefix.length 
+in {1 to 5, 7};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="igp-metric">igp.metric</span></h3>
+<p>The <code>igp.metric</code> attribute provides the metric value of a redistributed (non BGP) route.</p>
+<p>Supported since EOS-4.28.0F release</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code> igp.metric is &lt;VALUE&gt;<br />
+            igp.metric is_not &lt;VALUE&gt;<br />
+            igp.metric &gt; &lt;VALUE&gt;<br />
+            igp.metric &gt;= &lt;VALUE&gt;<br />
+            igp.metric &lt;= &lt;VALUE&amp;gt<br />
+            igp.metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>igp.metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>igp.metric</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_IGP_METRIC_GE100() {
+         return igp.metric &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> igp.metric in {&lt;VALUE1&gt; to<br />
+                           &lt;VALUE2&gt;,<br />
+                           &lt;VALUE3&gt;,<br />
+                           &lt;VALUE4&gt; to<br />
+                           &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>igp.metric</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IGP_METRIC_IN() {
+         return igp.metric in {100 to 200,
+                               300, 400,
+                               500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="igp-tag">igp.tag</span></h3>
+<p>Supported since EOS-4.24.2F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.igp.tag</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code> igp.tag is &lt;VALUE&gt;<br />
+            igp.tag &gt; &lt;VALUE&gt;<br />
+            igp.tag &gt;= &lt;VALUE&gt;<br />
+            igp.tag &lt;= &lt;VALUE&gt;<br />
+            igp.tag &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for tag: equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>igp.tag</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_TAG_GE100() {
+         return igp.tag &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>igp.tag is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation “not equal” for tag<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_TAG_100() {
+         return igp.tag is_not 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> igp.tag = &lt;VALUE&gt;<br />
+            igp.tag += &lt;VALUE&gt;<br />
+            igp.tag *= &lt;VALUE&gt;<br />
+            igp.tag -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for tag: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. Tag value is capped between 0 and 4294967295.<br /> <br /> Support for *= operation added in EOS-4.27.0F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function TAG_100() {
+         igp.tag = 100;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> igp.tag in {&lt;VALUE1&gt; to<br />
+                        
+                        &lt;VALUE2&gt;,<br />
+                        &lt;VALUE3&gt;,<br />
+                        &lt;VALUE4&gt; to<br />
+                        
+                        &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>igp.tag</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise. <br /> Support for in operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IGP_TAG_IN() {
+         return igp.tag in {100 to 200,
+                            300, 400,
+                            500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="isis-levels">isis.levels</span></h3>
+<p><code>&lt;ISIS_LEVEL&gt;</code> in the table below can be</p>
+<ul>
+<li><code>LEVEL1</code></li>
+<li><code>LEVEL2</code></li>
+</ul>
+<p><code>input.isis.levels</code> is available to access the unmodified attribute value.</p>
+Supported since EOS-4.26.1F release.
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>isis.levels is empty</code><br /> <br /> Evaluates to <code>true</code> if there are no IS-IS levels property.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_ISIS_LEVELS() {
+         return isis.levels is empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>isis.levels is_not empty</code><br /> <br /> Evaluates to <code>true</code> if there are IS-IS levels properties<br /> <br /> Supported since  EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_ISIS_LEVELS() {
+         return isis.levels is_not empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>isis.levels is {&lt;ISIS_LEVEL&gt;, …}</code><br /> <br /> Evaluates to <code>true</code> if the values in the IS-IS levels property are the same values as the specified set of IS-IS levels values.<br /> Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ISIS_LEVEL12() {
+         # Path's IS-IS levels must match exactly
+         return isis.levels is {LEVEL1, LEVEL2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>isis.levels is_not {&lt;ISIS_LEVEL&gt;, …}</code><br /> <br /> Evaluates to <code>true</code> if the values in the IS-IS levels property are not the same values as the specified set of IS-IS levels values.<br /> Evaluates to <code>false</code> otherwise<br /> <br /> Supported since  EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ISIS_NOT_LEVEL12() {
+         # Path's IS-IS levels must not match
+         return isis.levels is_not {LEVEL1, LEVEL2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>isis.levels = empty;</code><br /> <br /> Remove all IS-IS levels.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function DROP_ISIS_LEVELS() {
+         isis.levels = empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>isis.levels = {&lt;ISIS_LEVEL&gt;, …}</code><br /> <br /> Replace the IS-IS levels property with the specified IS-IS levels values</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ISIS_SET_LEVEL1() {
+         # Replaces all existing IS-IS
+         # levels with the level1
+         isis.levels = {LEVEL1};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="isis-metric">isis.metric</span></h3>
+<p><code>isis.metric</code> provides the metric of a source IS-IS route when redistributing to BGP from IS-IS or to BGP-LU from IS-IS SR, and provides the MED of a source BGP route when redistributing to IS-IS from BGP or to IS-IS SR from BGP-LU.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code> isis.metric is &lt;VALUE&gt;<br />
+            isis.metric is_not &lt;VALUE&gt;<br />
+            isis.metric &gt; &lt;VALUE&gt;<br />
+            isis.metric &gt;= &lt;VALUE&gt;<br />
+            isis.metric &lt;= &lt;VALUE&gt;<br />
+            isis.metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>isis.metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>isis.metric</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_ISIS_METRIC_GE100() {
+         return isis.metric &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> isis.metric = &lt;VALUE&gt;<br />
+            isis.metric += &lt;VALUE&gt;<br />
+            isis.metric *= &lt;VALUE&gt;<br />
+            isis.metric -= &lt;VALUE&gt;<br />
+            </code> <br /> Modification operations for the <code>isis.metric</code> attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The <code>isis.metric</code> value is capped between 0 and 4294967295.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ISIS_ISIS_METRIC_MODIFY() {
+         isis.metric = 100;
+         if prefix is 0.0.0.0/0 {
+            isis.metric += 10;
+         } else {
+            isis.metric -= 10;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> isis.metric in {&lt;VALUE1&gt; to<br />
+                            &lt;VALUE2&gt;,<br />
+                            &lt;VALUE3&gt;,<br />
+                            &lt;VALUE4&gt; to<br />
+                            &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>isis.metric</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ISIS_METRIC_IN() {
+         return isis.metric in {100 to 200,
+                                300, 400,
+                                500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="large-community">large_community</span></h3>
+<p><code>&lt;LARGE_COMM&gt;</code> in the table below must be in the form of U32:U32:U32, e.g. 65540:200:300.<br /> <code>input.large_community</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code> large_community is empty</code><br /> <br /> Evaluates to <code>true</code> if there is no LARGE_COMMUNITY attribute.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_LARGE_COMMUNITY() {
+         return large_community is empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code> large_community is_not empty</code> <br /> Evaluates to <code>true</code> if there are LARGE_COMMUNITY attribute(s)<br /> <br /> Supported since  EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_LARGE_COMMUNITY() {
+         return large_community is_not empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community is {&lt;LARGE_COMM&gt;, …}<br />
+            large_community all_in {&lt;LARGE_COMM&gt;, …}<br />
+            large_community has_all {&lt;LARGE_COMM&gt;, …}<br />
+            large_community has_any {&lt;LARGE_COMM&gt;, …}<br />
+            large_community has_none {&lt;LARGE_COMM&gt;, …}</code><br /> <br /> Evaluates to <code>true</code>
+<ul>
+<li><code>is</code>: if the values in the LARGE_COMMUNITY attribute are the same values as the specified set of large community values</li>
+<li><code>all_in</code>: if all the values in the LARGE_COMMUNITY attribute are contained in the specified set of large community values</li>
+<li><code>has_all</code>: if the values in the LARGE_COMMUNITY attribute include all of large community values in the specified set</li>
+<li><code>has_any</code>: if the values in the LARGE_COMMUNITY attribute have at least one of the large community values in the specified set</li>
+<li><code>has_none</code>: if the values in the LARGE_COMMUNITY attribute have none of the large community values in the specified set</li>
+</ul>
+Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_IS() {
+         # Path's large communities must be 
+         # exactly the same
+         return large_community is {65540:1:1, 65540:1:2};
+      }
+ 
+      function LARGE_COMMUNITY_ALL_IN() {
+         # Path with {65540:1:1} -&gt; true
+         # Path with {65540:1:1, 65540:1:2, 
+         #            65540:1:3} -&gt; false
+         return large_community all_in {65540:1:1, 65540:1:2};
+      }
+ 
+      function LARGE_COMMUNITY_HAS_ALL() {
+         # Path with {65540:1:1} -&gt; false
+         # Path with {65540:1:1, 65540:1:2, 
+         #            65540:1:3} -&gt; true
+         return large_community has_all {65540:1:1, 65540:1:2};
+      }
+ 
+      function COMMUNITY_HAS_ANY() {
+         # Path with {65540:1:1, 65540:1:3} -&gt; true
+         return large_community has_any {65540:1:1, 65540:1:2};
+      }
+ 
+      function LARGE_COMMUNITY_HAS_NONE() {
+         # Path with {65540:1:1} -&gt; false
+         # Path with {65540:1:3} -&gt; true
+         return large_community has_none {65540:1:1, 65540:1:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community is_not {&lt;LARGE_COMM&gt;, …}</code> <br /> <br /> Evaluates to <code>true</code>
+<ul>
+<li><code>is_not</code>: if the values in the LARGE_COMMUNITY attribute are not the same values as the specified set of large community values</li>
+</ul>
+Evaluates to <code>false</code> otherwise.<br /> <br /> Supported since  EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_IS_NOT() {
+         # Path's large communities must
+         # be different
+         return large_community is_not {65540:1:1, 65540:1:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community match<br />
+            large_community_list<br />
+            &lt;LARGE_COMM_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the LARGE_COMMUNITY attribute of the path matches a permit statement in the order of evaluation of the specified large community list. <br /> Evaluates to <code>false</code> if a deny statement is matched first or if no statement is matched.<br /> A match will occur if all of the large communities in a large community list statement are contained in the large communities on the path. The path may have additional large communities.</td>
+<td>
+<pre>ip large-community-list LARGECOMMLIST permit 65540:1:10 65540:1:20
+!
+router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_TEST() {
+         if large_community match large_community_list LARGECOMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community match_exact<br />
+            large_community_list<br />
+            &lt;LARGE_COMM_LIST_NAME&gt;</code> <br /> <br /> Evaluates to <code>true</code> if the LARGE_COMMUNITY attribute of the path matches all the large communities of a permit statement exactly, in the order of evaluation of the specified community list. <br /> Evaluates to <code>false</code> if a deny statement is similarly matched first or if no statement is matched.<br /> An exact match will occur if the large communities in a large community list statement are the same as the large communities on the path. The path and the matching large community list statement must not have any additional large communities.</td>
+<td>
+<pre>ip large-community-list LARGECOMMLIST permit 65540:1:10 65540:1:20
+!
+router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_TEST() {
+         if large_community match_exact large_community_list LARGECOMMLIST {
+            return true;
+         }
+         return false;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community = empty;</code><br /> <br /> Remove all large communities.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function DROP_LARGE_COMMUNITY() {
+         large_community = empty;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community = {&lt;COMM&gt;, …}<br />
+            large_community add {&lt;COMM&gt;, …}<br />
+            large_community remove {&lt;COMM&gt;, …}<br />
+            large_community retain {&lt;COMM&gt;, …}</code><br /> <br /> Modify the LARGE_COMMUNITY attribute according to the specified large community values:
+<ul>
+<li><code>=</code>: replace or set large community values</li>
+<li><code>add</code>: add large community values</li>
+<li><code>remove</code>: remove large community values</li>
+<li><code>retain</code>: remove all large community values except the ones specified</li>
+</ul>
+</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_SET() {
+         # Replaces all existing large
+         # communities with one large
+         # community
+         large_community = {65540:1:1};
+      }
+  
+      function LARGE_COMMUNITY_ADD() {
+         # Add 65540:1:1 to the path's
+         # large communities         
+         large_community add {65540:1:1};
+      }
+  
+      function LARGE_COMMUNITY_REMOVE() {
+         # Remove 65540:1:1 from the path's
+         # large communities
+         large_community remove {65540:1:1};
+      }
+  
+      function LARGE_COMMUNITY_RETAIN() {
+         # Keep only the large communities
+         # 65540:1:1 or 65540:1:2
+         large_community retain {65540:1:1, 65540:1:2};
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community = large_community_list &lt;LARGE_COMM_LIST_NAME&gt;<br />
+            <br />
+            large_community add large_community_list &lt;LARGE_COMM_LIST_NAME&gt;<br />
+            <br />
+            large_community remove large_community_list &lt;LARGE_COMM_LIST_NAME&gt;<br />
+            <br />
+            large_community retain large_community_list &lt;LARGE_COMM_LIST_NAME&gt;</code><br /> <br /> Modify the LARGE_COMMUNITY attribute: replace or set large community values, add large community values, remove large community values, and retain large community values respectively according to the specified large community list.</td>
+<td>
+<pre>ip large-community-list ALLOWED_65540_LARGE_COMM permit 65540:1:1 65540:1:2 65540:1:3 65540:1:4<br />ip large-community-list LARGE_COMM_HOST_ROUTE permit 65541:1:100
+ip large-community-list LARGE_COMM_LOCAL permit 65541:1:200
+!
+ 
+router general
+   control-functions
+      code
+      function RETAIN_AND_ADD_INBOUND() {
+         large_community retain large_community_list ALLOWED_65540_LARGE_COMM;
+         large_community add large_community_list LARGE_COMM_HOST_ROUTE;
+         return true;
+      }
+ 
+      function REMOVE_OUTBOUND() {
+         large_community remove large_community_list LARGE_COMM_HOST_ROUTE;
+         return true;
+      }
+ 
+      function LOCAL_ROUTE_LARGE_COMM() {
+         large_community = large_community_list LARGE_COMM_LOCAL;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="large-community-count">large_community.count</span></h3>
+<p><code>input.large_community.count</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>large_community.count is &lt;VALUE&gt;<br />
+            large_community.count is_not &lt;VALUE&gt;<br />
+            large_community.count &gt; &lt;VALUE&gt;<br />
+            large_community.count &gt;= &lt;VALUE&gt;<br />
+            large_community.count &lt;= &lt;VALUE&gt;<br />
+            large_community.count &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the number of large communities: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LESS_THAN_3_LARGE_COMMUNITIES() {
+         return large_community.count &lt; 3;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>large_community.count in<br />
+               {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                &lt;VALUE3&gt;,<br />
+                &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>large_community.count</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LARGE_COMMUNITY_COUNT_IN() {
+         return large_community.count in {100 to 
+                                          200,
+                                          300, 
+                                          400,
+                                          500 to 
+                                          600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="local-preference">local_preference</span></h3>
+<p>Supported since EOS-4.21.1F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.local_preference</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>local_preference is &lt;VALUE&gt;<br />
+            local_preference &gt; &lt;VALUE&gt;<br />
+            local_preference &gt;= &lt;VALUE&gt;<br />
+            local_preference &lt;= &lt;VALUE&gt;<br />
+            local_preference &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the LOCAL_PREF attribute: equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>local_preference</code> assumes the value 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_LOCAL_PREF_100() {
+         return local_preference is 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>local_preference is_not &lt;VALUE&gt;</code> <br /> Comparison operation “not equal” for the LOCAL_PREF attribute<br /> <br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_LOCAL_PREF_100() {
+         return local_preference is_not 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>local_preference = &lt;VALUE&gt;<br />
+            local_preference += &lt;VALUE&gt;<br />
+            local_preference *= &lt;VALUE&gt;<br />
+            local_preference -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for the LOCAL_PREF attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The LOCAL_PREF value is capped between 0 and 4294967295.<br /> <br /> Support for *= operation added in EOS-4.27.0F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LOCAL_PREF_MODIFY() {
+         local_preference = 200;
+         if prefix is 0.0.0.0/0 {
+            local_preference += 100;
+         } else {
+            local_preference -= 100;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>local_preference in {&lt;VALUE1&gt; to<br />
+                        
+                    &lt;VALUE2&gt;,<br />
+                                 &lt;VALUE3&gt;,<br />
+                                 &lt;VALUE4&gt; to<br />
+                        
+                    &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the local_preference attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function LOCAL_PREF_IN() {
+         return local_preference in {100 to 200,
+                                     300, 400,
+                                     500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="med">med</span></h3>
+<p>Supported since EOS-4.21.1F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.med</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>med is &lt;VALUE&gt;<br />
+            med &gt; &lt;VALUE&gt;<br />
+            med &gt;= &lt;VALUE&gt;<br />
+            med &lt;= &lt;VALUE&gt;<br />
+            med &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the MULTI_EXIT_DISC attribute: equal, greater than, greater than or equal, less than or equal, and less than respectively. <br /> <br /> <code>med</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_MED_GE100() {
+         return med &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>med is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation “not equal” for the MULTI_EXT_DISC attribute<br /> <br /> Supported since EOS-4.26.2F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_MED_100() {
+         return med is_not 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>med = &lt;VALUE&gt;<br />
+            med += &lt;VALUE&gt;<br />
+            med *= &lt;VALUE&gt;<br />
+            med -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for the MULTI_EXIT_DISC attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. The MULTI_EXIT_DISC value is capped between 0 and 4294967295.<br /> <br /> Support for *= operation added in EOS-4.27.0F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function MED_MODIFY() {
+         med = 100;
+         if prefix is 0.0.0.0/0 {
+            med += 10;
+         } else {
+            med -= 10;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>med in {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                    &lt;VALUE3&gt;,<br />
+                    &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the med attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function MED_IN() {
+         return med in {100 to 200,
+                        300, 400,
+                        500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="next-hop">next_hop</span></h3>
+<p>Supported since EOS-4.25.0F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.next_hop</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>next_hop is none</code><br /> <br /> Evaluates to <code>true</code> if the NEXT_HOP attribute is not set; evaluates to <code>false</code> otherwise. This is typically the case with locally originated routes in BGP.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NO_NEXT_HOP() {
+         return next_hop is none;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop is_not none</code><br /> <br /> Evaluates to <code>true</code> if the NEXT_HOP attribute is set; evaluates to <code>false</code> otherwise.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function HAS_NEXT_HOP() {
+         return next_hop is_not none;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop is &lt;ADDRESS&gt;</code><br /> <br /> Evaluates to <code>true</code> if the NEXT_HOP attribute is exactly the same as the specified IPv4 or IPv6 address; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_192_168_1_1() {
+         return next_hop is 192.168.1.1 or next_hop is ::ffff:192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop is_not &lt;ADDRESS&gt;</code><br /> <br /> Evaluates to <code>true</code> if the NEXT_HOP attribute is not the same as the specified IPv4 or IPv6 address; evaluates to <code>false</code> otherwise.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_192_168_1_1() {
+         return next_hop is_not 192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop match prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            next_hop match prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the NEXT_HOP attribute of the path matches a permit sequence in the order of evaluation of the specified prefix list.<br /> Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list ANY_V4 seq 10 permit 0.0.0.0/0 le 32
+!
+ipv6 prefix-list ANY_V6
+   seq 10 permit ::/0 le 128
+!
+router general
+   control-functions
+      code
+      function IS_V4_NEXT_HOP() {
+         return next_hop match prefix_list_v4 ANY_V4;
+      }
+      function IS_V6_NEXT_HOP() {
+         return next_hop match prefix_list_v6 ANY_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop = &lt;ADDRESS&gt;;</code><br /> <br /> Modify the next hop. The &lt;ADDRESS&gt; may be an IPv4 or an IPv6 address.<br /> <br /> Supported since EOS-4.25.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function RTBH() {
+         # Change next hop to resolve over
+         # drop route
+         if prefix match prefix_list_v4 ANY_V4 {
+            next_hop = 192.168.1.10;
+         } else if prefix match prefix_list_v6 ANY_V6 {
+            next_hop = 2001:db8::10/128;
+         }
+      }
+   
+      function SET_6PE_NH() {
+         next_hop = ::ffff:192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="next-hop-ip-version">next_hop.ip_version</span></h3>
+<p>The <code>next_hop.ip_version</code> attribute will contain the address family for the next hop attribute of the path.</p>
+<p><code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p><code>input.next_hop.ip_version</code> is available to access the unmodified attribute value.<br /> Supported since EOS-4.26.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>next_hop.ip_version is &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given next hop is an IPv4 address or an IPv6 address.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_NH() {
+         return next_hop.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the given next hop is not an IPv4 address or not an IPv6 address. <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_NOT_IPV4_NH() {
+         return next_hop.ip_version is_not IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="next-hop-best-path-metric">next_hop_best_path_metric</span></h3>
+<p>The <code>next_hop_best_path_metric</code> provides a setting to control the next hop IGP cost value used during BGP best path selection.</p>
+<p>See <a href="/en/support/toi/eos-4-20-5f/13988-override-igp-cost-of-bgp-next-hop" target="_blank" rel="noopener noreferrer">Override IGP cost of BGP next hop TOI</a> for more information.</p>
+<p>Supported since EOS-4.28.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric is &lt;VALUE&gt;<br />
+            next_hop_best_path_metric is_not &lt;VALUE&gt;<br />
+            next_hop_best_path_metric &gt; &lt;VALUE&gt;
+            next_hop_best_path_metric &gt;= &lt;VALUE&gt;<br />
+            next_hop_best_path_metric &lt;= &lt;VALUE&gt;<br />
+            next_hop_best_path_metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>next_hop_best_path_metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>next_hop_best_path_metric</code> is initialized to 0. </td>
+<td>
+<pre>router general
+   control-functions
+     code
+     function IS_NH_BP_METRIC_GE100() {
+       return next_hop_best_path_metric &gt;= 100;
+     }
+     EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric = &lt;VALUE&gt;<br />
+            next_hop_best_path_metric += &lt;VALUE&gt;<br />
+            next_hop_best_path_metric *= &lt;VALUE&gt;<br />
+            next_hop_best_path_metric -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for the <code>next_hop_best_path_metric</code> attribute: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively.<br /> The <code>next_hop_best_path_metric</code> value is capped between 0 and 4294967295.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function NH_BP_METRIC_MODIFY() {
+         next_hop_best_path_metric = 100;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric in<br />
+               {&lt;VALUE1&gt; to  &lt;VALUE2&gt;,<br />
+                &lt;VALUE3&gt;,<br />
+                &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the next_hop_best_path_metric attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function NH_BP_METRIC_IN() {
+         return next_hop_best_path_metric in
+                  {100 to 200,
+                   300, 400,
+                   500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="next-hop-metric">next_hop_metric</span></h3>
+<p>The <code>next_hop_metric</code> attribute provides the next hop metric (or IGP next hop cost) value of a BGP learned route.<br /> See <a href="/en/support/toi/eos-4-22-0f/14910-modifying-bgp-med-based-on-the-next-hops-igp-reachability-cost" target="_blank" rel="noopener noreferrer">Modifying MED based on the next hop's IGP reachability cost TOI</a> for more information.</p>
+<p>Supported since EOS-4.28.1F release</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>next_hop_metric is &lt;VALUE&gt;<br />
+            next_hop_metric is_not &lt;VALUE&gt;<br />
+            next_hop_metric &gt; &lt;VALUE&gt;<br />
+            next_hop_metric &gt;= &lt;VALUE&gt;<br />
+            next_hop_metric &lt;= &lt;VALUE&gt;<br />
+            next_hop_metric &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the <code>next_hop_metric</code> attribute: equal, not equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>next_hop_metric</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NH_METRIC_GE100() {
+         return next_hop_metric &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>next_hop_metric in {&lt;VALUE1&gt; to<br />
+                                &lt;VALUE2&gt;,<br />
+                                &lt;VALUE3&gt;,<br />
+                                &lt;VALUE4&gt; to<br />
+                                &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the next_hop_metric attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function NH_METRIC_IN() {
+         return next_hop_metric in {100 to 
+                                    200,
+                                    300, 
+                                    400,
+                                    500 to  
+                                    600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="origin">origin</span></h3>
+<p><code>&lt;ORIGIN&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IGP</code></li>
+<li><code>EGP</code></li>
+<li><code>INCOMPLETE</code></li>
+</ul>
+<p>Supported since EOS-4.24.2F release.</p>
+<p>With the EOS-4.26.0F release, <code>input.origin</code> is available to access the unmodified attribute value.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>origin is &lt;ORIGIN&gt;</code><br /> <br /> Evaluates to <code>true</code> if the origin is the same as the specified value; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_ORIGIN_IGP() {
+         return origin is IGP;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>origin is_not &lt;ORIGIN&gt;</code><br /> <br /> Evaluates to <code>true</code> if the origin is not the same as the specified value; evaluates to <code>false</code> otherwise<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_ORIGIN_IGP() {
+         return origin is_not IGP;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>origin = &lt;ORIGIN&gt;</code><br /> <br /> Modify the origin attribute to the specified value.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ORIGIN_IGP() {
+         origin = IGP;
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="prefix">prefix</span></h3>
+<p>The <code>prefix</code> attribute accesses the IP prefix value contained in the NLRI attribute of the path.</p>
+<p>Supported since EOS-4.21.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>prefix is &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is exactly the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_DEFAULT() {
+         return prefix is 0.0.0.0/0 or prefix is ::/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix is_not &lt;PREFIX&gt;</code><br /> <br />
+<p>Evaluates to <code>true</code> if the attribute value is not the same as the specified IPv4 or IPv6 prefix; evaluates to <code>false</code> otherwise<br /> <br /> Supported since EOS-4.26.2F release.</p>
+</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_V4_DEFAULT() {
+         return prefix is_not 0.0.0.0/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix match prefix_list_v4 &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            prefix match prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value matches a permit sequence in the order of evaluation of the specified prefix list.<br /> Evaluates to <code>false</code> if a deny sequence is matched first or if no sequence is matched.</td>
+<td>
+<pre>ip prefix-list DEFAULT_V4 seq 10 permit 0.0.0.0/0
+!
+ipv6 prefix-list DEFAULT_V6
+   seq 10 permit ::/0
+!
+router general
+   control-functions
+      code
+      function IS_DEFAULT_V4() {
+         return prefix match prefix_list_v4 DEFAULT_V4;
+      }
+      function IS_DEFAULT_V6() {
+         return prefix match prefix_list_v6 DEFAULT_V6;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix match_covered<br />
+            prefix_list_v4<br />
+            &lt;V4_PREFIX_LIST_NAME&gt;<br />
+            <br />
+            prefix match_covered prefix_list_v6 &lt;V6_PREFIX_LIST_NAME&gt;</code><br /> <br /> Evaluates to <code>true</code> (or false) if the attribute value matches a permit (or deny) sequence first in the order of evaluation of the specified prefix list. Evaluates to <code>unknown</code> otherwise. Note that the attribute value matches a prefix list sequence if the attribute value is covered by the subnet specified in the sequence. <b>The ge, le, and eq options are ignored for this operation.</b><br /> <br /> Supported since EOS-4.25.2F release.</td>
+<td>
+<pre>ip prefix-list PEER_SUBNETS seq 10 permit 192.168.1.0/24
+ip prefix-list PEER_SUBNETS seq 20 deny 192.168.2.0/24
+!
+router general
+   control-functions
+      code
+      function PEER_SUBNETS() {
+         return prefix match_covered prefix_list_v4 PEER_SUBNETS;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix covered_by &lt;PREFIX&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute value is contained in or equal to the specified IPv4 or IPv6 prefix.<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Supported since EOS-4.28.1F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function COVERED_BY_V4_DEFAULT() {
+         return prefix covered_by 0.0.0.0/0;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="prefix-ip-version">prefix.ip_version</span></h3>
+<p>The <code>prefix.ip_version</code> attribute will contain the address family of the IP prefix value contained in the NLRI attribute of the path.<br /> <code>&lt;VALUE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>IPv4</code></li>
+<li><code>IPv6</code></li>
+</ul>
+<p>Supported since EOS-4.27.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>prefix.ip_version is &lt;VALUE&gt;<br />
+            prefix.ip_version is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation to check if the attribute value is or is not an IPv4 prefix or an IPv6 prefix.</td>
+<td>
+<pre>router general
+   control functions
+      code
+      function IS_IPV4_PFX() {
+         return prefix.ip_version is IPv4;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="prefix-length">prefix.length</span></h3>
+<p>The <code>prefix.length</code> attribute will contain the length of the IP prefix value contained in the NLRI attribute of the path.</p>
+<p>Supported since EOS-4.25.0 release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>prefix.length is &lt;VALUE&gt;<br />
+            prefix.length &gt; &lt;VALUE&gt;<br />
+            prefix.length &gt;= &lt;VALUE&gt;<br />
+            prefix.length &lt;= &lt;VALUE&gt;<br />
+            prefix.length &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for the mask length of the attribute value: equal, greater than, greater than or equal, less than or equal, and less than respectively.</td>
+<td>
+<pre>ip prefix-list ANY_V4
+   seq 10 permit 0.0.0.0/0 le 32
+!
+ipv6 prefix-list ANY_V6
+   seq 10 permit ::/0 le 128
+!
+router general
+   control-functions
+      code
+      function IS_HOST_ROUTE() {
+         return (
+            ( prefix.length is 32 and
+              prefix match prefix_list_v4 ANY_V4 ) or
+            ( prefix.length is 128 and
+              prefix match prefix_list_v6 ANY_V6 )
+         );
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix.length is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation “not equal” for the mask length of the attribute value.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_24_MASKLEN() {
+         return prefix.length is_not 24;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>prefix.length in {&lt;VALUE1&gt; to<br />
+                              &lt;VALUE2&gt;,<br />
+                              &lt;VALUE3&gt;,<br />
+                              &lt;VALUE4&gt; to<br />
+                              &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the <code>prefix.length</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 13) or an inclusive range of values (e.g. 1 to 6).<br /> Evaluates to <code>false</code> otherwise.<br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function PREFIX_LENGTH_IN() {
+         return prefix.length in {1 to 6, 13};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="rpki-origin-as-validity">rpki.origin_as_validity</span></h3>
+<p>The <code>rpki.origin_as_validity</code> provides the origin validation state informed by RPKI and/or extended communities.<br /> <code>&lt;STATE&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>ROA_VALID</code></li>
+<li><code>ROA_INVALID</code></li>
+<li><code>ROA_NOT_FOUND</code></li>
+</ul>
+<p><code>input.rpki.origin_as_validity</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.1F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>rpki.origin_as_validity is &lt;STATE&gt;</code><br /> <br /> Evaluates to <code>true</code> if the origin validation state is equivalent to the right hand side; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function ACCEPT_OV_VALID() {
+         return rpki.origin_as_validity is ROA_VALID;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>rpki.origin_as_validity is_not &lt;STATE&gt;</code><br /> <br /> Evaluates to <code>true</code> if the origin validation state is not equivalent to the right hand side; evaluates to <code>false</code> otherwise. <br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function REJECT_OV_VALID() {
+         return rpki.origin_as_validity is_not ROA_VALID;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>rpki.origin_as_validity = &lt;STATE&gt;</code><br /> <br /> Sets the origin validation state to the value on the right hand side.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function MAKE_ROA_NOT_FOUND_VALID() {
+         if rpki.origin_as_validity is ROA_NOT_FOUND {
+            rpki.origin_as_validity = ROA_VALID;
+         }
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="source-protocol">source_protocol</span></h3>
+<p>The source_protocol attribute provides the protocol of the BGP path's source: BGP learnt paths are identified as BGP; redistributed routes are identified by the protocol of the RIB route.</p>
+<p>When evaluating leaked routes across VRFs, the following applies:</p>
+<ul>
+<li>Routes leaked within BGP by the use of <b>EVPN or MPLS-VPN export/import configuration</b> appear with the source protocol as BGP in the target VRF. This also applies to routes redistributed from other protocols into BGP in the source VRF.</li>
+<li>Routes leaked using the <b>VrfLeak agent</b> outside of BGP retain their original source protocol. If such routes are redistributed into BGP, <code>source_protocol</code> provides the original source protocol value.</li>
+</ul>
+<p><code>&lt;PROTO&gt;</code> in the table below can be:</p>
+<ul>
+<li><code>ATTACHED_HOST</code></li>
+<li><code>BGP</code></li>
+<li><code>CONNECTED</code></li>
+<li><code>DHCP</code></li>
+<li><code>DYNAMIC</code></li>
+<li><code>ISIS</code></li>
+<li><code>KERNEL</code></li>
+<li><code>OSPF</code></li>
+<li><code>OSPFv3</code></li>
+<li><code>RIP</code></li>
+<li><code>STATIC</code></li>
+</ul>
+<p>Supported since EOS-4.25.2F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>source_protocol is &lt;PROTO&gt;</code><br /> <br /> Evaluates to <code>true</code> if the protocol of the path is the specified value; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_CONNECTED() {
+         return source_protocol is CONNECTED;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>source_protocol is_not &lt;PROTO&gt;</code><br /> <br /> Evaluates to <code>true</code> if the protocol of the path is not the specified value; evaluates to <code>false</code> otherwise.<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_CONNECTED() {
+         return source_protocol is_not CONNECTED;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="source-session-remote-as">source_session.remote.as</span></h3>
+<p>The <code>source_session.remote.as</code> value provides the AS number of the peer that advertised the BGP path.</p>
+<p>Supports asdot notation.</p>
+<p>Supported since EOS-4.29.2F release.</p>
+<p> </p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>source_session.remote.as is &lt;VALUE&gt;<br />
+            source_session.remote.as is_not &lt;VALUE&gt;</code><br /> <br /> <code>&lt;VALUE&gt;</code> can be written in asdot or 4-byte integer notation<br /> <br /> Evaluates to <code>true</code> if the peer AS of the path is or is not the specified value; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_REMOTE_AS_500() {
+         return source_session.remote.as is 500;
+      }
+      function IS_REMOTE_AS_DOT() {
+         return source_session.remote.as is 10.10;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as in<br />
+               {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                &lt;VALUE3&gt;,<br />
+                &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> <code>&lt;VALUE&gt;</code> can be written in asdot or 4-byte integer notation<br /> <br /> Evaluates to <code>true</code> if the <code>source_session.remote.as</code> attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function REMOTE_AS_IN() {
+         return source_session.remote.as in
+                  {64500.100 to 64500.200,
+                   64500.300, 400,
+                   500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="source-session-remote-router-id">source_session.remote.router_id</span></h3>
+<p>The <code>source_session.remote.router_id</code> attribute provides the BGP Identifier of the peer who advertised the path. This attribute is defined in RFC4271.</p>
+<p>Supported since EOS-4.30.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id is &lt;ROUTER_ID&gt;<br />
+            source_session.remote.router_id is_not &lt;ROUTER_ID&gt;</code><br /> <br /> Evaluates to <code>true</code> if the attribute is or is not exactly the same as the specified BGP identifier; evaluates to <code>false</code> otherwise.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_192_168_1_1() {
+         return source_session.remote.router_id is 192.168.1.1;
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="weight">weight</span></h3>
+<p>The <code>weight</code> attribute contains the BGP weight value. This is a locally significant attribute used to influence the BGP best path selection algorithm.</p>
+<p><code>input.weight</code> is available to access the unmodified attribute value.</p>
+<p>Supported since EOS-4.26.0F release.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w50">Operation</th>
+<th class="w50">Example</th>
+</tr>
+<tr>
+<td><code>weight is &lt;VALUE&gt;<br />
+            weight &gt; &lt;VALUE&gt;<br />
+            weight &gt;= &lt;VALUE&gt;<br />
+            weight &lt;= &lt;VALUE&gt;<br />
+            weight &lt; &lt;VALUE&gt;</code><br /> <br /> Comparison operations for weight: equal, greater than, greater than or equal, less than or equal, and less than respectively.<br /> <br /> <code>weight</code> assumes the value of 0 in an expression if it is not present.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_WEIGHT_GE100() {
+         return weight &gt;= 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>weight is_not &lt;VALUE&gt;</code><br /> <br /> Comparison operation “not equal” for weight<br /> <br /> Supported since EOS-4.26.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function IS_NOT_WEIGHT_100() {
+         return weight is_not 100;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>weight = &lt;VALUE&gt;<br />
+            weight += &lt;VALUE&gt;<br />
+            weight *= &lt;VALUE&gt;<br />
+            weight -= &lt;VALUE&gt;</code><br /> <br /> Modification operations for weight: assignment, addition assignment, multiplication assignment, and subtraction assignment respectively. Weight value is capped between 0 and 65535.<br /> <br /> Support for *= operation added in EOS-4.27.0F release</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function WEIGHT_MODIFY() {
+         weight = 100;
+         if prefix is 0.0.0.0/0 {
+            weight += 10;
+         } else {
+            weight -= 10;
+         }
+         return true;
+      }
+      EOF</pre>
+</td>
+</tr>
+<tr>
+<td><code>weight in {&lt;VALUE1&gt; to &lt;VALUE2&gt;,<br />
+                       &lt;VALUE3&gt;,<br />
+                       &lt;VALUE4&gt; to &lt;VALUE5&gt;…}</code><br /> <br /> Evaluates to <code>true</code> if the weight attribute matches a value in the set on the RHS. Values are either singleton values (e.g. 300, 400) or an inclusive range of values (e.g. 100 to 200, 500 to 600).<br /> Evaluates to <code>false</code> otherwise. <br /> <br /> Support for <code>in</code> operator since EOS-4.29.2F release.</td>
+<td>
+<pre>router general
+   control-functions
+      code
+      function WEIGHT_IN() {
+         return weight in {100 to 200,
+                           300, 400,
+                           500 to 600};
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="built-in-functions">built-in functions</span></h2>
+<h3><span id="as-path-remove">as_path.remove</span></h3>
+<p>This function deletes any values in the <code>as_path</code> attribute that match the argument provided. Values are removed from all segment types.</p>
+<p>Supported since EOS-4.30.0F on all points of application that support the <code>as_path</code> attribute.</p>
+<h4><span id="arguments">Arguments</span></h4>
+<p>The function takes one argument.</p>
+<ul>
+<li>Argument: <code>{ &lt;AS number&gt; | &lt;range&gt; }</code><br /> A set of values to match against, which can include AS numbers and ranges of AS numbers, where AS numbers can be in asdot format,  in any order or combination. </li>
+</ul>
+<h4><span id="return-value">Return value</span></h4>
+<p>The function always returns <code>true</code>.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th><b>Example</b></th>
+</tr>
+<tr>
+<td>
+<pre>router general
+   control functions
+      code
+      function REMOVE_AS_NUMBERS() {
+         return as_path.remove( { 64496, 64497, 64500 to 64505, 64507, 
+                                  64509 to 64511 } );
+      }</pre>
+</td>
+</tr>
+</tbody>
+</table>
+ 
+<h3><span id="as-path-replace">as_path.replace</span></h3>
+<p>This function deletes any values in the <code>as_path</code> attribute that match the argument provided and inserts another value in its place. Values are replaced in all segment types. When multiple values are matched in a set segment type only a single value is inserted.</p>
+<p>Supported since EOS-4.30.0F on all points of application that support the <code>as_path</code> attribute.</p>
+<h4><span id="arguments">Arguments</span></h4>
+<p>The function takes two arguments.</p>
+<ul>
+<li>Argument 1: <code>{ &lt;AS number&gt; | &lt;range&gt; }</code><br /> A set of values to match against, which can include AS numbers and ranges of AS numbers, where AS numbers can be in asdot notation,  in any order or combination. </li>
+<li>Argument 2: <code>&lt;AS number&gt;</code><br /> An AS number to insert in place of the matched value, which can be in asdot notation.</li>
+</ul>
+<h4><span id="return-value">Return value</span></h4>
+<p>The function always returns <code>true</code>.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th><b>Example</b></th>
+</tr>
+<tr>
+<td>
+<pre>router general
+   control functions
+      code
+      function REPLACE_AS_NUMBERS() {
+         return as_path.replace( { 64496, 64497, 64500 to 64505, 64507, 
+                                   64509 to 64511 }, 64512 );
+      }</pre>
+</td>
+</tr>
+</tbody>
+</table>
+ 
+<h3><span id="evpn-ip-prefix-route-set-overlay-index">evpn.ip_prefix_route.set_overlay_index</span></h3>
+<p>This function sets all the necessary attributes to make an EVPN IP-prefix route use an overlay-index for resolution. The type of overlay index to use is based on the specified argument. For the argument value of <code>EVPN_OVERLAY_INDEX_GATEWAY_TENANT</code>, this function will:</p>
+<ul>
+<li>Set the <code>evpn.ip_prefix_route.gateway_address</code> attribute to the next hop of the source route</li>
+<li>Remove any router-mac extended communities</li>
+<li>Set the label field of the NLRI to 0</li>
+</ul>
+<p>All other specified argument values will have no effect on the path.</p>
+<p> </p>
+<p>Supported since EOS-4.29.0F</p>
+<h4><span id="arguments">Arguments</span></h4>
+<p>The function takes one argument.</p>
+<ul>
+<li>Argument: <code>EVPN_OVERLAY_INDEX_GATEWAY_TENANT | EVPN_OVERLAY_INDEX_GATEWAY_INTERFACE</code></li>
+</ul>
+<h4><span id="return-value">Return value</span></h4>
+<p>The function always returns <code>true</code>.</p>
+<p> </p>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Example</th>
+</tr>
+<tr>
+<td>
+<pre>router general
+   control functions
+      code
+      function SET_OVERLAY_INDEX_GATEWAY_TENANT() {
+         if evpn.route_type is EVPN_IP_PREFIX {
+            evpn.ip_prefix_route.set_overlay_index(
+               EVPN_OVERLAY_INDEX_GATEWAY_TENANT );
+         }
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="set-next-hop-self">set_next_hop_self</span></h3>
+<p>This function sets the next hop to self when advertising prefixes. After <code>set_next_hop_self()</code> has been invoked, all next hop comparisons for the path will fail until the next hop is set to a determinate address.</p>
+<p>Supported since EOS-4.26.2F release.<br /> <code>set_next_hop_self()</code> for IPv4 paths advertised out to peers with extended next hop support (RFC5549) negotiated is supported since EOS-4.27.0F release.</p>
+<h4><span id="arguments">Arguments</span></h4>
+<p>This function takes no arguments.</p>
+<h4><span id="return-value">Return value</span></h4>
+<p>The function always returns <code>true</code>.</p>
+<p> </p>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Example</th>
+</tr>
+<tr>
+<td>
+<pre>router general
+   control functions
+      code
+      function NEXT_HOP_SELF() {
+         set_next_hop_self();
+      }
+      EOF</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="rpki-match-origin-as-validity">rpki.match_origin_as_validity</span></h3>
+<p>This function validates the prefix and origin AS against a named ROA table. In comparison, the <code>rpki.origin_as_validity</code> attribute validates the prefix and origin AS against the default ROA table.</p>
+<p>Supported since EOS-4.27.1F release for inbound BGP neighbor application.</p>
+<h4><span id="arguments">Arguments</span></h4>
+<p>The function takes 2 arguments.</p>
+<ul>
+<li>Argument 1: <code>roa_table &lt;TABLE_NAME&gt;</code><br /> The ROA table against which to validate the prefix and origin AS.</li>
+<li>Argument 2: <code>ROA_VALID | ROA_INVALID | ROA_NOT_FOUND</code><br /> The expected return value of the validation operation. </li>
+</ul>
+<h4><span id="return-value">Return value</span></h4>
+<p>If the origin AS validation using the ROA table specified in the first argument returns the result specified in the second argument, the function returns <code>true</code>, otherwise <code>false</code>.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Example</th>
+</tr>
+<tr>
+<td>
+<pre>router general
+   control functions
+      code
+      function APPLY_ROA_TABLE1_VALID() {
+         if rpki.match_origin_as_validity( roa_table TABLE1, ROA_VALID ) {<br />            rpki.origin_as_validity = ROA_VALID;
+         }
+      }</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h2 id="pageLink-1"><span id="resources">Resources</span></h2>
+<ul>
+<li><a href="/support/toi/eos-4-24-1f/14532-accumulated-igp-metric-aigp" target="_blank" rel="noopener noreferrer">Accumulated IGP Metric (AIGP) TOI</a></li>
+<li><a href="/support/toi/eos-4-24-0f/14470-bgp-prefix-origin-validation-with-resource-public-key-infrastructure-rpki" target="_blank" rel="noopener noreferrer">BGP Prefix Origin Validation with RPKI TOI</a></li>
+<li><a href="/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support" target="_blank" rel="noopener noreferrer">Routing control functions - Bgp agent support</a></li>
+<li><a href="/support/toi/eos-4-28-0f/15453-routing-control-functions-is-is-agent-support" target="_blank" rel="noopener noreferrer">Routing control functions - IS-IS agent support</a></li>
+<li><a href="/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration" target="_blank" rel="noopener noreferrer">Routing control functions - Language and configuration</a></li>
+<li><a href="/support/toi/eos-4-28-0f/15452-routing-control-functions-ldp-agent-support" target="_blank" rel="noopener noreferrer">Routing control functions - LDP agent support</a></li>
+</ul>
+</li>
+</ul></article>  
+    
+    
+    
+         
+</div>
+
+					<div class="clearfix"></div>
+					
+				</main>
+				<!-- /contentWrap -->
+			</div>
+			<!-- /dataWrap -->
+			
+		</div>
+		<!-- /dataArea -->
+	</div>
+	<!-- /dataContainer -->
+
+	<footer id="footerContainer">
+				<div id="footBarArea">
+			<label>Get In Touch Today</label>
+			<a href="/en/company/contact-us" class="btn-an btn-cta">Contact Us</a>
+		</div>
+		<!-- /footBarArea -->
+				<div id="footerWrap">
+						<div id="footSocial">
+				<div class="site-logo"><img src="/templates/arista_v2/img/logo_arista_blue.png" alt="Arista"></div>
+				
+
+<div class="custom"  >
+	<div class="social-icon"><a class="icon24-fb" href="https://www.facebook.com/AristaNW" target="_blank">Facebook</a> <a class="icon24-tw" href="https://twitter.com/@AristaNetworks" target="_blank">Twitter</a> <a class="icon24-in" href="http://www.linkedin.com/company/arista-networks-inc" target="_blank">LinkedIn</a></div></div>
+
+			</div>
+			<!-- /footSocial -->
+						<nav id="footNav" role="navigation">
+				
+<ul class="nav menu">
+    	<li class="fml-head-support deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Support</span></a>
+	<ul class="navChild">
+	<li class="fml-service-offerings"><a  href="/en/support/customer-support"><span>Support &amp; Services</span></a></li>
+	<li class="fml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="fml-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation </span></a></li>
+	<li class="fml-downloads"><a  href="/en/support/software-download"><span>Software Downloads </span></a></li>
+</ul>
+</li>
+	<li class="fml-head-contacts deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Contacts &amp; Help</span></a>
+	<ul class="navChild">
+	<li class="fml-contact-arista"><a  href="/en/company/contact-us"><span>Contact Arista</span></a></li>
+	<li class="fml-contact-technical-support"><a  href="/en/support/customer-support"><span>Contact Technical Support</span></a></li>
+	<li class="fml-order-status nav-url"><a  href="https://orders.arista.com" target="_blank"><span>Order Status</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-news deeper parent nav-heading">
+<a href="javascript:void(0);"><span>News</span></a>
+	<ul class="navChild">
+	<li class="fml-news-room"><a  href="/en/company/news/in-the-news"><span>News Room</span></a></li>
+	<li class="fml-events"><a  href="/en/company/news/events"><span>Events</span></a></li>
+	<li class="fml-blogs nav-url"><a  href="/blogs" target="_blank"><span>Blogs</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-about-arista deeper parent nav-heading">
+<a href="javascript:void(0);"><span>About Arista</span></a>
+	<ul class="navChild">
+	<li class="fml-company"><a  href="/en/company/company-overview"><span>Company</span></a></li>
+	<li class="fml-management-team"><a  href="/en/company/management-team"><span>Management Team</span></a></li>
+	<li class="fml-careers"><a  href="/en/careers"><span>Careers</span></a></li>
+	<li class="fml-investor-relations nav-url"><a  href="http://investors.arista.com/"><span>Investor Relations</span></a></li>
+</ul>
+</li>
+</ul>
+<!-- /nav -->
+			</nav>
+			<!-- /footNav -->
+						<!-- /position-8 -->
+			<div class="clearfix"></div>
+						<div id="copyRight">
+				<label>&copy; 2023 Arista Networks, Inc. All rights reserved.</label>
+				
+<ul class="nav menu">
+    	<li class="terms-of-use nav-component"><a  href="/en/terms-of-use"><span>Terms of Use</span></a></li>
+	<li class="privacy-policy nav-component"><a  href="/en/privacy-policy"><span>Privacy Policy</span></a></li>
+	<li class="fraud-alert nav-component"><a  href="/en/fraud-alert"><span>Fraud Alert</span></a></li>
+	<li class="sitemap nav-component"><a  href="/en/sitemap"><span>Sitemap</span></a></li>
+</ul>
+<!-- /nav -->
+			</div>
+		</div>
+		<!-- /footerWrap -->
+	</footer>
+	<!-- /footerContainer -->
+</div>
+<!-- /bodyContainer -->
+<script type="text/javascript" src="https://customer.cludo.com/scripts/bundles/search-script.min.js"></script>
+<script>
+	var CludoSearch;
+	(function(){var cludoSettings = {customerId: 2013, engineId: '9664', searchUrl: 'https://www.arista.com/en/search-results/', language: 'en', searchInputs: ['cludo-search'], type: 'inline', disableAutocomplete: true, hideSearchFilters: true, searchApiUrl: 'https://api-eu1.cludo.com/api/v3'}; CludoSearch= new Cludo(cludoSettings); CludoSearch.init(); })();
+	var wifiId = "123036";
+</script>
+<div id="noSupportMsg" style="display:none;"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="en-gb" dir="ltr">
+<head>
+<meta charset="utf-8" />
+	<base href="https://www.arista.com/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="David Cronin" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="apple-mobile-web-app-capable" content="YES" />
+	<meta name="Rating" content="General" />
+	<meta name="Classification" content="General" />
+	<meta name="Distribution" content="Global" />
+	<meta name="Audience" content="All" />
+	<meta name="revisit-after" content="1 days" />
+	<meta name="Author" content="Arista Networks" />
+	<meta name="Publisher" content="Arista Networks" />
+	<meta name="robots" content="All" />
+	<meta name="description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion. " />
+	<title>Routing control functions - Language and configuration - Arista</title>
+	<link href="https://www.arista.com/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration" rel="canonical" />
+	<link href="/templates/arista_v2/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/templates/arista_v2/css/bs337.min.css?v=1543082404" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anH5Set.css?v=1601533343" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anLayout.css?v=1676642446" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anStyle.css?v=1698911251" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anRespo.css?v=1698911353" rel="stylesheet" />
+	<link href="/custom_ui/css/jqueryUi-1.10.4.css?v=1522948259" rel="stylesheet" />
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"d2cf4c6bb2762a56d9e99072abb6039a","system.paths":{"root":"","base":""}}</script>
+	<script src="/media/jui/js/jquery.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/caption.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/mootools-core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/templates/arista_v2/js/jq331.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/bs337.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/cb164.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/anScript.js?v=1694698768"></script>
+	<script src="/templates/arista_v2/js/anLangPrefix.js?v=1698653165"></script>
+	<script src="/templates/arista_v2/js/anBrowserCheck.js?v=1582796951"></script>
+	<script src="/custom_ui/js/jqueryUi-1.10.4.min.js?v=1520261210"></script>
+	<script src="/templates/arista_v2/js/anSlideTabs.js?v=1524283288"></script>
+	<script>
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+	<script type="application/ld+json">
+[{"@context":"http://schema.org/","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.arista.com/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration"},"name":"Routing control functions - Language and configuration - Arista","headline":"Routing control functions - Language and configuration - Arista","author":{"@type":"Organization","name":"Arista Networks"},"publisher":{"@type":"Organization","name":"Arista Networks","logo":{"@type":"ImageObject","url":"https://www.arista.com/assets/images/logo/Arista_Logo.png"}},"image":"https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg","description":"Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.\u00a0","datePublished":"2023-06-15 11:50:24","dateModified":"2023-06-15 11:50:24"}]
+	</script>
+	<meta property="og:title" content="Routing control functions - Language and configuration - Arista" />
+	<meta property="og:description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion. "/>
+	<meta property="og:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg"/>
+	<meta property="article:published_time" content="2023-06-15 11:50:24"/>
+	<meta name="twitter:title" content="Routing control functions - Language and configuration - Arista">
+	<meta name="twitter:description" content="Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion. ">
+	<meta name="twitter:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg">
+	<meta property="og:type" content="Article"/>
+	<meta property="og:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration"/>
+	<meta property="og:site_name" content="Arista Networks"/>
+	<meta property="article:author" content="Arista Networks"/>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration">
+	<meta name="twitter:site" content="@AristaNetworks">
+
+<!--[if lt IE 9]><script src="/media/jui/js/html5.js"></script><![endif]-->
+<script>
+	jq = jQuery.noConflict();
+	jq(document).ready(function(){ setLangFile('en-GB'); browserSupport(); });
+</script>
+<script src="https://cdn.cookielaw.org/consent/0088c1d9-3411-49f6-bd71-0581b986ca8b/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="0088c1d9-3411-49f6-bd71-0581b986ca8b"></script>
+<script type="text/javascript">function OptanonWrapper(){}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59M58H58VM"></script>
+<script>
+	//Google Tag Code
+	window.dataLayer = window.dataLayer || []; 
+	function gtag(){ dataLayer.push(arguments); } 
+	gtag('js', new Date()); gtag('config', 'G-59M58H58VM'); 
+	
+	//Google Analytics Code
+	googleEventTrack('Eos-4-27-2f');
+	(function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)}, i[r].l=1*new Date(); a=s.createElement(o), m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g; m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create','UA-11521293-2','auto'); ga('require','linkid','linkid.js');
+	ga('set','anonymizeIp',true); ga('send','pageview');
+
+	//HubSpot Analytics Code
+	(function(d,s,i,r) { if(d.getElementById(i)){return;} var n=d.createElement(s), e=d.getElementsByTagName(s)[0]; n.id=i; n.src='https://js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/691113.js'; e.parentNode.insertBefore(n, e); })(document,"script","hs-analytics",300000);
+</script>
+</head>
+<body id="pgEos4272f" class="com-content view-article lg-engb">
+<div id="bodyContainer">
+
+	<!-- /headerContainer -->
+
+		<div  id="bannerContainer">
+		<div id="bannerSlider">
+						<!-- /topSubMenu -->
+
+						
+<ul class="bannerWrap autoplay staticWrap">
+				<li  style="background-image:url(/assets/images/banner/default/banner_inner_bg.jpg);" >
+				<div class="slider-item slider-fw">
+												<h1 class="main-head">EOS 4.27.2F TOI</h1>
+										</div>
+		</li>
+		</ul>
+<!-- /sliderWrap -->
+
+					</div>
+		<!-- /bannerSlider -->
+
+				<nav id="rightSubMenu">
+			<div class="rightSubBox"><a id="ctaSubMenu" href="#" class="btn-an btn-cta">View All Support</a></div>
+<div id="subChildNav" class="">
+	<a class="btn-closs">X</a>
+	
+<ul id="View All Support" class="nav menu">
+    	<li class="lml-support alias-parent-active"><a  href="/en/support"><span>Support Overview</span></a></li>
+	<li class="lml-customer-support"><a  href="/en/support/customer-support"><span>Customer Support</span></a></li>
+	<li class="lml-product-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation</span></a></li>
+	<li class="lml-product-certificate"><a  href="/en/support/product-certificate"><span>Product Certifications</span></a></li>
+	<li class="lml-advisories-notices"><a  href="/en/support/advisories-notices"><span>Advisories &amp; Notices</span></a></li>
+	<li class="lml-product-lifecycle"><a  href="/en/support/product-lifecycle"><span>Product Lifecycle</span></a></li>
+	<li class="lml-software-download"><a  href="/en/support/software-download"><span>Software Download</span></a></li>
+	<li class="lml-toi alias-parent-active"><a  href="/en/support/toi"><span>Transfer of Information</span></a></li>
+	<li class="lml-support-portal"><a  href="/en/community/support-portal"><span>Support Portal</span></a></li>
+	<li class="lml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="lml-software-bug-portal"><a  href="/en/support/software-bug-portal"><span>Software Bug Portal</span></a></li>
+	<li class="mlag-issu-check"><a  href="/en/support/mlag-portal"><span>MLAG ISSU Check</span></a></li>
+	<li class="lml-cvp-upgrade-path"><a  href="/en/support/cvp-upgrade-path"><span>CVP Upgrade Path</span></a></li>
+</ul>
+<!-- /nav -->
+</div>
+
+		</nav>
+				<!-- /rightSubMenu -->
+	</div>
+	<!-- /bannerContainer -->
+		<div id="dataContainer">
+				<div id="dataContainerBg">&nbsp;</div>
+				<div id="dataArea">
+			<div class="dataTabBg">&nbsp;</div>
+			<div  id="dataWrap">
+				<div class="dataTabBg">&nbsp;</div>
+								<!-- /position-left -->
+
+				<main id="contentWrap" role="main">
+										<div id="system-message-container">
+	</div>
+
+										
+					<div class="item-page">
+    
+    
+    <div class="page-header">
+        <h2 class="pageTitle"> Routing control functions - Language and configuration            
+            
+            <span class="pdf-icon headLink"><a href="/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration?tmpl=component&amp;format=pdf" onclick="" target="_blank" title="PDF" rel="nofollow"> <span class="icon-book ico24-pdf"></span> PDF</a></span>
+          </h2>
+        
+        
+        
+      </div>
+    
+    
+    <div class="article-info muted">
+    <dl class="article-info">
+            
+            <dd class="createdby"><span class="icomoon-user"></span> 
+        Written by <a href="/en/support/toi/author/330-davidcronin" >David Cronin</a>      </dd>
+            
+            <dd class="published"> 
+        <span class="icomoon-calendar"></span> Posted on March 4, 2022 
+      </dd>
+            
+            
+            
+            <dd class="modified"> 
+        <span class="icomoon-calendar"></span> Updated on June 15, 2023 
+      </dd>
+            
+            
+            <dd class="hits"> 
+        <span class="icomoon-eye-open"></span> 6955 Views </dd>
+          </dl>
+  </div>
+    
+  	<div id="tagsBar">
+		    <span class="tag-22 tag-list0" itemprop="keywords">
+            <a href="/en/support/toi/tag/routing">Routing</a>
+          </span>
+		    <span class="tag-288 tag-list1" itemprop="keywords">
+            <a href="/en/support/toi/tag/policy">Policy</a>
+          </span>
+		    <span class="tag-591 tag-list2" itemprop="keywords">
+            <a href="/en/support/toi/tag/control">Control</a>
+          </span>
+		    <span class="tag-592 tag-list3" itemprop="keywords">
+            <a href="/en/support/toi/tag/functions">Functions</a>
+          </span>
+		    <span class="tag-760 tag-list4" itemprop="keywords">
+            <a href="/en/support/toi/tag/rcf">RCF</a>
+          </span>
+		    <span class="tag-929 tag-list5" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-27-2f"> EOS 4.27.2F</a>
+          </span>
+		    <span class="tag-945 tag-list6" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-28-0f"> EOS 4.28.0F</a>
+          </span>
+		    <span class="tag-965 tag-list7" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-28-1f">EOS 4.28.1F</a>
+          </span>
+		    <span class="tag-1013 tag-list8" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-29-0f">EOS 4.29.0F</a>
+          </span>
+		    <span class="tag-1034 tag-list9" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-29-1f">EOS 4.29.1F</a>
+          </span>
+		    <span class="tag-1075 tag-list10" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-30-0f">EOS 4.30.0F</a>
+          </span>
+			</div>
+  
+                        <div id="tocWrap">
+    <h5>Table of Content <span id="tocSH">Hide</span></h5>
+    <ul id="tocList">
+      <li>
+        </li>
+<li>-- <a href="#description">Description</a></li>
+<li>-- <a href="#salient-aspects-and-language-primitives">Salient aspects and language primitives</a>
+<ul>
+<li>-- <a href="#language-syntax">Language syntax</a>
+<ul>
+<li>-- <a href="#comments">Comments</a></li>
+<li>-- <a href="#functions">Functions</a></li>
+<li>-- <a href="#function-calls">Function calls</a></li>
+<li>-- <a href="#trilean-logic-states">Trilean logic states</a></li>
+<li>-- <a href="#expression">Expression</a></li>
+<li>-- <a href="#sequential-operator">Sequential operator</a>
+<ul>
+<li>-- <a href="#comparing-sequential-operator-logical-and-logical-or-and-statements">Comparing sequential operator, logical and, logical or, and statements</a></li>
+</ul>
+</li>
+<li>-- <a href="#numerical-operators">Numerical operators</a></li>
+<li>-- <a href="#return-statement">Return statement</a></li>
+<li>-- <a href="#exit-statement">Exit statement</a></li>
+<li>-- <a href="#attribute-modification-statement">Attribute modification statement</a></li>
+<li>-- <a href="#if-condition">If … condition</a></li>
+<li>-- <a href="#immediate-values">Immediate values</a>
+<ul>
+<li>-- <a href="#asdot-notation">asdot notation</a></li>
+<li>-- <a href="#mac-address-notation">MAC address notation</a></li>
+<li>-- <a href="#sets">Sets</a></li>
+<li>-- <a href="#ranges">Ranges</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#attributes-and-functions">Attributes and functions</a></li>
+<li>-- <a href="#the-input-attribute-scope">The 'input' attribute scope</a></li>
+</ul>
+</li>
+<li>-- <a href="#platform-compatibility">Platform compatibility</a></li>
+<li>-- <a href="#configuration">Configuration</a>
+<ul>
+<li>-- <a href="#providing-rcf-configuration">Providing RCF configuration</a>
+<ul>
+<li>-- <a href="#code-units">Code units</a></li>
+<li>-- <a href="#configuration-commands">Configuration commands</a></li>
+</ul>
+</li>
+<li>-- <a href="#compilation-errors">Compilation errors</a>
+<ul>
+<li>-- <a href="#examples">Examples</a>
+<ul>
+<li>-- <a href="#missing-semicolon">Missing semicolon</a></li>
+<li>-- <a href="#missing-curly-brace">Missing curly brace</a></li>
+<li>-- <a href="#missing-operator">Missing operator</a></li>
+<li>-- <a href="#mismatching-types">Mismatching types</a></li>
+<li>-- <a href="#mismatching-set-contents">Mismatching set contents</a></li>
+<li>-- <a href="#undefined-reference">Undefined reference</a></li>
+<li>-- <a href="#function-redefinition">Function redefinition</a></li>
+<li>-- <a href="#function-call-cycles">Function call cycles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#compilation-warnings">Compilation Warnings</a>
+<ul>
+<li>-- <a href="#examples">Examples</a>
+<ul>
+<li>-- <a href="#statement-with-no-effect">Statement with no effect</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#labeled-code-editing">Labeled code editing</a>
+<ul>
+<li>-- <a href="#replacing-labeled-blocks">Replacing labeled blocks</a></li>
+<li>-- <a href="#inserting-labeled-blocks">Inserting labeled blocks</a></li>
+<li>-- <a href="#deleting-labeled-blocks">Deleting labeled blocks</a></li>
+</ul>
+</li>
+<li>-- <a href="#eapi-support">EAPI support</a></li>
+<li>-- <a href="#config-session">Config session</a></li>
+<li>-- <a href="#config-replace">Config replace</a></li>
+<li>-- <a href="#copy-command">Copy command</a></li>
+<li>-- <a href="#points-of-application">Points of application</a></li>
+</ul>
+</li>
+<li>-- <a href="#show-commands">Show commands</a>
+<ul>
+<li>-- <a href="#workflow-show-commands">Workflow show commands</a>
+<ul>
+<li>-- <a href="#displaying-pending-rcf-configuration">Displaying pending RCF configuration</a></li>
+<li>-- <a href="#displaying-diff-between-rcf-configuration-in-pending-buffer-and-running-configuration">Displaying diff between RCF configuration in pending buffer and running configuration</a></li>
+<li>-- <a href="#displaying-active-rcf-configuration">Displaying active RCF configuration</a></li>
+<li>-- <a href="#displaying-rcf-code-units">Displaying RCF code units</a></li>
+<li>-- <a href="#displaying-rcf-function-locations">Displaying RCF function locations</a>
+<ul>
+<li>-- <a href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#debugging">Debugging</a>
+<ul>
+<li>-- <a href="#examples">Examples</a>
+<ul>
+<li>-- <a href="#return-true">Return true</a></li>
+<li>-- <a href="#modify-and-compare-attribute">Modify and compare attribute</a></li>
+<li>-- <a href="#logical-operators">Logical operators</a></li>
+<li>-- <a href="#if-else-statement">if else statement</a></li>
+<li>-- <a href="#function-calls">Function calls</a></li>
+<li>-- <a href="#exit-statement">exit statement</a></li>
+<li>-- <a href="#multiline-expressions">Multiline expressions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#limitations">Limitations</a></li>
+<li>-- <a href="#resources">Resources</a>      </li>
+    </ul>
+  </div>
+  <!-- /tocWrap -->
+  <article id="toiContent">
+<h2><span id="description">Description</span></h2>
+<p>Routing control functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion. </p>
+<p>This document covers:</p>
+<ul>
+<li>The core RCF language including</li>
+<ul>
+<li>Language syntax</li>
+<li>Matching and modifying route attributes</li>
+</ul>
+<li>Workflows to define routing control functions</li>
+<li>CLI commands to provide visibility into operational status</li>
+</ul>
+<p>Documents that cover other aspects of the language can be found in the “<a href="#resources">Resources</a>” section.</p>
+<h2><span id="salient-aspects-and-language-primitives">Salient aspects and language primitives</span></h2>
+<ul>
+<li>The new language syntax is independent of the existing route map syntax.</li>
+<li>RCF code consists of RCF function definitions that can be applied at points of application or reused in other RCF functions. Each function is a sequence of statements that are evaluated in the order in which they are written. Example:
+<pre># Accept all routes as they are
+
+function ACCEPT_ALL() {
+   return true;
+}
+
+# Reject all routes unconditionally
+
+function DENY_ALL() {
+   return false;
+}
+
+# Set the med to 100 and accept all routes
+
+function SET_MED() {
+   med = 100;
+   return true;
+}</pre>
+</li>
+<li>RCF functions always return a value of <code>true</code>, <code>false</code>, or <code>unknown</code>, along with possible modifications made to the route attributes in the function.
+<p><br /> <img src="/assets/images/article/toi/eos-4272f/RCF_lang3.jpg" alt="" /></p>
+</li>
+<ul>
+<li>A function returns the value of <code>unknown</code> if no explicit return statement is specified.</li>
+<li>A return value of <code>true</code> from an RCF function applied at a point of RCF application accepts the route with all modifications applied. A return value of <code>false</code> or <code>unknown</code> rejects the route.</li>
+<li>If the point of RCF application refers to an RCF function that is not configured as part of the RCF code, <strong>all routes at that point of RCF application get rejected.</strong> For example, if <code>ACCEPT_ALL()</code> is applied to peer 192.168.1.1 inbound and <code>ACCEPT_ALL()</code> is not configured, all updates from peer 192.168.1.1 are dropped.</li>
+</ul>
+<li>RCF functions can also reuse other RCF functions. RCF functions can call other RCF functions to:
+<ul>
+<li>make conditional code execution decisions (use of <code>if … else …</code>)
+<pre># DEFAULT_ROUTE() returns if the prefix is 0.0.0.0/0 or ::/0
+
+function DEFAULT_ROUTE() {
+   return prefix is 0.0.0.0/0 or prefix is ::/0;
+}
+
+# All routes are accepted by FUNC_A(). If the route under review
+# is the default route, then the med is set to 100.
+
+function FUNC_A() {
+   if DEFAULT_ROUTE() {
+      med = 100;
+   }
+   return true;
+}
+</pre>
+</li>
+<li>delegate return value evaluation (use of return)
+<pre>function DEFAULT_ROUTE() {
+   return prefix is 0.0.0.0/0 or prefix is ::/0;
+}
+
+# Only accepts the default route. All other prefixes are rejected
+
+function FUNC_A() {
+   # some RCF code
+   return DEFAULT_ROUTE();
+}
+</pre>
+</li>
+<li>apply a common set of path attribute modifications
+<pre># Modify LOCAL_PREF and AS_PATH attributes. Note that
+# TAG_PEERS() returns 'unknown' implicitly since
+# no explicit 'return true' or 'return false' is
+# specified.
+
+function TAG_PEERS() {
+   local_preference = 1000;
+   as_path prepend 64501 64502;
+}
+
+# Reuse TAG_PEERS to apply a common set of path attribute
+# modifications. The return value of 'unknown' from
+# TAG_PEERS() is ignored.
+
+function FUNC_A() {
+   TAG_PEERS();
+   return true;
+}
+</pre>
+</li>
+</ul>
+</li>
+<li>The return value of the RCF function at the point of application is mapped to accepting (return value of true) or rejecting routes (return value of false or unknown). The return value of reused RCF functions need not accept or reject routes. Consider the following two examples.
+<p><br /> <img src="/assets/images/article/toi/eos-4272f/RCF_lang1.jpg" alt="" /></p>
+<pre># Returns if the MULTI_EXIT_DISC is 200 after incrementing
+# it by 100
+
+function IS_INC_MED_200() {
+   med += 100;
+   return med is 200;
+}
+
+# MED_TEST() demonstrates that even though IS_INC_MED_200
+# returns true, the route gets rejected because of the
+# decision made in MED_TEST()
+
+function MED_TEST() {
+   if IS_INC_MED_200() {
+      return false;
+   }
+   return true;
+}
+
+
+# Sets LOCAL_PREF for all routes (in the RCF evaluation
+# engine) to 100. Return true only for 0.0.0.0/0; false
+# for all other routes
+
+function SET_LOCAL_PREF_IS_DEFAULT() {
+   local_preference = 100;
+   return prefix is 0.0.0.0/0;
+}
+
+# The return value (true/false) is returned as is from
+# LOCAL_PREF_TEST() and thus accepts or rejects routes
+
+function LOCAL_PREF_TEST() {
+   # some RCF code
+   return SET_LOCAL_PREF_IS_DEFAULT();
+}</pre>
+</li>
+<li>Allows reusing AS path lists, community lists, and IPv4 and IPv6 prefix lists. See examples later in the document. If the RCF function has references to undefined prefix lists, community lists, or AS path lists, all routes applied against this RCF function are dropped.</li>
+<li>Allows arbitrary levels of <code>if … else …</code> nesting
+<pre>function COND_EXAMPLE() {
+   if med &gt;= 100 {
+      if prefix is 0.0.0.0/0 {
+         local_preference = 200;
+      } else {
+         local_preference = 100;
+      }
+      return true;
+   } else {
+      return false;
+   }
+}</pre>
+</li>
+<li>Support for logical expressions using <code>and, or,</code> and <code>not</code>. These operations always return a value of true or false.
+<pre>function EXPR_EXAMPLE() {
+   return <strong>not</strong> ( med &gt;= 100 <strong>and</strong> ( <strong>not</strong> prefix match prefix_list_v4 DEFAULT_ROUTE <strong>or</strong> community match community_list CLIST ) );
+}</pre>
+<ul>
+<li>Expression short circuiting
+<ul>
+<li>With the and operator, if the first operand returns <code>false</code> or <code>unknown</code>, the second operand (or function) is not evaluated.
+<pre>function SET_MED() {
+   med = 100;
+   return true;
+}
+
+function SHORT_CIRCUITING_1() {
+   return false and SET_MED();   # SET_MED() is never
+                                 # evaluated
+}</pre>
+</li>
+<li>With the <code>or</code> operator, if the first operand returns <code>true</code>, the second operand (or function) is not evaluated.
+<pre>function SET_MED() {
+   med = 100;
+   return true;
+}
+
+function SHORT_CIRCUITING_2() {
+   return true or SET_MED();    # SET_MED() is never
+                                # evaluated
+}</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Comparison against modified path attributes: all modifications of path attributes take immediate effect inside the RCF evaluation engine. All subsequent reads and comparisons of the path attribute will return the modified value.
+<pre>function MOD_COMP_EXAMPLE() {
+   local_preference += 100;
+   return local_preference is 150; # Compares against modified value of LOCAL_PREF
+}</pre>
+<ul>
+<li>With the EOS-4.26.0F release, the value of unmodified path attributes are also available.
+<pre># FUNC() is applied as inbound RCF function
+
+function FUNC() {
+   med = 10;
+   return input.med is 5 and      # Compare the unmodified value and
+          med is 10;              # the modified value. 'med is 10' is true.
+}</pre>
+</li>
+</ul>
+</li>
+<li>Preserve attribute modifications as a result of the RCF evaluation even if the modifications are followed with a <code>return false</code> inside the RCF evaluation engine.
+<pre>function MODIFY_MED() {
+   med = 100;
+   return false;
+}
+
+function FUNC_A() {
+   MODIFY_MED();
+   return med is 100;  # This will always return true as
+                       # MODIFY_MED() will always set the
+                       # med to 100 inside the RCF evaluation
+                       # engine.
+}</pre>
+</li>
+<li>Ability to perform sequential modifications of the same attribute in the user defined order
+<pre>function COMM_MODIFICATIONS() {
+   community add community_list COMM_LIST1;    # Add communities from COMM_LIST1
+   community remove community_list COMM_LIST2; # Next, remove communities from COMM_LIST2
+   return true;
+}
+</pre>
+</li>
+</ul>
+<h3><span id="language-syntax">Language syntax</span></h3>
+<h4><span id="comments">Comments</span></h4>
+<p>Comments start with the hash (#) character and the comment continues till the end of the line.</p>
+<pre># This comment appears before a function
+function DENY_ALL() {
+   # comments can appear inside functions too!
+   return false;   # This function always returns false
+}
+</pre>
+<p>A comment can appear anywhere in the RCF code.</p>
+<h4><span id="functions">Functions</span></h4>
+<p>Function syntax:</p>
+<pre>function &lt;FUNCTION_NAME&gt;() {
+# statements 
+}
+</pre>
+<p>A function name can only contain letters <code>a-z, A-Z, 0-9,</code> and the underscore character (_). A function name must start with <code>a-z, A-Z,</code> or the underscore character (_).</p>
+<p>Examples of valid function names:</p>
+<ul>
+<li>GOOD_FUNCTION_11</li>
+<li>GoodFunction11</li>
+<li>_good_function_11</li>
+</ul>
+<p>Examples of invalid function names:</p>
+<ul>
+<li>9badFunctionName</li>
+<li>Bad Function Name</li>
+<li>Bad-Function-Name</li>
+</ul>
+<h4><span id="function-calls">Function calls</span></h4>
+<p>An RCF function (the callee) can be called from another RCF function (the caller).</p>
+<p>An RCF function call can be used as part of an expression.</p>
+<p>Function call syntax 1:</p>
+<pre>&lt;CALLEE_FUNCTION_NAME&gt;()</pre>
+<p>Example:</p>
+<pre>function SET_MED() { med = 100; }
+
+function ACCEPT_ALL() { return true; }
+
+function CALLER() { return local_preference is 10 or ACCEPT_ALL(); }
+</pre>
+<p>When used as a standalone statement, it must be followed by a semicolon.</p>
+<p>Function call syntax 2:</p>
+<pre>&lt;CALLEE_FUNCTION_NAME&gt;();</pre>
+<p>Example:</p>
+<pre>function SET_MED() { med = 100; }
+
+function CALLER() {
+   SET_MED();
+   return true;
+}
+</pre>
+<h4><span id="trilean-logic-states">Trilean logic states</span></h4>
+<p>RCF supports trilean states denoted as <code>true, false,</code> and <code>unknown.</code></p>
+<h4><span id="expression">Expression</span></h4>
+<p>An expression is composed of one or more clauses of the following types:</p>
+<ul>
+<li>Comparisons</li>
+<ul>
+<li>Example: <code>local_preference is 100</code></li>
+</ul>
+<li>Match operations</li>
+<ul>
+<li>Example: <code>prefix match prefix_list_v4 ALLOW_ROUTES</code></li>
+</ul>
+<li>Function calls</li>
+<ul>
+<li>Example: <code>DEFAULT_ROUTE()</code></li>
+</ul>
+<li>Sequential operator expression (see <a href="#21yhj4if5f4g">Sequential operator</a>)</li>
+<ul>
+<li>Example: <code>FUNC_A() ?? FUNC_B() is true</code></li>
+</ul>
+</ul>
+<p>These clauses are combined using logical operators such as <code>and, or,</code> and <code>not</code> operators to form complex expressions.The expressions support the use of parentheses for grouping and precedence.</p>
+<p>The expression is evaluated from left to right honoring the decreasing precedence of evaluation listed below.</p>
+<ul>
+<li>parentheses "()"</li>
+<li><code>not</code></li>
+<li><code>and</code></li>
+<li><code>or</code></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>local_preference is 100</code></li>
+<li><code>not prefix match prefix_list_v4 PREFIX_LIST_NAME</code></li>
+<li><code>DEFAULT_ROUTE() and ( local_preference &gt;= 100 and community match community_list COMM_LIST )</code></li>
+</ul>
+<p>Supported comparison and match operations are listed with examples in the <a href="#321xfxgsngvs">next</a> section. </p>
+<p>Truth table for the <code>not</code> operator.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="txt-center"><b>NOT</b></th>
+<th class="txt-center">Operand</th>
+<th class="txt-center">true</th>
+<th class="txt-center">false</th>
+<th class="txt-center">unknown</th>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">Result</th>
+<td class="txt-center">false</td>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center"><b>true</b></td>
+</tr>
+</tbody>
+</table>
+<p>Truth table for the <code>and</code> operator.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="txt-center"><b>AND</b></th>
+<th class="txt-center">RHS</th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2"><strong>true</strong></th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2"><strong>false</strong></th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2"><strong>unknown</strong></th>
+</tr>
+<tr>
+<th class="txt-center">LHS</th>
+<th> </th>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">true</th>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">false</th>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">unknown</th>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+</tr>
+</tbody>
+</table>
+<p>If the first clause of an <code>and</code> operation evaluates to <code>false or unknown</code>, the second clause is not evaluated.</p>
+<p>Truth table for the or operator.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="txt-center"><b>OR</b></th>
+<th class="txt-center">RHS</th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2">true</th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2">false</th>
+<th class="txt-center" style="vertical-align: top;" rowspan="2">unknown</th>
+</tr>
+<tr>
+<th class="txt-center">LHS</th>
+<th> </th>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">true</th>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center"><b>true</b></td>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">false</th>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+</tr>
+<tr>
+<th class="txt-center" colspan="2">unknown</th>
+<td class="txt-center"><b>true</b></td>
+<td class="txt-center">false</td>
+<td class="txt-center">false</td>
+</tr>
+</tbody>
+</table>
+<p>If the first clause of an <code>or</code> operation evaluates to <code>true</code>, the second clause is not evaluated.</p>
+<h4 id="21yhj4if5f4g"><span id="sequential-operator">Sequential operator</span></h4>
+<p>Supported since EOS-4.25.0F release.</p>
+<p>The sequential operator "??" allows conditional evaluation of functions in a sequence. The syntax for the sequential operator is</p>
+<pre>&lt;FUNC1_NAME&gt;() ?? &lt;FUNC2_NAME&gt;()</pre>
+<p>The operator can be repeated to form a longer sequence of function invocations.</p>
+<pre>&lt;FUNC1_NAME&gt;() ?? &lt;FUNC2_NAME&gt;() ?? &lt;FUNC3_NAME&gt;() ?? ...</pre>
+<p>The sequential operator evaluates the first function first.</p>
+<ol>
+<li>If the function invocation returns <code>true</code>, the evaluation of the expression terminates (no other function in the sequence is evaluated) and the entire expression returns <code>true</code>.</li>
+<li>If the function invocation returns <code>false</code>, the evaluation of the expression terminates and the entire expression returns <code>false</code>.</li>
+<li>Only if the function invocation returns <code>unknown</code>, the sequential operator evaluation proceeds to the next term and repeats.</li>
+</ol>
+<p>In summary, if a function can neither take a <code>true</code> nor a <code>false</code> decision and returns <code>unknown</code>, the evaluation will proceed to the next term. If this process reaches the last term in the sequence, then the value from the last function is returned by the expression.</p>
+<p>Example:</p>
+<pre>function PEER_192_168_1_1_IN() {
+   ### RCF function for peer 192.168.1.1.
+
+   # If FUNC_GLOBAL() returns true (or false), accept (or reject) the
+   # route immediately.
+   # Otherwise, if FUNC_ASN100() returns true (or false), accept (or
+   # reject) the route immediately.
+   # Otherwise, return the result from evaluating FUNC_192_168_1_1_IN().
+   return FUNC_GLOBAL() ?? FUNC_ASN100() ?? FUNC_192_168_1_1_IN();
+}
+</pre>
+<p>The trailing term can also be <code>true, false,</code> or <code>unknown</code>. This allows defining the default return value when all function invocations return <code>unknown</code>.</p>
+<pre>function PEER_192_168_1_1_IN() {
+   ### RCF function for peer 192.168.1.1.
+
+   # If the 3 function calls don't return an an explicit true or false,
+   # accept the route.
+   return FUNC_GLOBAL() ?? FUNC_ASN100() ?? FUNC_192_168_1_1_IN() <strong>?? true;</strong>
+}
+</pre>
+<p>The sequential operator's result can also be compared against a trilean logic state.</p>
+<pre>&lt;FUNC1_NAME&gt;() ?? &lt;FUNC2_NAME&gt;() is &lt;true | false | unknown&gt;</pre>
+<h5><span id="comparing-sequential-operator-logical-and-logical-or-and-statements">Comparing sequential operator, logical and, logical or, and statements</span></h5>
+<p>The 4 syntaxes with sequential operator <code>(??), and, or,</code> and functions in statements with (;) can be used to achieve different goals with function invocations. The following examples illustrate the difference.</p>
+<table class="data-table data-colm2">
+<tbody>
+<tr>
+<td>
+<pre>function SEQ_OP() {
+           return FUNC1() ?? FUNC2();
+        }</pre>
+</td>
+<td>FUNC2() is conditionally evaluated and its result returned by SEQ_OP() only if FUNC1() evaluation returns <code>unknown.</code></td>
+</tr>
+<tr>
+<td>
+<pre>function AND() {
+           return FUNC1() and FUNC2();
+        }</pre>
+</td>
+<td>FUNC2() is conditionally evaluated and its result returned by AND() only if FUNC1() returns <code>true.</code></td>
+</tr>
+<tr>
+<td>
+<pre>function OR() {
+           return FUNC1() or FUNC2();
+        }</pre>
+</td>
+<td>FUNC2() is conditionally evaluated and its result returned by OR() only if FUNC1() returns <code>false or unknown.</code></td>
+</tr>
+<tr>
+<td>
+<pre>function STMT() {
+           FUNC1();
+           return FUNC2();
+        }</pre>
+</td>
+<td>FUNC1() is always evaluated. The return value from this invocation is not used. FUNC2() is also always evaluated and its result is returned by STMT().</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="numerical-operators">Numerical operators</span></h4>
+<p>Modification operators on numerical attributes do not allow the result to exceed the range of values valid for the attribute. For example, the result of <code>local_preference += 100 </code>is bounded by <code>4294967295</code> and <code>med -= 10000</code> is bounded by 0.</p>
+<h4><span id="return-statement">Return statement</span></h4>
+<p>The return statement returns the provided immediate value or the result of evaluating the provided expression to the caller.</p>
+<pre>return true | false | unknown | &lt;EXPRESSION&gt;;</pre>
+<p>A semicolon is required at the end of the return statement.</p>
+<p>Examples:</p>
+<pre>function ALWAYS_TRUE() {
+   # Example of returning an immediate value
+   return true;
+}
+
+function DEFAULT_ROUTE() {
+   # Example of returning a comparison
+   return prefix is 0.0.0.0/0;
+}
+
+function RETURN_EXPR() {
+   # Example of returning the result of an expression
+   return ALWAYS_TRUE() and DEFAULT_ROUTE();
+}
+</pre>
+<h4><span id="exit-statement">Exit statement</span></h4>
+<p>The <code>exit</code> statement immediately halts RCF function evaluation and returns the provided immediate value or the result of evaluating the provided expression to the point of application. The value is used at the point of application to accept or reject the route as explained in the section "Salient aspects and language primitives".</p>
+<p>Supported since EOS-4.27.0F release.</p>
+<pre>exit true | false | unknown | &lt;EXPRESSION&gt;;</pre>
+<p>A semicolon is required at the end of the exit statement.</p>
+<p>Examples:</p>
+<pre>function MAYBE_EXIT_TRUE() {
+   # Example of function that may immediately exit true
+   if prefix is 1.2.3.0/24 {
+      exit true;
+   }
+}
+
+function MAYBE_SET_MED() {
+   # If MAYBE_EXIT_TRUE() exits, med will not be set and the policy will evaluate to
+   # true even though we do not explicitly handle it.
+   MAYBE_EXIT_TRUE();
+   med = 10;
+   return false;
+}
+</pre>
+<h4><span id="attribute-modification-statement">Attribute modification statement</span></h4>
+<p>Attribute modifications follow the following syntax.</p>
+<pre>&lt;ATTRIBUTE&gt; &lt;OPERATION&gt; &lt;VALUE&gt;;</pre>
+<p>A semicolon is required at the end of the modification statement. Examples are provided alongside each supported attribute and operation in the <a href="#321xfxgsngvs">next</a> section.</p>
+<h4><span id="if-condition">If … condition</span></h4>
+<p>RCF allows an <code>if …</code> construct, followed by optional <code>else if</code> clauses, concluding with an optional <code>else</code> clause. The <code>else if</code> clause is supported since EOS-4.24.2F.</p>
+<p><code>if</code> syntax without an <code>else</code> block:</p>
+<pre>if &lt;EXPRESSION&gt; {
+   # if block
+}
+</pre>
+<p><code>if</code> syntax with an <code>else</code> block:</p>
+<pre>if &lt;EXPRESSION&gt;  {
+   # if block
+} else {
+   # else block
+}
+</pre>
+<p><code>if</code> syntax with an <code>else</code> if block:</p>
+<pre>if &lt;EXPRESSION1&gt;  {
+   # if block
+} else if &lt;EXPRESSION2&gt;  {
+   # else if block
+} else {
+   # else block
+}
+</pre>
+<p>Examples:</p>
+<pre>function MED_TEST_1() {
+   if med is 100 {
+      return true;
+   }
+   return false;
+}
+
+function MED_TEST_2() {
+   if med &gt;= 100 {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+function MED_TEST_3() {
+   if med &gt;= 400 {
+      local_preference = 400;
+   } else if med &gt;= 300 {
+      local_preference = 300;
+   } else if med &gt;= 200 {
+      local_preference = 200;
+   } else {
+      local_preference = 100;
+   }
+   return true;
+}
+</pre>
+<h4><span id="immediate-values">Immediate values</span></h4>
+<h5><span id="asdot-notation">asdot notation</span></h5>
+<p>For operations that include AS number immediate values, 4 byte AS numbers can be given in the asdot notation as specified by RFC5396.</p>
+<p>For example:</p>
+<pre>as_path.origin_as is 1.10</pre>
+<h5><span id="mac-address-notation">MAC address notation</span></h5>
+<p>For operations that include MAC addresses, immediate values can use colon or dot notation.</p>
+<p>For example:</p>
+<pre>evpn.mac_ip_route is 1a:2b:3c:4d:5e:6f
+
+evpn.mac_ip_route is 1a2b.3c4d.5e6f</pre>
+<h5><span id="sets">Sets</span></h5>
+<p>RCF supports a set collection. A set is a collection of unique values. When multiple instances of the same value are present only one takes effect.</p>
+<p>The set collection has been supported since the EOS-4.25.2F release.</p>
+<p>Example:</p>
+<pre>community add { 100, 200, 300 }</pre>
+<p>Attributes are supported in community sets since the EOS-4.29.1F release.</p>
+<p>Example:</p>
+<pre>community add { 100, 200, igp.tag }</pre>
+<h5><span id="ranges">Ranges</span></h5>
+<p>RCF supports a range construct. A range has a lower and upper bound value. </p>
+<p>A value will match against a range if both of the following are true</p>
+<ul>
+<li>the value is greater than or equal to the lower bound value.</li>
+<li>the value is less than or equal to the upper bound value.</li>
+</ul>
+<p>If the lower bound value is greater than the upper bound value in a given range, no value will match against it.</p>
+<p>A range can be defined as part of a set collection. A set that contains a range can only be used with the in operator.</p>
+<p>The set can contain any mix of singleton values and ranges.</p>
+<p>The range construct has been supported since the EOS-4.29.1F release.</p>
+<p>Example:</p>
+<pre>as_path.origin_as in { 64500, 64505 to 64510, 64503, 64515 to 64520 }</pre>
+<h3 id="321xfxgsngvs"><span id="attributes-and-functions">Attributes and functions</span></h3>
+<p>The RCF language provides a list of supported attributes that can be compared against values or modified. The language also includes builtin functions that provide some predefined functionality. The complete list of all attributes and builtin functions is available in the "<a href="/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference">Routing control functions - Attribute and builtin function reference</a>" TOI.</p>
+<h3><span id="the-input-attribute-scope">The 'input' attribute scope</span></h3>
+<p>With the EOS-4.26.0F release, the RCF evaluation engine provides access to the unmodified attribute values, as seen by the evaluation engine at the point of application, during the evaluation of the function.</p>
+<pre>router general
+   control-functions
+      code
+      function INPUT_AND_MODIFIED_LP_CHECK() {
+         return input.local_preference is 500 and
+                local_preference is 1000;
+      }
+
+      function INBOUND_POLICY() {
+         local_preference = 1000;
+         return INPUT_AND_MODIFIED_LP_CHECK();
+      }
+      EOF
+!
+</pre>
+<p>In the example above, <code>local_preference</code> is modified to <code>1000</code> for all paths in <code>INBOUND_POLICY().</code> However, <code>INPUT_AND_MODIFIED_LP_CHECK()</code> will return <code>true</code> only if the <code>local_preference</code> value received by the point of application function <code>(INBOUND_POLICY)</code> is 500 and the modified value is 1000.</p>
+<h2><span id="platform-compatibility">Platform compatibility</span></h2>
+<p>The feature is supported on all EOS platforms.</p>
+<h2><span id="configuration">Configuration</span></h2>
+<h3><span id="providing-rcf-configuration">Providing RCF configuration</span></h3>
+<p>RCF code is a part of the EOS configuration. The supported workflows allow adding, modifying, and removing RCF configuration. RCF code operations are performed under a newly introduced <code>control-functions</code> sub-configuration mode, under the existing <code>router-general</code> configuration mode.</p>
+<p>The CLI workflow revolves around 3 basic operations:</p>
+<ul>
+<li>Pulling RCF code into the CLI session's "pending" buffer from a source (a remote URL or a local file).</li>
+<li>Compiling the content’s of the CLI session’s pending buffer</li>
+<li>Committing the contents of the CLI session's pending buffer into the running configuration after a successful compilation</li>
+</ul>
+<p><br /> <img src="/assets/images/article/toi/eos-4272f/RCF_lang2.jpg" alt="" /></p>
+<p>Modifying the RCF code involves pushing the RCF code to an external source, editing it there, pulling it back from the external source into the pending buffer, followed by compiling and committing the successfully compiling code to the running configuration.</p>
+<p><br /> <img src="/assets/images/article/toi/eos-4272f/RCF_lang4.jpg" alt="" /></p>
+<h4><span id="code-units">Code units</span></h4>
+<p>As of the EOS-4.26.2F release, RCF code can be organized into named code units. A code unit consists of zero or more RCF functions. RCF code units provide the smallest unit of RCF configuration that can be committed to the running configuration.</p>
+<p>All code units are compiled together. Issuing the <code>commit</code> command updates all modified code units in the running configuration.</p>
+<ol>
+<li>Functions in one code unit may invoke functions in another code unit</li>
+<li>Function names must be unique across all code units</li>
+</ol>
+<pre>router general
+   control-functions
+      <strong>code unit COMMON</strong>
+      function DEFAULT_ROUTE() {
+         return prefix is 0.0.0.0/0 or prefix is ::/0;
+      }
+      EOF
+      <strong>code unit AS_65535_FUNCTIONS</strong>
+      function AS_65535_IN() {
+         # Rejects default route, accepts all other routes
+         if DEFAULT_ROUTE() {
+            return false;
+         }
+         return true;
+      }
+
+      function AS_65535_OUT() {
+         # Add a community and advertise all routes
+         community add { 64500:200 };
+         return true;
+      }
+      EOF
+</pre>
+<h4><span id="configuration-commands">Configuration commands</span></h4>
+<p>To support these operations, the following commands are available under the <code>control-functions</code> configuration mode.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<td><code>pull [unit &lt;NAME&gt;] replace &lt;URL&gt;</code></td>
+<td>Populate the pending buffer for the specified code unit with contents of the file located at the specified URL. For backward compatibility, pulling into the unnamed code unit causes the RCF code to compile automatically.</td>
+</tr>
+<tr>
+<td><code>compile</code></td>
+<td>Compile all code units together. Modified code units are taken from the pending buffer, unmodified code units are taken from the running configuration.</td>
+</tr>
+<tr>
+<td><code>commit</code></td>
+<td>If compilation is successful, update all modified code units from the pending buffer to the running configuration.</td>
+</tr>
+<tr>
+<td><code>push [unit &lt;NAME&gt;] &lt;URL&gt;</code></td>
+<td>Push the contents of the specified code unit to the location identified by the URL. The contents are taken from the pending buffer if the code unit is modified. Otherwise, the code unit contents are taken from the running configuration.</td>
+</tr>
+<tr>
+<td><code>discard [(unit &lt;NAME&gt;) | all]</code></td>
+<td>Discard the contents of the pending buffer for the specified code unit, or for all code units if the “all” keyword is specified</td>
+</tr>
+<tr>
+<td><code>code [unit &lt;NAME&gt;]</code></td>
+<td>Create or replace RCF code for the specified code unit as multi-line input in EOS CLI</td>
+</tr>
+<tr>
+<td><code>edit [unit &lt;NAME&gt;]</code></td>
+<td>Create or modify RCF code for the specified code unit using the GNU nano text editor (since EOS-4.27.1F)</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>[unit &lt;NAME&gt;]</code>is optional in the above commands. If a unit name is not specified, the command is applied to the singular unnamed code unit. This unnamed code unit behaves the same as named code units aside from the absence of a name.</p>
+<p>Once RCF code units are committed to the running configuration, they will appear in <code>show running-config</code> along with the rest of the system configuration. This preserves EOS's ease of provisioning devices by keeping all the system configuration in a single file.</p>
+<p>An example of pulling, compiling, and committing two RCF code units is shown below.</p>
+<pre>Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)#<strong>pull unit A replace <a href="http://192.168.1.1/rcf-code-unit-a.txt">http://192.168.1.1/rcf-code-unit-a.txt</a></strong>
+Arista(config-router-general-control-functions)#<strong>pull unit B replace <a href="http://192.168.1.1/rcf-code-unit-b.txt">http://192.168.1.1/rcf-code-unit-b.txt</a></strong>
+Arista(config-router-general-control-functions)#<strong>compile</strong>
+Compilation successful
+Arista(config-router-general-control-functions)#<strong>commit</strong>
+Arista(config-router-general-control-functions)#
+</pre>
+<p>An example of taking an RCF code unit from the running configuration, modifying it, addressing compilation issues, and eventually committing it back to the running configuration is shown next.</p>
+<pre>Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)#<strong>push unit A flash:rcf-code-unit-a.txt</strong>
+Arista(config-router-general-control-functions)#<strong>bash vi /mnt/flash/rcf-code-unit-a.txt</strong>   ! edit the contents
+Arista(config-router-general-control-functions)#<strong>pull unit A replace flash:rcf-code-unit-a.txt</strong>
+Arista(config-router-general-control-functions)#<strong>compile</strong>
+% Error (syntax): line 1:13: mismatched input '{' expecting '('
+Arista(config-router-general-control-functions)#<strong>push unit A flash:rcf-code-unit-a.txt </strong>  ! optionally push the RCF code unit again
+Arista(config-router-general-control-functions)#<strong>bash vi /mnt/flash/rcf-code-unit-a.txt </strong>  ! edit the contents to fix compilation errors
+Arista(config-router-general-control-functions)#<strong>pull unit A replace flash:rcf-code-unit-a.txt</strong>
+Arista(config-router-general-control-functions)#<strong>compile</strong>
+Compilation successful
+Arista(config-router-general-control-functions)#<strong>commit</strong>
+Arista(config-router-general-control-functions)#
+</pre>
+<p>Since EOS-4.27.1F, it is possible to add and modify RCF code units directly from the CLI using the <code>edit [unit &lt;NAME&gt;]</code> command. This will open the GNU nano text editor with the specified code unit, or create it. Saving the file and closing the editor will write the contents back to the pending buffer.</p>
+<h3><span id="compilation-errors">Compilation errors</span></h3>
+<p>RCF compilation provides some verification of the RCF code to ensure it can be evaluated. When compilation is invoked for RCF code that is malformed or cannot be evaluated errors will be reported. The following are some examples of common compilation errors explained. </p>
+<h4><span id="examples">Examples</span></h4>
+<h5><span id="missing-semicolon">Missing semicolon</span></h5>
+<p>RCF requires a semicolon to separate statements even when statements are on different lines.</p>
+<p>Below the semicolon is missing from the end of line 2.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function SET_MED() {
+         med = 10
+         return true;
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 2:17: missing ';'
+2          med = 10
+                   ^
+3          return true;
+</pre>
+<h5><span id="missing-curly-brace">Missing curly brace</span></h5>
+<p>RCF requires a curly brace to indicate the end of a block of code.</p>
+<p>Below the curly brace is missing.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function CHECK_MED() {
+         return med is 10;
+      function SET_MED() {
+         med = 10;
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 3:6: missing '}' at 'function SET_MED'
+2          return med is 10;
+3       function SET_MED() {
+        ^~~~~~~~~~~~~~~~</pre>
+<h5><span id="missing-operator">Missing operator</span></h5>
+<p>If an expression is specified without an operator then RCF cannot determine what to do with the given values.</p>
+<p>Below the operator is missing between the attribute med and the value 10.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function CHECK_MED() {
+         return med 10;
+      }
+      EOF</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 2:20: no viable alternative at input 'med 10'
+2          return med 10;
+                      ^~
+</pre>
+<h5><span id="mismatching-types">Mismatching types</span></h5>
+<p>The left side and the right side of an RCF operator must have interoperable types for that operator.</p>
+<p>Below is an expression comparing a community set with an integer.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function CHECK_COMMUNITY() {
+         return community is 10;
+      }
+      EOF</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 2:16 (function 'CHECK_COMMUNITY'): invalid operation 'is' between 'community' and '10'
+2          return community is 10;
+                  ^~~~~~~~~~~~~~~
+</pre>
+<h5><span id="mismatching-set-contents">Mismatching set contents</span></h5>
+<p>An RCF set must contain values with interoperable types.</p>
+<p>Below a community set is defined that also contains invalid values or values from other set types.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function SET_COMMUNITY() {
+         community = { FOO,  100, 200, 300, LINK-BANDWIDTH-AS:101:100.101MBps, 
+                       LEVEL2, 100:100:100
+         };
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 2:23 (function 'SET_COMMUNITY'): invalid immediate values '{FOO, LINK-BANDWIDTH-AS:101:100.101MBps, LEVEL2, 100:100:100}' in an immediate community set
+2          community = { FOO,  100, 200, 300, LINK-BANDWIDTH-AS:101:100.101MBps,
+                         ^~~                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3                        LEVEL2, 100:100:100
+                         ^~~~~~  ^~~~~~~~~~~
+4          };
+</pre>
+<h5><span id="undefined-reference">Undefined reference</span></h5>
+<p>For RCF to correctly determine the attribute or function being referred to in an expression, the attribute or function must be defined.</p>
+<p>Below is an RCF function specifying the misspelled attribute <code>aspath</code> instead of <code>as_path.</code></p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_ERROR
+      function SET_AS_PATH() {
+        aspath prepend 10;
+      }
+      EOF</pre>
+<p>Compilation output:</p>
+<pre>% Error unit COMPILATION_ERROR line 2:8 (function 'SET_AS_PATH'): undefined reference to attribute 'aspath'
+2         aspath prepend 10;
+          ^~~~~~
+</pre>
+<h5><span id="function-redefinition">Function redefinition</span></h5>
+<p>RCF requires that a function is only defined once.</p>
+<p>Below is a configuration where two functions are defined with the same name.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit FIRST_DEFINITION
+      function CHECK_MED() {
+         if med is 10 {
+            return true;
+         }
+      }
+      EOF
+      code unit SECOND_DEFINITION
+      function CHECK_MED() {
+         if med is 20 {
+            return false;
+         }
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>% Error unit FIRST_DEFINITION line 1:6: redefinition of function 'CHECK_MED'
+1       function CHECK_MED() {
+        ^~~~~~~~~~~~~~~~~~
+
+Previously defined in code unit SECOND_DEFINITION:
+1       function CHECK_MED() {
+        ^~~~~~~~~~~~~~~~~~
+</pre>
+<h5><span id="function-call-cycles">Function call cycles</span></h5>
+<p>An RCF function cannot directly or indirectly call itself.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit UNIT_A
+      function A() {
+         return B();
+      }
+      EOF
+      code unit UNIT_B
+      function B() {
+         return true or C();
+      }
+      EOF
+      code unit UNIT_C
+      function C() {
+         if ( false or A() or false) {
+            return true;
+         }
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>% Error: cycle found in function callgraph 'A -&gt; B -&gt; C -&gt; A'
+Code unit UNIT_A
+1       function A() {
+        ^~~~~~~~~~
+
+2          return B();
+                  ^~~
+
+Code unit UNIT_B
+1       function B() {
+        ^~~~~~~~~~
+
+2          return true or C();
+                          ^~~
+
+Code unit UNIT_C
+1       function C() {
+        ^~~~~~~~~~
+
+2          if ( false or A() or false) {
+                         ^~~
+
+Code unit UNIT_A
+1       function A() {
+        ^~~~~~~~~~
+</pre>
+<h3><span id="compilation-warnings">Compilation Warnings</span></h3>
+<p>RCF compilation provides some verification of the RCF code to ensure unusual behavior specified is intended. When compilation is invoked for RCF code that may not have the desired effect, warnings are reported. The following are some examples of common compilation warnings explained.</p>
+<h4><span id="examples">Examples</span></h4>
+<h5><span id="statement-with-no-effect">Statement with no effect</span></h5>
+<p>A condition in RCF where the result is not used for control flow has no effect.<br /> Below is a logical operator whose result is not used, and so the operation has no effect.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit COMPILATION_WARNING
+      function CHECK_MED() {
+         med is 10 or 
+         med is 20;
+      }
+      EOF
+</pre>
+<p>Compilation output:</p>
+<pre>! Warning unit COMPILATION_ERROR line 2:9 (function 'CHECK_MED'): statement has no effect
+2          med is 10 or
+           ^~~~~~~~~~~~
+3          med is 20;
+           \~~~~~~~~
+</pre>
+<h3><span id="labeled-code-editing">Labeled code editing</span></h3>
+<p>Since EOS-4.26.2F release, an RCF function can be organized into labeled blocks. A labeled block is 0 or more RCF statements delimited by curly braces and identified by a name (the label). Labeled blocks can be added, modified, or removed via dedicated CLI commands. These dedicated CLI commands do not require the user to repeat the rest of the content in the code unit getting modified. The <code>compile</code> and <code>commit</code> commands are still required to apply the changes to the running configuration.</p>
+<p>Example:</p>
+<pre>function PEER_192_168_1_1_IN() {
+   @EARLY_RETURN {
+      if prefix is 0.0.0.0 or prefix is ::/0 {
+         return false;
+      }
+   }
+
+   @REQUIRED_SETTERS {
+      local_preference = 200;
+      community add { 64500:200 };
+   }
+
+   @CONDITIONAL_STEPS {
+      # Empty labeled block that can be filled in later
+   }
+
+   @FINAL_RESULT {
+      return true;
+   }
+}</pre>
+<p>The operator should assign these labels within the RCF function upfront.</p>
+<ul>
+<li>Labeled blocks can be nested</li>
+<li>Label names can be reused across functions</li>
+<li>Label names used within a function must be unique</li>
+</ul>
+<p>A label name must start with @ followed by</p>
+<ol>
+<li><code>a-z, A-Z, 0-9, _ </code>for the next character, and</li>
+<li>zero or more of <code>a-z, A-Z, 0-9, _, ., {, }, =, -, :, \, [, ]</code> characters</li>
+</ol>
+<p>Examples of valid label names:</p>
+<ul>
+<li>@main</li>
+<li>@_seq1</li>
+<li>@BgpOverload</li>
+</ul>
+<p>Examples of invalid label names:</p>
+<ul>
+<li>@-badLabelName</li>
+<li>@Bad Label Name</li>
+<li>BadLabelName</li>
+</ul>
+<p>Labeled code modifications are auto-indented by EOS by approximating the indentation style used in the RCF function.</p>
+<h4><span id="replacing-labeled-blocks">Replacing labeled blocks</span></h4>
+<p>The <code>code [unit &lt;UNIT_NAME&gt;] replace block function &lt;FUNC_NAME&gt; &lt;LABEL_NAME&gt; command replaces the labeled block &lt;LABEL_NAME&gt;</code> with a new labeled block specified by the operator as multi-line input in EOS CLI.</p>
+<ul>
+<li>The label of the labeled block provided by the operator as multi-line input must match <code>&lt;LABEL_NAME&gt;</code></li>
+<li><code>&lt;LABEL_NAME&gt;</code> must exist within the function <code>&lt;FUNC_NAME&gt;</code></li>
+<li><code>&lt;FUNC_NAME&gt;</code> must exist within the code unit <code>&lt;UNIT_NAME&gt;</code>. </li>
+</ul>
+<p>The following example demonstrates replacing the labeled block @LABEL1:</p>
+<pre>Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)<strong>#show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+   <strong>@LABEL1 {
+      if med &gt;= 100 {
+         return false;
+      }
+   }</strong>
+
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+Arista(config-router-general-control-functions)#<strong>code unit UNIT_A replace block function LABELED_BLOCK_EXAMPLE @LABEL1</strong>
+Enter RCF code. Type 'EOF' on its own line to end.
+<strong>@LABEL1 {
+   community add {64500:200};
+}
+EOF</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+   <strong>@LABEL1 {
+      community add {64500:200};
+   }
+</strong>
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+</pre>
+<h4><span id="inserting-labeled-blocks">Inserting labeled blocks</span></h4>
+<p>The <code>code [unit &lt;UNIT_NAME&gt;] insert block function &lt;FUNC_NAME&gt; {before, after} &lt;LABEL_NAME&gt;</code> command inserts a new labeled block specified by the operator as multi-line input in EOS CLI before or after the labeled block <code>&lt;LABEL_NAME&gt;</code>.</p>
+<ul>
+<li>The label name of the labeled block provided by the operator as multi-line input must not exist within the function <code>&lt;FUNC_NAME&gt;</code></li>
+<li><code>&lt;LABEL_NAME&gt;</code> must exist within the function <code>&lt;FUNC_NAME&gt;</code></li>
+<li><code>&lt;FUNC_NAME&gt;</code> must exist within the code unit <code>&lt;UNIT_NAME&gt;.</code> </li>
+</ul>
+<p>The following example demonstrates inserting a labeled block @LABEL_NEW before the labeled block @LABEL2:</p>
+<pre>Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+Arista(config-router-general-control-functions)#<strong>code unit UNIT_A insert block function LABELED_BLOCK_EXAMPLE before @LABEL2
+Enter RCF code. Type 'EOF' on its own line to end.
+@LABEL_NEW {
+   if community has_any {64500:100, 64500:200} {
+      return false;
+   }
+}
+EOF</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+   <strong>@LABEL_NEW {
+      if community has_any {64500:100, 64500:200} {
+         return false;
+      }
+   }</strong>
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+</pre>
+<h4><span id="deleting-labeled-blocks">Deleting labeled blocks</span></h4>
+<p>The <code>code [unit &lt;UNIT_NAME&gt;] delete block function &lt;FUNC_NAME&gt; &lt;LABEL_NAME&gt;</code> command deletes the labeled block <code>&lt;LABEL_NAME&gt;</code>.</p>
+<ul>
+<li><code>&lt;LABEL_NAME&gt;</code> must exist within the function <code>&lt;FUNC_NAME&gt;</code></li>
+<li><code>&lt;FUNC_NAME&gt;</code> must exist within the code unit <code>&lt;UNIT_NAME&gt;</code>. </li>
+</ul>
+<p>The following example demonstrates deleting the labeled block <code>@LABEL1:</code></p>
+<pre>Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+   @LABEL1 {
+      if med &gt;= 100 {
+         return false;
+      }
+   }
+
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+Arista(config-router-general-control-functions)#<strong>code unit UNIT_A delete block function LABELED_BLOCK_EXAMPLE @LABEL1</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit UNIT_A
+function LABELED_BLOCK_EXAMPLE() {
+
+   @LABEL2 {
+      return true;
+   }
+}
+EOF
+</pre>
+<h3><span id="eapi-support">EAPI support</span></h3>
+<p>Starting with the EOS-4.25.2F release, RCF configuration can be modified using EAPI. New or modified RCF configuration added via EAPI will automatically be compiled and committed into the running-config (or session-config if using a config session) upon exiting the <code>control-functions</code> submode or when the last CLI command in the EAPI request has been processed, whichever comes first.</p>
+<h3><span id="config-session">Config session</span></h3>
+<p>RCF code can also be modified in a config session. The workflows described above can be invoked inside a config session. The RCF code must be committed to the config session by invoking <code>commit</code> inside the <code>control-functions</code> configuration mode before committing the config session. Otherwise, the RCF code changes made inside the session-config will get lost.</p>
+<pre>Arista(config)#<strong>configure session</strong>
+Arista(config-s-sess-2)#<strong>router general</strong>
+Arista(config-s-sess-2-router-general)#<strong>control-functions</strong>
+Arista(config-s-sess-2-router-general-control-functions)#<strong>pull unit A replace flash:rcf-code-unit-a.txt</strong>
+Arista(config-s-sess-2-router-general-control-functions)#<strong>compile</strong>
+Compilation successful
+Arista(config-s-sess-2-router-general-control-functions)#<strong>commit</strong>      ! RCF code commit
+Arista(config-s-sess-2-router-general-control-functions)#<strong>show session-config</strong>
+...
+router general
+   control-functions
+      code unit A
+      function ACCEPT_ALL() {
+         # Accepts all routes
+         return true;
+      }
+
+      function DENY_ALL() {
+         # Rejects all routes
+         return false;
+      }
+      EOF
+...
+Arista(config-s-sess-2-router-general-control-functions)#<strong>exit</strong>
+Arista(config-s-sess-2-router-general)#<strong>commit</strong>      ! session commit
+</pre>
+<h3><span id="config-replace">Config replace</span></h3>
+<p>The <code>configure replace &lt;URL&gt;</code> command replaces the running configuration with contents fetched from the specified URL. If the RCF code in the configuration fetched from the URL fails to compile, the entire <code>configure replace</code> operation fails to complete. An error log is generated at the end of <code>configure replace</code> execution.</p>
+<h3><span id="copy-command">Copy command</span></h3>
+<p>The <code>copy &lt;SRC_URL&gt; running-config</code> and the <code>copy &lt;SRC_URL&gt; session-config</code> commands replace the full RCF code at the destination with the RCF code available at the source if the RCF code compiles successfully. If the RCF code does not compile successfully, the RCF code from the source URL is ignored.  Compilation errors in the RCF code do not affect the copying of non-RCF configuration present at the source.</p>
+<h3><span id="points-of-application">Points of application</span></h3>
+<p>The above sections specify how RCF functions can be configured and edited on EOS. RCF functions have to additionally be configured at the desired point of evaluation, in various agents, to use the RCF functionality. Documentation covering configuration in these agents can be found in the “Resources” section.</p>
+<h2><span id="show-commands">Show commands</span></h2>
+<h3><span id="workflow-show-commands">Workflow show commands</span></h3>
+<h4><span id="displaying-pending-rcf-configuration">Displaying pending RCF configuration</span></h4>
+<p>The <code>show router rcf pending</code> command or the <code>show pending</code> command in the <code>router general &gt; control-functions configuration mode,</code> shows the contents of the CLI session's pending buffer.</p>
+<p>With the EOS-4.24.2F release, it also shows the source of the RCF code pull at the top of the uncommitted RCF code.</p>
+<p>With the EOS-4.26.2F release, the  <code>show router rcf pending</code> command or the <code>show pending</code> command will show the effective contents of all RCF code units that will take effect after a <code>commit</code> command. All code units will be displayed regardless of whether they have been modified in the pending buffer. If there are no changes to be committed (the pending buffer content is the same as the running configuration for all code units), the message <code>No pending routing control function changes</code> is printed at the top of the show command output.</p>
+<pre>Arista(config)#<strong>configure terminal</strong>
+Arista(config)#<strong>router general</strong>
+Arista(config-router-general)#<strong>control-functions</strong>
+Arista(config-router-general-control-functions)#<strong>pull unit A replace flash:rcf-code-unit-a.txt</strong>
+Arista(config-router-general-control-functions)#<strong>show pending</strong>
+code unit A
+! Source: file:/tmp/rcf-code-unit-a.txt
+function ACCEPT_ALL() {
+   # Accepts all routes
+   return true;
+}
+
+function DENY_ALL() {
+   # Rejects all routes
+   return false;
+}
+EOF
+Arista(config-router-general-control-functions)#<strong>compile</strong>
+Compilation successful
+Arista(config-router-general-control-functions)#<strong>commit</strong>
+Arista(config-router-general-control-functions)#<strong>show pending
+No pending routing control function changes</strong>
+code unit A
+! Source: file:/tmp/rcf-code-unit-a.txt
+function ACCEPT_ALL() {
+   # Accepts all routes
+   return true;
+}
+
+function DENY_ALL() {
+   # Rejects all routes
+   return false;
+}
+EOF
+Arista(config-router-general-control-functions)#
+</pre>
+<h4><span id="displaying-diff-between-rcf-configuration-in-pending-buffer-and-running-configuration">Displaying diff between RCF configuration in pending buffer and running configuration</span></h4>
+<p>The EOS-4.25.2F release adds support for <code>show diff</code> in the <code>router general &gt; control-functions</code> configuration mode which shows the difference between the RCF code in the pending buffer and the RCF code in the running configuration.</p>
+<p>With the EOS-4.26.2F release, the <code>show diff</code> command shows the difference between the RCF code in the pending buffer and the RCF code in the running configuration.</p>
+<pre>Arista(config-router-general-control-functions)#pull unit A replace file:/tmp/rcf-code-unit-a-2.txt
+Arista(config-router-general-control-functions)#compile
+Compilation successful
+Arista(config-router-general-control-functions)#<strong>show diff</strong>
+--- running-config: code unit A
++++ pending: code unit A
+@@ -7,3 +7,7 @@
+	# Rejects all routes
+	return false;
+ }
++
++function DEFAULT_ROUTE() {
++   return prefix is 0.0.0.0/0 or prefix is ::/0;
++}
+
+Arista(config-router-general-control-functions)#
+</pre>
+<h4><span id="displaying-active-rcf-configuration">Displaying active RCF configuration</span></h4>
+<p>Note that <code>show active</code> and <code>show running-config</code> will also show the source of the committed RCF code. Built-in functions are not displayed since they are not defined by the user.</p>
+<pre>Arista(config-router-general-control-functions)#<strong>show active
+</strong>router general
+   control-functions
+      code unit A source pulled-from flash:rcf-code-unit-a.txt
+      code unit A
+      function ACCEPT_ALL() {
+         # Accepts all routes
+         return true;
+      }
+      
+      function DENY_ALL() {
+         # Rejects all routes
+         return false;
+      }
+      EOF
+Arista(config-router-general-control-functions)#
+</pre>
+<h4><span id="displaying-rcf-code-units">Displaying RCF code units</span></h4>
+<p>The EOS-4.28.1F release adds support for <code>show router rcf code [ unit &lt;UNIT_NAME&gt; ]</code> which shows the committed RCF code in the running configuration. <br /> RCF code committed in a config session will only be shown once the config session has been committed.</p>
+<pre>Arista(config-router-general-control-functions)#show router rcf code unit A
+function ACCEPT_ALL() {
+   # Accepts all routes
+   return true;
+}
+</pre>
+<h4><span id="displaying-rcf-function-locations">Displaying RCF function locations</span></h4>
+<p>The EOS-4.29.0F release adds support for <code>show router rcf function location [ ( function FUNC_NAME ) | ( unit UNIT_NAME ) ]</code> which shows the code unit name and starting line number within the code unit for committed RCF function definitions.</p>
+<h5><span id="example">Example</span></h5>
+<pre>router general
+   control-functions
+      code
+      function testA() {  
+         med = 10;  
+         return true;  
+      }
+      
+      EOF
+      code unit unit2
+      function testC() {  
+         med = 20;  
+         return true;  
+      }
+      
+      function testB() {  
+         med = 30;  
+         return true;  
+      }
+      
+      EOF
+      code unit unit3
+      function testD() {  
+         return true;  
+      }
+      EOF
+</pre>
+<h6>Show the locations of all functions in all code units</h6>
+<p>By default, the <code>show router rcf function location</code> command will display all RCF functions across all code units.</p>
+<p>Note: Built-in functions are not displayed since they are not defined by the user.</p>
+<pre>Arista(config-router-general-control-functions)#show router rcf function location
+Function Name Code Unit         Line Number  
+------------- ----------------- -----------  
+testA         unnamed code unit           1  
+testB         unit2                       6  
+testC         unit2                       1  
+testD         unit3                       1 
+</pre>
+<h6>Show the location of a specific function</h6>
+<p>Locating a specific function can be done by adding the <code>function FUNC_NAME</code> filter to the command.</p>
+<p>Note: Specifying a built-in function or a non-existing function will result in an error.</p>
+<pre>Arista(config-router-general-control-functions)#show router rcf function location function testB
+Function Name Code Unit Line Number  
+------------- --------- -----------  
+testB         unit2               6 
+</pre>
+<h6>Show the location of all functions in a code unit</h6>
+<p>Locating all functions in a code unit can be done by adding the <code>unit UNIT_NAME</code> filter to the command.</p>
+<p>Note: Specifying a non-existing code unit will result in an error.</p>
+<pre>Arista(config-router-general-control-functions)#show router rcf function location unit unit2
+Function Name Code Unit Line Number  
+------------- --------- -----------  
+testB         unit2               6  
+testC         unit2               1
+</pre>
+<h3><span id="debugging">Debugging</span></h3>
+<p>With the EOS-4.27.2F release, the RCF evaluation engine provides a textual representation explaining the control flow of a given evaluation of an RCF function.</p>
+<p>This textual representation aids the user in understanding how an RCF function evaluates a given route at a specified point of application. It indicates:</p>
+<ul>
+<li>the overall result of the evaluation</li>
+<li>the RCF code that was evaluated</li>
+<li>the results of individual expressions</li>
+<li>the evaluation of operators, including:</li>
+<ul>
+<li>the overall result of the operator</li>
+<li>whether the operators evaluation was short circuited</li>
+<li>the precedence in the evaluation of multiple operators in a single expression</li>
+</ul>
+<li>the evaluation of called functions, including</li>
+<ul>
+<li>the overall result of the called function</li>
+<li>the evaluation of the called function’s contents</li>
+</ul>
+</ul>
+<p>The CLI command to debug the RCF evaluation of a route at a point of application is provided in the point of applications documentation. Documentation covering debugging at these points of application can be found in the “Resources” section.</p>
+<p>The RCF evaluation is explained by way of textual annotations displayed above each line of evaluated RCF code.</p>
+<p>The annotations are as follows:</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Name</th>
+<th>Annotation</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td>Evaluation bar</td>
+<td>-------------</td>
+<td>Indicates a statement or assignment was evaluated.</td>
+</tr>
+<tr>
+<td>True bar</td>
+<td>T------------</td>
+<td>Indicates a condition, operator, or function call evaluated to true.</td>
+</tr>
+<tr>
+<td>False bar</td>
+<td>F------------</td>
+<td>Indicates a condition, operator, or function call evaluated to false.</td>
+</tr>
+<tr>
+<td>Unknown bar</td>
+<td>U------------</td>
+<td>Indicates a function call evaluated to unknown.</td>
+</tr>
+<tr>
+<td>Exit bar</td>
+<td>X------------</td>
+<td>Indicates the evaluation of a statement, expression, operator, or function call was halted due to an ‘exit’ statement.</td>
+</tr>
+<tr>
+<td>Continuation bar</td>
+<td>\------------</td>
+<td>Indicates that an evaluated statement, assignment, expression, or function call is continuing on from the previous line.</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="examples">Examples</span></h4>
+<h5><span id="return-true">Return true</span></h5>
+<p>This example demonstrates how the overall result of a function is indicated.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function RETURN_TRUE() {
+         return true;
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was allowed by the evaluation of main().
+
+Code unit DEBUG
+1 function RETURN_TRUE() {
+     T----- T---
+2    return true;
+</pre>
+<p>Note:</p>
+<ul>
+<li>The initial sentence indicates the overall effect of the RCF function was to allow the path.</li>
+<li>The function is defined at line number 1 in the <code>DEBUG</code> code unit.</li>
+</ul>
+<h5><span id="modify-and-compare-attribute">Modify and compare attribute</span></h5>
+<p>This example demonstrates how assignment statements and comparison expressions are indicated.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function SET_AND_MATCH_MED_OVER_200() {
+         # Increment med by 50 and return true 
+         # if med is then greater than 200.
+         med += 50;
+         return med &gt;= 200;
+      }
+      EOF
+</pre>
+<p>Debugging output with med = 100:</p>
+<pre>The path was disallowed by the evaluation of SET_AND_MATCH_MED_OVER_200().
+
+Code unit DEBUG
+1 function SET_AND_MATCH_MED_OVER_200() {
+     ---------
+4    med += 50;
+     F----- F---------
+5    return med &gt;= 200;
+</pre>
+<p>Debugging output with med = 200:</p>
+<pre>The path was allowed by the evaluation of SET_AND_MATCH_MED_OVER_200().
+
+Code unit DEBUG
+1 function SET_AND_MATCH_MED_OVER_200() {
+     ---------
+4    med += 50;
+     T----- T---------
+5    return med &gt;= 200; 
+</pre>
+<p>Note:</p>
+<ul>
+<li>The comments are not included in the output (lines 2 and 3). Only lines of RCF code relevant to the evaluation are in the output.</li>
+<li>An evaluation bar indicates that <code>med += 50</code> evaluated. This statement’s evaluation has no trilean result so one is not indicated.</li>
+<li>Depending on the value of med the return expression is indicated with a false bar or a true bar.</li>
+</ul>
+<h5><span id="logical-operators">Logical operators</span></h5>
+<p>This example demonstrates how operators, short circuiting, and precedence are indicated.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function OPERATORS() {
+         return false and true or true;
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was allowed by the evaluation of OPERATORS().
+
+Code unit DEBUG
+1 function OPERATORS() {
+     T----- (F---- F--     ) T- T---
+2    return  false and true  or true;
+</pre>
+<p>Note:</p>
+<ul>
+<li>The overall result of the operator expressions are indicated above the operators.</li>
+<li>The <code>and</code> operator takes precedence over the <code>or</code> operator. Thus the <code>and</code> expression is enclosed in brackets to indicate the implicit precedence. The <code>or</code> expression includes the result of the <code>and</code> expression as its left hand side.</li>
+<li>The <code>and</code> operator evaluation has short circuited. Thus the right hand side of the expression does not have an evaluation bar because it did not evaluate.</li>
+<li>The overall result of the logical expression is indicated by the true bar above the <code>return</code> statement. </li>
+</ul>
+<h5><span id="if-else-statement">if else statement</span></h5>
+<p>This example demonstrates how an <code>if … else if .. else</code> control flow is indicated</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function IF() {
+        if false {
+           return true;
+        } else if true {
+           return false;
+        } else {
+           return true;
+        }
+        return true;
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was disallowed by the evaluation of IF().
+
+Code unit DEBUG
+1 function IF() {                                                                                                                                                                                                     
+    F- F----
+2   if false {
+      ---- T- T---
+4   } else if true {
+       F----- F----
+5      return false;
+</pre>
+<p>Note:</p>
+<ul>
+<li>The false bar above the <code>if</code> statement on line 2 indicates the overall result of the condition. </li>
+<li>The <code>if</code> condition on line 2 evaluated to false, therefore the <code>if</code> block did not evaluate. Thus it is not present in the output.</li>
+<li>As the <code>if</code> condition on line 2 evaluated to false, the <code>else if</code> is evaluated, represented with an evaluation bar.</li>
+<li>As the <code>if</code> condition on line 4 evaluates to true, the <code>else if </code>block is evaluated.</li>
+<li>A return statement is evaluated in this block, resulting in the function’s evaluation ending. Thus the remainder of the function is not in the output.</li>
+</ul>
+<h5><span id="function-calls">Function calls</span></h5>
+<p>This example demonstrates how function calls and code unit names are indicated.</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function SET_MED() {
+         med = 10;
+      }
+      function MAIN() {
+         SET_MED();
+         return CHECK_MED_IS_SET();
+      }
+      function CHECK_MED_IS_SET() {
+         if MED_IS_10() {
+            return true;
+         }
+      }
+      code unit MED_UNIT
+      function MED_IS_10() {
+         return med is 10;
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was allowed by the evaluation of MAIN().
+
+Code unit DEBUG
+4 function MAIN() {
+     U--------
+5    SET_MED();
+
+Code unit DEBUG
+|1 function SET_MED() {
+|     --------
+|2    med = 10;
+|3 }
+
+     T----- T-----------------
+6    return CHECK_MED_IS_SET();
+
+Code unit DEBUG                        
+| 8 function CHECK_MED_IS_SET() {        
+|      T- T----------
+| 9    if MED_IS_10() {
+
+Code unit MED_UNIT
+||1 function MED_IS_10() {               
+||     T----- T--------
+||2    return med is 10;
+
+|         T----- T---
+|10       return true;     
+</pre>
+<p>Note:</p>
+<ul>
+<li>The initial function called for the evaluation is indicated in the first sentence of the output. It is <code>MAIN</code>. </li>
+<li>The function call within the evaluation occurs on line 5, <code>SET_MED()</code>.</li>
+<li>The evaluation of <code>SET_MED</code> is below its call in the output. </li>
+<li>To indicate <code>SET_MED</code> is called from within another function the evaluation of <code>SET_MED</code> is indented by a single pipe (|). </li>
+<li>The return value of <code>unknown</code> from <code>SET_MED</code> is indicated by the unknown bar above the function call on line 5.</li>
+<li>The evaluation of <code>SET_MED</code> does not encounter a <code>return</code> statement thus the function returns unknown. The closing curly bracket } ending the function block is included to indicate reaching the end of the block and thus the end of the function.</li>
+<li>After the evaluation of <code>SET_MED</code> has finished the evaluation of <code>MAIN</code> continues from line 6.</li>
+<li>The function <code>MAIN</code> returns on line 6 and the evaluation ends, however the evaluation of the called function in the last expression <code>(CHECK_MED_IS_SET)</code> is indicated below its call in the output.</li>
+<li>The function <code>MED_IS_10</code> is defined in a separate code unit <code>MED_UNIT</code>, indicated at the top of the function’s evaluation. Line numbers are relative to the code unit the function is defined in.</li>
+<li>The function <code>MED_IS_10</code> is called from within a function call to <code>CHECK_MED_IS_SET.</code> Thus two pipes <code>(||)</code> are used to indicate the called function’s evaluation.</li>
+</ul>
+<h5><span id="exit-statement">exit statement</span></h5>
+<p>This example demonstrates how <code>exit</code> statement evaluations are indicated</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function MAIN() {
+         return EXIT();
+      }
+      function EXIT() {
+         exit true;
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was allowed by the evaluation of MAIN().
+
+Code unit DEBUG                        
+1 function MAIN() {
+     X----- X-----
+2    return EXIT();                      
+
+Code unit DEBUG
+|4 function EXIT() {                     
+|     T--- T---
+|5    exit true;
+</pre>
+<p>Note:</p>
+<ul>
+<li>The exit bar above the <code>return EXIT()</code> expression indicates that the evaluation of this expression was halted due to the evaluation of an exit expression. As these expressions did not complete they do not have trilean results.</li>
+<li>The true bar above the exit statement indicates the exit expression was true. This is the overall result of the RCF evaluation invoked for function <code>MAIN.</code> </li>
+</ul>
+<h5><span id="multiline-expressions">Multiline expressions</span></h5>
+<p>This example demonstrates how multiline expressions are indicated</p>
+<p>Configuration:</p>
+<pre>router general
+   control-functions
+      code unit DEBUG
+      function COMMUNITY() {
+         return community has_any { 64500:100, 
+                                    64500:200 } 
+      }
+      EOF
+</pre>
+<p>Debugging output:</p>
+<pre>The path was allowed by the evaluation of COMMUNITY().
+
+Code unit DEBUG
+1 function COMMUNITY() {
+     T----- T-----------------------------
+2    return community has_any { 64500:100,
+                                \----------
+3                               64500:200 };
+</pre>
+<p>Note:</p>
+<ul>
+<li>The true bar above the community operation indicates that the condition was true. </li>
+<li>The continuation bar above the RCF code on line 3 indicates that this is part of the same expression continuing from the previous line.</li>
+</ul>
+<h2><span id="limitations">Limitations</span></h2>
+<ul>
+<li>Route maps cannot be invoked from inside an RCF function. Similarly, RCF functions cannot be invoked from within route maps.</li>
+</ul>
+<h2 id="resources"><span id="resources">Resources</span></h2>
+<ul>
+<li><a href="/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference">Routing control functions - Attribute and builtin function reference</a></li>
+<li><a href="/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support">Routing control functions - Bgp agent support</a></li>
+<li><a href="/support/toi/eos-4-27-2f/15100-policy-debugging-cli">Policy Debugging CLI</a></li>
+<li><a href="/support/toi/eos-4-28-0f/15453-routing-control-functions-is-is-agent-support">Routing control functions - IS-IS agent support</a></li>
+<li><a href="/support/toi/eos-4-28-0f/15452-routing-control-functions-ldp-agent-support">Routing control functions - LDP agent support</a></li>
+</ul></article>  
+    
+    
+    
+         
+</div>
+
+					<div class="clearfix"></div>
+					
+				</main>
+				<!-- /contentWrap -->
+			</div>
+			<!-- /dataWrap -->
+			
+		</div>
+		<!-- /dataArea -->
+	</div>
+	<!-- /dataContainer -->
+
+	<footer id="footerContainer">
+				<div id="footBarArea">
+			<label>Get In Touch Today</label>
+			<a href="/en/company/contact-us" class="btn-an btn-cta">Contact Us</a>
+		</div>
+		<!-- /footBarArea -->
+				<div id="footerWrap">
+						<div id="footSocial">
+				<div class="site-logo"><img src="/templates/arista_v2/img/logo_arista_blue.png" alt="Arista"></div>
+				
+
+<div class="custom"  >
+	<div class="social-icon"><a class="icon24-fb" href="https://www.facebook.com/AristaNW" target="_blank">Facebook</a> <a class="icon24-tw" href="https://twitter.com/@AristaNetworks" target="_blank">Twitter</a> <a class="icon24-in" href="http://www.linkedin.com/company/arista-networks-inc" target="_blank">LinkedIn</a></div></div>
+
+			</div>
+			<!-- /footSocial -->
+						<nav id="footNav" role="navigation">
+				
+<ul class="nav menu">
+    	<li class="fml-head-support deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Support</span></a>
+	<ul class="navChild">
+	<li class="fml-service-offerings"><a  href="/en/support/customer-support"><span>Support &amp; Services</span></a></li>
+	<li class="fml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="fml-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation </span></a></li>
+	<li class="fml-downloads"><a  href="/en/support/software-download"><span>Software Downloads </span></a></li>
+</ul>
+</li>
+	<li class="fml-head-contacts deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Contacts &amp; Help</span></a>
+	<ul class="navChild">
+	<li class="fml-contact-arista"><a  href="/en/company/contact-us"><span>Contact Arista</span></a></li>
+	<li class="fml-contact-technical-support"><a  href="/en/support/customer-support"><span>Contact Technical Support</span></a></li>
+	<li class="fml-order-status nav-url"><a  href="https://orders.arista.com" target="_blank"><span>Order Status</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-news deeper parent nav-heading">
+<a href="javascript:void(0);"><span>News</span></a>
+	<ul class="navChild">
+	<li class="fml-news-room"><a  href="/en/company/news/in-the-news"><span>News Room</span></a></li>
+	<li class="fml-events"><a  href="/en/company/news/events"><span>Events</span></a></li>
+	<li class="fml-blogs nav-url"><a  href="/blogs" target="_blank"><span>Blogs</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-about-arista deeper parent nav-heading">
+<a href="javascript:void(0);"><span>About Arista</span></a>
+	<ul class="navChild">
+	<li class="fml-company"><a  href="/en/company/company-overview"><span>Company</span></a></li>
+	<li class="fml-management-team"><a  href="/en/company/management-team"><span>Management Team</span></a></li>
+	<li class="fml-careers"><a  href="/en/careers"><span>Careers</span></a></li>
+	<li class="fml-investor-relations nav-url"><a  href="http://investors.arista.com/"><span>Investor Relations</span></a></li>
+</ul>
+</li>
+</ul>
+<!-- /nav -->
+			</nav>
+			<!-- /footNav -->
+						<!-- /position-8 -->
+			<div class="clearfix"></div>
+						<div id="copyRight">
+				<label>&copy; 2023 Arista Networks, Inc. All rights reserved.</label>
+				
+<ul class="nav menu">
+    	<li class="terms-of-use nav-component"><a  href="/en/terms-of-use"><span>Terms of Use</span></a></li>
+	<li class="privacy-policy nav-component"><a  href="/en/privacy-policy"><span>Privacy Policy</span></a></li>
+	<li class="fraud-alert nav-component"><a  href="/en/fraud-alert"><span>Fraud Alert</span></a></li>
+	<li class="sitemap nav-component"><a  href="/en/sitemap"><span>Sitemap</span></a></li>
+</ul>
+<!-- /nav -->
+			</div>
+		</div>
+		<!-- /footerWrap -->
+	</footer>
+	<!-- /footerContainer -->
+</div>
+<!-- /bodyContainer -->
+<script type="text/javascript" src="https://customer.cludo.com/scripts/bundles/search-script.min.js"></script>
+<script>
+	var CludoSearch;
+	(function(){var cludoSettings = {customerId: 2013, engineId: '9664', searchUrl: 'https://www.arista.com/en/search-results/', language: 'en', searchInputs: ['cludo-search'], type: 'inline', disableAutocomplete: true, hideSearchFilters: true, searchApiUrl: 'https://api-eu1.cludo.com/api/v3'}; CludoSearch= new Cludo(cludoSettings); CludoSearch.init(); })();
+	var wifiId = "123036";
+</script>
+<div id="noSupportMsg" style="display:none;"></div>
+
+
+</body>
+</html>

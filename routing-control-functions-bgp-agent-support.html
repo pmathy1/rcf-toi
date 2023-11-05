@@ -1,0 +1,3438 @@
+<!doctype html>
+<html lang="en-gb" dir="ltr">
+<head>
+<meta charset="utf-8" />
+	<base href="https://www.arista.com/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="David Cronin" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="apple-mobile-web-app-capable" content="YES" />
+	<meta name="Rating" content="General" />
+	<meta name="Classification" content="General" />
+	<meta name="Distribution" content="Global" />
+	<meta name="Audience" content="All" />
+	<meta name="revisit-after" content="1 days" />
+	<meta name="Author" content="Arista Networks" />
+	<meta name="Publisher" content="Arista Networks" />
+	<meta name="robots" content="All" />
+	<meta name="description" content="Routing Control Functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion." />
+	<title>Routing Control Functions - Bgp agent support - Arista</title>
+	<link href="https://www.arista.com/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support" rel="canonical" />
+	<link href="/templates/arista_v2/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/templates/arista_v2/css/bs337.min.css?v=1543082404" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anH5Set.css?v=1601533343" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anLayout.css?v=1676642446" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anStyle.css?v=1698911251" rel="stylesheet" />
+	<link href="/templates/arista_v2/css/anRespo.css?v=1698911353" rel="stylesheet" />
+	<link href="/custom_ui/css/jqueryUi-1.10.4.css?v=1522948259" rel="stylesheet" />
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"d2cf4c6bb2762a56d9e99072abb6039a","system.paths":{"root":"","base":""}}</script>
+	<script src="/media/jui/js/jquery.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/caption.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/mootools-core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/media/system/js/core.js?bce97e69c200e310a6886d3dcb964f7f"></script>
+	<script src="/templates/arista_v2/js/jq331.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/bs337.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/cb164.min.js?v=1524283288"></script>
+	<script src="/templates/arista_v2/js/anScript.js?v=1694698768"></script>
+	<script src="/templates/arista_v2/js/anLangPrefix.js?v=1698653165"></script>
+	<script src="/templates/arista_v2/js/anBrowserCheck.js?v=1582796951"></script>
+	<script src="/custom_ui/js/jqueryUi-1.10.4.min.js?v=1520261210"></script>
+	<script src="/templates/arista_v2/js/anSlideTabs.js?v=1524283288"></script>
+	<script>
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+	<script type="application/ld+json">
+[{"@context":"http://schema.org/","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.arista.com/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support"},"name":"Routing Control Functions - Bgp agent support - Arista","headline":"Routing Control Functions - Bgp agent support - Arista","author":{"@type":"Organization","name":"Arista Networks"},"publisher":{"@type":"Organization","name":"Arista Networks","logo":{"@type":"ImageObject","url":"https://www.arista.com/assets/images/logo/Arista_Logo.png"}},"image":"https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg","description":"Routing Control Functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.","datePublished":"2023-09-01 06:27:28","dateModified":"2023-09-01 06:27:28"}]
+	</script>
+	<meta property="og:title" content="Routing Control Functions - Bgp agent support - Arista" />
+	<meta property="og:description" content="Routing Control Functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion."/>
+	<meta property="og:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg"/>
+	<meta property="article:published_time" content="2023-09-01 06:27:28"/>
+	<meta name="twitter:title" content="Routing Control Functions - Bgp agent support - Arista">
+	<meta name="twitter:description" content="Routing Control Functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.">
+	<meta name="twitter:image" content="https://www.arista.com/assets/images/logo/arista_logo_blue_bg_500x280.jpg">
+	<meta property="og:type" content="Article"/>
+	<meta property="og:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support"/>
+	<meta property="og:site_name" content="Arista Networks"/>
+	<meta property="article:author" content="Arista Networks"/>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.arista.com/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support">
+	<meta name="twitter:site" content="@AristaNetworks">
+
+<!--[if lt IE 9]><script src="/media/jui/js/html5.js"></script><![endif]-->
+<script>
+	jq = jQuery.noConflict();
+	jq(document).ready(function(){ setLangFile('en-GB'); browserSupport(); });
+</script>
+<script src="https://cdn.cookielaw.org/consent/0088c1d9-3411-49f6-bd71-0581b986ca8b/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="0088c1d9-3411-49f6-bd71-0581b986ca8b"></script>
+<script type="text/javascript">function OptanonWrapper(){}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59M58H58VM"></script>
+<script>
+	//Google Tag Code
+	window.dataLayer = window.dataLayer || []; 
+	function gtag(){ dataLayer.push(arguments); } 
+	gtag('js', new Date()); gtag('config', 'G-59M58H58VM'); 
+	
+	//Google Analytics Code
+	googleEventTrack('Eos-4-27-2f');
+	(function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)}, i[r].l=1*new Date(); a=s.createElement(o), m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g; m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create','UA-11521293-2','auto'); ga('require','linkid','linkid.js');
+	ga('set','anonymizeIp',true); ga('send','pageview');
+
+	//HubSpot Analytics Code
+	(function(d,s,i,r) { if(d.getElementById(i)){return;} var n=d.createElement(s), e=d.getElementsByTagName(s)[0]; n.id=i; n.src='https://js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/691113.js'; e.parentNode.insertBefore(n, e); })(document,"script","hs-analytics",300000);
+</script>
+</head>
+<body id="pgEos4272f" class="com-content view-article lg-engb">
+<div id="bodyContainer">
+
+	<!-- /headerContainer -->
+
+		<div  id="bannerContainer">
+		<div id="bannerSlider">
+						<!-- /topSubMenu -->
+
+						
+<ul class="bannerWrap autoplay staticWrap">
+				<li  style="background-image:url(/assets/images/banner/default/banner_inner_bg.jpg);" >
+				<div class="slider-item slider-fw">
+												<h1 class="main-head">EOS 4.27.2F TOI</h1>
+										</div>
+		</li>
+		</ul>
+<!-- /sliderWrap -->
+
+					</div>
+		<!-- /bannerSlider -->
+
+				<nav id="rightSubMenu">
+			<div class="rightSubBox"><a id="ctaSubMenu" href="#" class="btn-an btn-cta">View All Support</a></div>
+<div id="subChildNav" class="">
+	<a class="btn-closs">X</a>
+	
+<ul id="View All Support" class="nav menu">
+    	<li class="lml-support alias-parent-active"><a  href="/en/support"><span>Support Overview</span></a></li>
+	<li class="lml-customer-support"><a  href="/en/support/customer-support"><span>Customer Support</span></a></li>
+	<li class="lml-product-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation</span></a></li>
+	<li class="lml-product-certificate"><a  href="/en/support/product-certificate"><span>Product Certifications</span></a></li>
+	<li class="lml-advisories-notices"><a  href="/en/support/advisories-notices"><span>Advisories &amp; Notices</span></a></li>
+	<li class="lml-product-lifecycle"><a  href="/en/support/product-lifecycle"><span>Product Lifecycle</span></a></li>
+	<li class="lml-software-download"><a  href="/en/support/software-download"><span>Software Download</span></a></li>
+	<li class="lml-toi alias-parent-active"><a  href="/en/support/toi"><span>Transfer of Information</span></a></li>
+	<li class="lml-support-portal"><a  href="/en/community/support-portal"><span>Support Portal</span></a></li>
+	<li class="lml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="lml-software-bug-portal"><a  href="/en/support/software-bug-portal"><span>Software Bug Portal</span></a></li>
+	<li class="mlag-issu-check"><a  href="/en/support/mlag-portal"><span>MLAG ISSU Check</span></a></li>
+	<li class="lml-cvp-upgrade-path"><a  href="/en/support/cvp-upgrade-path"><span>CVP Upgrade Path</span></a></li>
+</ul>
+<!-- /nav -->
+</div>
+
+		</nav>
+				<!-- /rightSubMenu -->
+	</div>
+	<!-- /bannerContainer -->
+		<div id="dataContainer">
+				<div id="dataContainerBg">&nbsp;</div>
+				<div id="dataArea">
+			<div class="dataTabBg">&nbsp;</div>
+			<div  id="dataWrap">
+				<div class="dataTabBg">&nbsp;</div>
+								<!-- /position-left -->
+
+				<main id="contentWrap" role="main">
+										<div id="system-message-container">
+	</div>
+
+										
+					<div class="item-page">
+    
+    
+    <div class="page-header">
+        <h2 class="pageTitle"> Routing Control Functions - Bgp agent support            
+            
+            <span class="pdf-icon headLink"><a href="/en/support/toi/eos-4-27-2f/15099-routing-control-functions-bgp-agent-support?tmpl=component&amp;format=pdf" onclick="" target="_blank" title="PDF" rel="nofollow"> <span class="icon-book ico24-pdf"></span> PDF</a></span>
+          </h2>
+        
+        
+        
+      </div>
+    
+    
+    <div class="article-info muted">
+    <dl class="article-info">
+            
+            <dd class="createdby"><span class="icomoon-user"></span> 
+        Written by <a href="/en/support/toi/author/330-davidcronin" >David Cronin</a>      </dd>
+            
+            <dd class="published"> 
+        <span class="icomoon-calendar"></span> Posted on March 3, 2022 
+      </dd>
+            
+            
+            
+            <dd class="modified"> 
+        <span class="icomoon-calendar"></span> Updated on September 1, 2023 
+      </dd>
+            
+            
+            <dd class="hits"> 
+        <span class="icomoon-eye-open"></span> 6973 Views </dd>
+          </dl>
+  </div>
+    
+  	<div id="tagsBar">
+		    <span class="tag-22 tag-list0" itemprop="keywords">
+            <a href="/en/support/toi/tag/routing">Routing</a>
+          </span>
+		    <span class="tag-33 tag-list1" itemprop="keywords">
+            <a href="/en/support/toi/tag/bgp">BGP</a>
+          </span>
+		    <span class="tag-233 tag-list2" itemprop="keywords">
+            <a href="/en/support/toi/tag/multi-agent">Multi Agent</a>
+          </span>
+		    <span class="tag-760 tag-list3" itemprop="keywords">
+            <a href="/en/support/toi/tag/rcf">RCF</a>
+          </span>
+		    <span class="tag-929 tag-list4" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-27-2f"> EOS 4.27.2F</a>
+          </span>
+		    <span class="tag-945 tag-list5" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-28-0f"> EOS 4.28.0F</a>
+          </span>
+		    <span class="tag-965 tag-list6" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-28-1f">EOS 4.28.1F</a>
+          </span>
+		    <span class="tag-990 tag-list7" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-28-2f">EOS 4.28.2F</a>
+          </span>
+		    <span class="tag-1034 tag-list8" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-29-1f">EOS 4.29.1F</a>
+          </span>
+		    <span class="tag-1055 tag-list9" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-29-2f">EOS 4.29.2F</a>
+          </span>
+		    <span class="tag-1075 tag-list10" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-30-0f">EOS 4.30.0F</a>
+          </span>
+		    <span class="tag-1090 tag-list11" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-30-1f">EOS 4.30.1F</a>
+          </span>
+		    <span class="tag-1120 tag-list12" itemprop="keywords">
+            <a href="/en/support/toi/tag/eos-4-30-2f">EOS 4.30.2F</a>
+          </span>
+			</div>
+  
+                        <div id="tocWrap">
+    <h5>Table of Content <span id="tocSH">Hide</span></h5>
+    <ul id="tocList">
+      <li>
+        </li>
+<li>-- <a href="#description">Description</a></li>
+<li>-- <a href="#configuration">Configuration</a>
+<ul>
+<li>-- <a href="#applying-rcf-to-bgp-points-of-application">Applying RCF to BGP points of application</a></li>
+<li>-- <a href="#instance-configuration">Instance configuration</a>
+<ul>
+<li>-- <a href="#redistribute-statement">Redistribute statement</a></li>
+<li>-- <a href="#mpls-l3-vpn-import">MPLS L3 VPN import</a></li>
+<li>-- <a href="#l3-evpn-import">L3 EVPN import</a></li>
+<li>-- <a href="#mpls-l3-vpn-export">MPLS L3 VPN export</a></li>
+<li>-- <a href="#l3-evpn-export">L3 EVPN export</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-ipv4-unicast-and-ipv6-unicast">Address family: IPv4 Unicast and IPv6 Unicast</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+<li>-- <a href="#redistribute-statement">Redistribute statement</a></li>
+<li>-- <a href="#mpls-l3-vpn-import">MPLS L3 VPN import</a></li>
+<li>-- <a href="#l3-evpn-import">L3 EVPN import</a></li>
+<li>-- <a href="#mpls-l3-vpn-export">MPLS L3 VPN export</a></li>
+<li>-- <a href="#l3-evpn-export">L3 EVPN export</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-ipv4-labeled-unicast-and-ipv6-labeled-unicast">Address family: IPv4 Labeled Unicast and IPv6 Labeled Unicast</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+<li>-- <a href="#ldp-tunnel-redistribution">LDP tunnel redistribution</a></li>
+<li>-- <a href="#is-is-segment-routing-tunnel-redistribution">IS-IS Segment Routing tunnel redistribution</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-evpn">Address family: EVPN</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">Address family: MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-route-target-membership">Address family: Route-Target Membership</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-ipv4-unicast-flowspec-and-ipv6-unicast-flowspec">Address family: IPv4 Unicast Flowspec and IPv6 Unicast Flowspec</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#address-family-vpls">Address family: VPLS</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#dynamic-prefix-list-configuration">Dynamic prefix list configuration</a></li>
+</ul>
+</li>
+<li>-- <a href="#attribute-and-function-support">Attribute and function support</a>
+<ul>
+<li>-- <a href="#address-family-configuration-ipv4-unicast-and-ipv6-unicast">Address family configuration: IPv4 Unicast and IPv6 Unicast</a></li>
+<li>-- <a href="#address-family-configuration-ipv4-labeled-unicast-and-ipv6-labeled-unicast">Address family configuration: IPv4 Labeled Unicast and IPv6 Labeled Unicast</a></li>
+<li>-- <a href="#address-family-configuration-evpn">Address family configuration: EVPN</a></li>
+<li>-- <a href="#address-family-configuration-mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">Address family configuration: MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</a></li>
+<li>-- <a href="#address-family-configuration-route-target-membership">Address family configuration: Route-Target Membership</a></li>
+<li>-- <a href="#address-family-configuration-ipv4-unicast-flowspec-and-ipv6-unicast-flowspec">Address family configuration: IPv4 Unicast Flowspec and IPv6 Unicast Flowspec</a></li>
+<li>-- <a href="#address-family-configuration-vpls">Address family configuration: VPLS</a></li>
+<li>-- <a href="#dynamic-prefix-list-configuration">Dynamic prefix list configuration</a></li>
+</ul>
+</li>
+<li>-- <a href="#show-commands">Show commands</a>
+<ul>
+<li>-- <a href="#debugging">Debugging</a></li>
+<li>-- <a href="#ipv4-unicast-and-ipv6-unicast">IPv4 Unicast and IPv6 Unicast</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+<li>-- <a href="#redistribute-statement">Redistribute statement</a></li>
+<li>-- <a href="#mpls-l3-vpn-and-l3-evpn-import">MPLS L3 VPN and L3 EVPN import</a></li>
+<li>-- <a href="#mpls-l3-vpn-and-l3-evpn-export">MPLS L3 VPN and L3 EVPN export</a></li>
+</ul>
+</li>
+<li>-- <a href="#evpn">EVPN</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+<li>-- <a href="#flowspec">Flowspec</a>
+<ul>
+<li>-- <a href="#inbound-bgp-neighbor-application">Inbound BGP neighbor application</a></li>
+<li>-- <a href="#outbound-bgp-neighbor-application">Outbound BGP neighbor application</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>-- <a href="#limitations">Limitations</a></li>
+<li>-- <a href="#resources">Resources</a>      </li>
+    </ul>
+  </div>
+  <!-- /tocWrap -->
+  <article id="toiContent">
+<h2><span id="description">Description</span></h2>
+<p>Routing Control Functions (RCF) is a language that can be used to express route filtering and attribute modification logic in a powerful and programmatic fashion.</p>
+<p>The document covers:</p>
+<ul>
+<li>Configurations of a RCF function for BGP points of application</li>
+<li>CLI show commands to provide visibility into the operational status of RCF</li>
+<li>The protocol attributes supported for BGP points of application</li>
+</ul>
+<p>Additional documentation covering aspects of the RCF language can be found in the <a href="#pageLink-1">Resources</a> section at the end of this document.</p>
+<h2><span id="configuration">Configuration</span></h2>
+<h3><span id="applying-rcf-to-bgp-points-of-application">Applying RCF to BGP points of application</span></h3>
+<p>RCF functions can be used for filtering routes and updating route attributes at various points of application in BGP.</p>
+<h3><span id="instance-configuration">Instance configuration</span></h3>
+<p>The following configurations allow filtering and modifying path attributes while instantiating IPv4 Unicast and IPv6 Unicast AFI/SAFI paths from the respective sources (the RIB, VPN AFI/SAFI, etc).</p>
+<p>The supported path attributes and built-in functions for unicast paths are listed <a href="#pageLink-2">here</a>.</p>
+<h4><span id="redistribute-statement">Redistribute statement</span></h4>
+<p><b>connected</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   [ vrf &lt;NAME&gt; ]
+      redistribute connected rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   redistribute connected rcf CONNECTED_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>dynamic</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   [ vrf &lt;NAME&gt; ]
+      redistribute dynamic rcf &lt;FUNCTION_NAME&gt;()
+</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   redistribute dynamic rcf DYNAMIC_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>isis</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.26.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   [ vrf &lt;NAME&gt; ]
+      redistribute isis ( level-1 | level-2 | level-1-2 ) rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   redistribute isis level-1 rcf LEVEL_1_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>static</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   [ vrf &lt;NAME&gt; ]
+      redistribute static rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   redistribute static rcf STATIC_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-import">MPLS L3 VPN import</span></h4>
+<p>The <code>IMPORT_FUNCTION_NAME()</code> function applies to the unicast route created on import. The unicast route attributes will be populated with the <strong>BGP Customer Attribute Set</strong> (RFC 6368) if it exists, otherwise the VPN path attributes will be used.</p>
+<p>The <code>VPN_FUNCTION_NAME()</code> function applies to the VPN route that is imported using the provider attributes. Modifications to path attributes in the <code>VPN_FUNCTION_NAME()</code> function don't apply to the provider path. See the <a href="/en/support/toi/eos-4-21-1f/14091-rfc-4364-bgp-mpls-l3-vpn" target="_blank" rel="noopener noreferrer">BGP MPLS L3 VPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   vrf &lt;NAME&gt;
+      route-target import ( vpn-ipv4 | vpn-ipv6 ) rcf &lt;IMPORT_FUNCTION_NAME&gt;() [ vpn-route filter-rcf &lt;VPN_FUNCTION_NAME&gt;() ]</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      route-target import vpn-ipv4 rcf IMPORT_POLICY() vpn-route filter-rcf FILTER_VPN_ROUTES()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="l3-evpn-import">L3 EVPN import</span></h4>
+<p>The <code>IMPORT_FUNCTION_NAME()</code> function applies to the unicast route created on import. See the <a href="/en/support/toi/eos-4-20-1f/13932-l3-evpn-mpls" target="+&quot;_blank&quot;">BGP L3 EVPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   vrf &lt;NAME&gt;
+      route-target import evpn rcf &lt;IMPORT_FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      route-target import evpn rcf IMPORT_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-export">MPLS L3 VPN export</span></h4>
+<p>The <code>EXPORT_FUNCTION_NAME()</code> function applies to the VPN route created on export. The unicast route path attributes are pushed into a <b>BGP Customer Attribute Set</b> if the iBGP as PE-CE Protocol for BGP/MPLS L3 VPNs (RFC 6368) is configured, these attributes are not modified in policy. The <code>VRF_FUNCTION_NAME()</code> function applies to the unicast route that is to be exported. Modifications to path attributes in the <code>VRF_FUNCTION_NAME()</code> function don't apply to the provider path. See the <a href="/en/support/toi/eos-4-21-1f/14091-rfc-4364-bgp-mpls-l3-vpn" target="_blank" rel="noopener noreferrer">BGP MPLS L3 VPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   vrf &lt;NAME&gt;
+      route-target export ( vpn-ipv4 | vpn-ipv6 ) rcf &lt;EXPORT_FUNCTION_NAME&gt;() [ vrf-route filter-rcf &lt;VRF_FUNCTION_NAME&gt;() ]</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      route-target export vpn-ipv4 rcf EXPORT_POLICY() vrf-route filter-rcf FILTER_VRF_ROUTES()
+      route-target export vpn-ipv6 rcf EXPORT_POLICY() vrf-route filter-rcf FILTER_VRF_ROUTES()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="l3-evpn-export">L3 EVPN export</span></h4>
+<p>The <code>EXPORT_FUNCTION_NAME()</code> function applies to the EVPN route created on export. See the <a href="/en/support/toi/eos-4-20-1f/13932-l3-evpn-mpls" target="_blank" rel="noopener noreferrer">BGP L3 EVPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>router bgp &lt;ASN&gt;
+   vrf &lt;NAME&gt;
+      route-target export evpn rcf &lt;EXPORT_FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      route-target export evpn rcf EXPORT_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-ipv4-unicast-and-ipv6-unicast">Address family: IPv4 Unicast and IPv6 Unicast</span></h3>
+<p>The supported path attributes and built-in functions for unicast paths are listed <a href="#pageLink-2">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()
+   address-family ipv6
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()
+   address-family ipv6
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="redistribute-statement">Redistribute statement</span></h4>
+<p><b>connected</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   redistribute connected rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      redistribute connected rcf CONNECTED_POLICY()
+   address-family ipv6
+      redistribute connected rcf CONNECTED_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>dynamic</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   redistribute dynamic rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      redistribute dynamic rcf DYNAMIC_POLICY()
+   address-family ipv6
+      redistribute dynamic rcf DYNAMIC_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>isis</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.26.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   redistribute isis ( level-1 | level-2 | level-1-2 ) rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      redistribute isis level-1 rcf LEVEL_1_POLICY()
+   address-family ipv6
+      redistribute isis level-1 rcf LEVEL_1_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><b>static</b></p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.24.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   redistribute static rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4
+      redistribute static rcf STATIC_POLICY()
+   address-family ipv4
+      redistribute static rcf STATIC_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-import">MPLS L3 VPN import</span></h4>
+<p>The <code>IMPORT_FUNCTION_NAME()</code> function applies to the unicast route created on import. The unicast route attributes will be populated with the <strong>BGP Customer Attribute Set</strong> (RFC 6368) if it exists, otherwise the VPN path attributes will be used.</p>
+<p>The <code>VPN_FUNCTION_NAME()</code> function applies to the VPN route that is imported using the provider attributes. Modifications to path attributes in the <code>VPN_FUNCTION_NAME()</code> function don't apply to the provider path. See the <a href="/en/support/toi/eos-4-21-1f/14091-rfc-4364-bgp-mpls-l3-vpn" target="_blank" rel="noopener noreferrer">BGP MPLS L3 VPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   route-target import ( vpn-ipv4 | vpn-ipv6 ) rcf &lt;IMPORT_FUNCTION_NAME&gt;() [ vpn-route filter-rcf &lt;VPN_FUNCTION_NAME&gt;() ]</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      address-family ipv4
+         route-target import vpn-ipv4 rcf IMPORT_POLICY() vpn-route filter-rcf FILTER_VPN_ROUTES()
+      address-family ipv6
+         route-target import vpn-ipv6 rcf IMPORT_POLICY() vpn-route filter-rcf FILTER_VPN_ROUTES()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="l3-evpn-import">L3 EVPN import</span></h4>
+<p>The <code>IMPORT_FUNCTION_NAME()</code> function applies to the unicast route created on import. See the <a href="/en/support/toi/eos-4-20-1f/13932-l3-evpn-mpls" target="_blank" rel="noopener noreferrer">BGP L3 EVPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   route-target import evpn rcf &lt;IMPORT_FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      address-family ipv4
+         route-target import evpn rcf IMPORT_POLICY()
+      address-family ipv6
+         route-target import evpn rcf IMPORT_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-export">MPLS L3 VPN export</span></h4>
+<p>The <code>EXPORT_FUNCTION_NAME()</code> function applies to the VPN route created on export. The unicast route path attributes are pushed into a <b>BGP Customer Attribute Set</b>  if the iBGP as PE-CE Protocol for BGP/MPLS L3 VPNs (RFC 6368) is configured, these attributes are not modified in the policy. The <code>VRF_FUNCTION_NAME()</code> function applies to the unicast route that is to be exported. Modifications to path attributes in the <code>VRF_FUNCTION_NAME()</code> function don't apply to the provider path. See the <a href="/en/support/toi/eos-4-21-1f/14091-rfc-4364-bgp-mpls-l3-vpn" target="_blank" rel="noopener noreferrer">BGP MPLS L3 VPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   route-target export ( vpn-ipv4 | vpn-ipv6 ) rcf &lt;EXPORT_FUNCTION_NAME&gt;() [ vrf-route filter-rcf &lt;VRF_FUNCTION_NAME&gt;() ]</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      address-family ipv4
+         route-target export vpn-ipv4 rcf EXPORT_POLICY() vrf-route filter-rcf FILTER_VRF_ROUTES()
+      address-family ipv6
+         route-target export vpn-ipv6 rcf EXPORT_POLICY() vrf-route filter-rcf FILTER_VRF_ROUTES()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="l3-evpn-export">L3 EVPN export</span></h4>
+<p>The <code>EXPORT_FUNCTION_NAME()</code> function applies to the EVPN route created on export. See the <a href="/en/support/toi/eos-4-20-1f/13932-l3-evpn-mpls" target="_blank" rel="noopener noreferrer">BGP L3 EVPN TOI</a> for more information.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 )
+   route-target export evpn rcf &lt;EXPORT_FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   vrf VRF1
+      address-family ipv4
+         route-target export evpn rcf EXPORT_POLICY()
+      address-family ipv6
+         route-target export evpn rcf EXPORT_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-ipv4-labeled-unicast-and-ipv6-labeled-unicast">Address family: IPv4 Labeled Unicast and IPv6 Labeled Unicast</span></h3>
+<p>The supported path attributes and built-in functions for labeled unicast paths are listed <a href="#pageLink-3">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 ) labeled-unicast
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4 labeled-unicast
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()
+   address-family ipv6 labeled-unicast
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( ipv4 | ipv6 ) labeled-unicast
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4 labeled-unicast
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()
+   address-family ipv6 labeled-unicast
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="ldp-tunnel-redistribution">LDP tunnel redistribution</span></h4>
+<p>LDP tunnel redistribution is only available for the IPv4 Labeled Unicast address family.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ipv4 labeled-unicast
+   tunnel source-protocol ldp rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4 labeled-unicast
+      tunnel source-protocol ldp rcf LDP_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="is-is-segment-routing-tunnel-redistribution">IS-IS Segment Routing tunnel redistribution</span></h4>
+<p>IS-IS segment routing redistribution is only available for the IPv4 Labeled Unicast address family.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ipv4 labeled-unicast
+   tunnel source-protocol isis segment-routing rcf &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family ipv4 labeled-unicast
+      tunnel source-protocol isis segment-routing rcf SR_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-evpn">Address family: EVPN</span></h3>
+<p>The supported path attributes and built-in functions for EVPN paths are listed <a href="#pageLink-5">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family evpn
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family evpn
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family evpn
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family evpn
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">Address family: MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</span></h3>
+<p>The supported path attributes and built-in functions for MPLS L3 VPN paths are listed <a href="#pageLink-6">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( vpn-ipv4 | vpn-ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family vpn-ipv4
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family ( vpn-ipv4 | vpn-ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family vpn-ipv4
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-route-target-membership">Address family: Route-Target Membership</span></h3>
+<p>The supported path attributes and built-in functions for Route-Target Membership paths are listed <a href="#pageLink-7">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family rt-membership
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family rt-membership
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h3><span id="address-family-ipv4-unicast-flowspec-and-ipv6-unicast-flowspec">Address family: IPv4 Unicast Flowspec and IPv6 Unicast Flowspec</span></h3>
+<p>The supported path attributes and built-in functions for BGP Flowspec unicast paths are listed <a href="#pageLink-8">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family flow-spec ( ipv4 | ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family flow-spec ipv4
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()
+   address-family flow-spec ipv6
+      neighbor 192.168.0.1 rcf in INBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family flow-spec ( ipv4 | ipv6 )
+   neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+   address-family flow-spec ipv4
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()
+   address-family flow-spec ipv6
+      neighbor 192.168.0.1 rcf out OUTBOUND_POLICY()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="address-family-vpls">Address family: VPLS</span></h3>
+<p>The supported path attributes and built-in functions for VPLS paths are listed <a href="#u003pq6o9izs">here</a>.</p>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Supported since</th>
+<th>EOS-4.28.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family vpls
+           neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf in &lt;FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+           address-family vpls
+              neighbor 192.168.0.1 rcf in INBOUND_POLICY() </pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Supported since</th>
+<th>EOS-4.28.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>address-family vpls
+           neighbor ( &lt;NEIGHBOR&gt; | &lt;PEER_GROUP&gt; ) rcf out &lt;FUNCTION_NAME&gt;() </pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>router bgp 64500
+           address-family vpls
+              neighbor 192.168.0.1 rcf out OUTBOUND_POLICY() </pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="dynamic-prefix-list-configuration">Dynamic prefix list configuration</span></h3>
+<p>The DPL_FUNCTION_NAME() function is evaluated on BGP routes in a given VRF in order to activate the dynamic prefix list. The supported path attributes and built-in functions for dynamic prefix list configuration are listed here.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Supported since</th>
+<th>EOS-4.30.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>dynamic prefix-list &lt;DYN_PFX_LIST&gt;
+   match rcf &lt;DPL_FUNCTION_NAME&gt;()</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre>dynamic prefix-list DYN1
+   match rcf TRIGGERING_ROUTE_EXISTS()</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="attribute-and-function-support">Attribute and function support</span></h2>
+<table class="data-table">
+<tbody>
+<tr>
+<th colspan="2">Legend</th>
+</tr>
+<tr>
+<td class="center">✓</td>
+<td>Fully supported as described in the <a href="/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference" target="_blank" rel="noopener noreferrer">Attribute and built-in function reference TOI</a></td>
+</tr>
+<tr>
+<td class="center">limited</td>
+<td>Modifications to this attribute are not supported at this point of application</td>
+</tr>
+<tr>
+<td class="center">x</td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+<p><i>Attributes or built-in functions not listed in the table are not supported</i></p>
+<h3 id="pageLink-2"><span id="address-family-configuration-ipv4-unicast-and-ipv6-unicast">Address family configuration: IPv4 Unicast and IPv6 Unicast</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">Attribute</th>
+<th>Inbound</th>
+<th>Outbound</th>
+<th>Redistribute</th>
+<th>MPLS VPN import filter-rcf<sup>1</sup></th>
+<th>MPLS VPN import</th>
+<th>L3 EVPN import</th>
+<th>MPLS VPN export filter-rcf</th>
+<th>MPLS VPN export<sup>2</sup></th>
+<th>L3 EVPN export<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>aigp.accumulation_metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>aigp.metric</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>as_path</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.aggregate</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>bgp.aggregate_contributor</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>connected.interface</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.length</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.ip_version</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.route_type</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>fec.recmp</code></td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>igp.metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>igp.tag</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓<sup>3</sup></td>
+<td class="center">✓<sup>3</sup></td>
+</tr>
+<tr>
+<td><code>isis.levels</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">limited</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>isis.metric</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">limited</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓4</td>
+<td class="center">limited</td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+</tr>
+<tr>
+<td><code>next_hop_metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric</code></td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>prefix.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>prefix.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>rpki.origin_as_validity</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>source_protocol</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup> MPLS VPN import filter-rcf evaluates VPN-IPv4 and VPN-IPv6 paths as candidates for import<br /> <sup>2</sup> MPLS VPN export and L3 EVPN export evaluate the path after export in the respective VPN table<br /> <sup>3</sup> The <code>igp.tag</code> attribute in the MPLS VPN export and L3 EVPN export points of applications is supported since the EOS-4.30.0F release<br /> <sup>4</sup> Modifying the <code>next_hop</code> attribute in the MPLS VPN export points of applications is supported since the EOS-4.29.1F release</p>
+<p> </p>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th>built-in function</th>
+<th>Inbound</th>
+<th>Outbound</th>
+<th>Redistribute</th>
+<th>MPLS VPN import filter-rcf</th>
+<th>MPLS VPN import</th>
+<th>L3 EVPN import</th>
+<th>MPLS VPN export filter-rcf</th>
+<th>MPLS VPN export</th>
+<th>L3 EVPN export</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_next_hop_self()</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>rpki.match_origin_as_validity()</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageLink-3"><span id="address-family-configuration-ipv4-labeled-unicast-and-ipv6-labeled-unicast">Address family configuration: IPv4 Labeled Unicast and IPv6 Labeled Unicast</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Inbound</th>
+<th>Outbound</th>
+<th>LDP tunnel redistribution</th>
+<th>IS-IS SR tunnel redistribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>aigp.accumulation_metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>aigp.metric</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>as_path</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.prefix_sid.index</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>igp.metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>isis.metric</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">limited</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">limited</td>
+<td class="center">limited</td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop_metric<code></code></code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric</code></td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>prefix.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>prefix.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_protocol</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<div class="clear15"> </div>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th>built-in function</th>
+<th>Inbound</th>
+<th>Outbound</th>
+<th>LDP tunnel redistribution</th>
+<th>IS-IS SR tunnel redistribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_next_hop_self()</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageLink-5"><span id="address-family-configuration-evpn">Address family configuration: EVPN</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">Attribute</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path<code></code></code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.mac_address</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.mac_ip_route.ip_address</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.gateway_address.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.ip_prefix_route.prefix.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>evpn.route_type</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>igp.tag</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop</code></td>
+<td class="center">✓<sup>1</sup></td>
+<td class="center">✓<sup>1</sup></td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop_metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric</code></td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_protocol</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>Modifying the next_hop attribute is supported for EVPN IP prefix routes since the EOS-4.29.2F release  </p>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">built-in function</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>evpn.ip_prefix_route.set_overlay_index()</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>set_next_hop_self()</code></td>
+<td class="center">⨯</td>
+<td class="center">⨯</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageLink-6"><span id="address-family-configuration-mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">Address family configuration: MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">Attribute</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>igp.tag</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop_metric</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop_best_path_metric</code></td>
+<td class="center">✓</td>
+<td class="center">⨯</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td class="center">✓<sup>1</sup></td>
+<td class="center">✓<sup>1</sup></td>
+</tr>
+<tr>
+<td><code>source_protocol</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>Modifying the <code>prefix</code> attribute in the MPLS VPN inbound and outbound points of applications is supported since the EOS-4.30.0F release</p>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">built-in function</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_next_hop_self()</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageLink-7"><span id="address-family-configuration-route-target-membership">Address family configuration: Route-Target Membership</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">Attribute</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>destination_session.local.as</code></td>
+<td class="center">⨯</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>next_hop</code></td>
+<td class="center">limited</td>
+<td class="center">limited</td>
+</tr>
+<tr>
+<td><code>next_hop.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_protocol</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>source_session.remote.router_id</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageLink-8"><span id="address-family-configuration-ipv4-unicast-flowspec-and-ipv6-unicast-flowspec">Address family configuration: IPv4 Unicast Flowspec and IPv6 Unicast Flowspec</span></h3>
+<table class="data-table data-table-alt">
+<thead>
+<tr>
+<th class="w30">Attribute</th>
+<th class="w30">Inbound</th>
+<th class="w30">Outbound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>afi_safi</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.last_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.origin_as</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>as_path.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>bgp.route_source</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>ext_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.destination.prefix.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix.length</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>flowspec.source.prefix.ip_version</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>large_community.count</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>local_preference</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>med</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td class="center">✓</td>
+<td class="center">✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u003pq6o9izs"><span id="address-family-configuration-vpls">Address family configuration: VPLS</span></h3>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Attribute</th>
+<th>Inbound</th>
+<th>Outbound</th>
+</tr>
+<tr>
+<td>afi_safi</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path.last_as</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path.origin_as</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path.length</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>bgp.route_source</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>community</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>community.count</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>destination_session.local.as</td>
+<td>⨯</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>ext_community</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>ext_community.count</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>igp.tag</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>large_community</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>large_community.count</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>local_preference</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>med</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>next_hop</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>next_hop.ip_version</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>next_hop_best_path_metric</td>
+<td>✓</td>
+<td>⨯</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_protocol</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_session.remote.as</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_session.remote.router_id</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="dynamic-prefix-list-configuration">Dynamic prefix list configuration</span></h3>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Attribute</th>
+<th>Support</th>
+</tr>
+<tr>
+<td>afi_safi</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>aigp.metric</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>as_path.last_as</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path.origin_as</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>as_path.length</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>bgp.route_source</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>community</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>community.count</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>ext_community</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>ext_community.count</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>large_community</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>large_community.count</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>local_preference</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>med</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>next_hop</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>next_hop.ip_version</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>limited</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>prefix.length</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>prefix.ip_version</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_protocol</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_session.remote.as</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>source_session.remote.router_id</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>limited</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="show-commands">Show commands</span></h2>
+<p>To view the status of RCF functions in BGP, use the <code>show bgp rcf [&lt;FUNCTION_NAME&gt;]</code> command.</p>
+<pre>Arista#<b>show bgp rcf</b>
+Function                       Status                         Detail
+------------------------------ ------------------------------ ------------------------------
+ACCEPT_ALL()                   active
+DENY_ALL()                     active
+USES_MISSING_PFXL()            prefix_list_v4 not found       MISSING_PFXL
+<br />
+Arista#<b>show bgp rcf ACCEPT_ALL()</b>
+Function                       Status                         Detail
+------------------------------ ------------------------------ ------------------------------
+ACCEPT_ALL()                   active
+Arista#
+</pre>
+<p>The possible status values are enumerated below.</p>
+<ul>
+<li><b>active</b>: the RCF function is fully configured and is available for use</li>
+<li><b>reference not found</b>: the RCF function refers to an external construct (e.g. as path list, community list, or prefix list) which is not defined. All routes evaluated against such an RCF function are not accepted. The undefined reference name can be found in the “Detail” column.</li>
+<li><b>missing symbol</b>: the RCF function is in the process of getting programmed. This should only appear transiently and is not persistent.</li>
+</ul>
+<p>Starting from EOS-4.26.0F, the <code>show bgp neighbors</code> command will display the RCF functions configured on inbound and outbound for BGP neighbors. If both a route map and an RCF function are configured for the same point of application (inbound or outbound), the show command will indicate that the RCF configuration takes precedence.</p>
+<pre>Arista#show bgp neighbors
+BGP neighbor is 1.0.1.2, remote AS 500, internal link<br />…
+<b>  Inbound route map for IPv4 unicast is RM1 (disabled due to overriding RCF function)</b>
+<b>  Inbound RCF function for IPv4 unicast is ACCEPT_ALL()</b>
+<b>  Outbound RCF function for IPv4 unicast is ACCEPT_ALL()</b>
+…
+</pre>
+<h3><span id="debugging">Debugging</span></h3>
+<p>With the EOS-4.27.2F release, the RCF evaluation engine provides a textual representation explaining the control flow of a given evaluation of an RCF function.</p>
+<p> </p>
+<p>The CLI commands to debug the RCF function applied at points of application are defined below. It is also possible to specify an RCF function that is not currently applied at the point of application to determine its behavior if it were applied.</p>
+<p>Documents that cover the output of the CLI (“Routing control functions - Language and configuration”) and the usage of the CLI (“Policy Debugging CLI”) can be found in the “<a href="#pageLink-1">Resources</a>” section.</p>
+<h3><span id="ipv4-unicast-and-ipv6-unicast">IPv4 Unicast and IPv6 Unicast</span></h3>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.27.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy inbound neighbor ( &lt;neighbor address&gt; | all ) ( ipv4 | ipv6 ) unicast [ vrf &lt;vrf name&gt; ] [ rcf &lt;function name&gt;() ] &lt;prefix&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy inbound neighbor 192.168.0.1 ipv4 unicast rcf INBOUND_POLICY() 0.0.0.0/0</b>
+Path with NLRI 0.0.0.0/0, received from 192.168.0.1
+<br />
+The path was allowed by the evaluation of INBOUND_POLICY().
+<br />
+code unit DEBUG
+1 function INBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy outbound neighbor &lt;neighbor address&gt; 
+( ipv4 | ipv6 ) unicast [ vrf &lt;vrf name&gt; ] [ rcf &lt;function name&gt;() ] &lt;prefix&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy outbound neighbor 192.168.0.1 ipv4 unicast rcf OUTBOUND_POLICY() 0.0.0.0/0</b>
+Path with NLRI 0.0.0.0/0, to 192.168.0.1
+ 
+The path was allowed by the evaluation of OUTBOUND_POLICY().
+ 
+code unit DEBUG
+1 function OUTBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="redistribute-statement">Redistribute statement</span></h4>
+<p>Debugging information will only be returned for protocols supported by RCF.</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.28.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy redistribute ( ipv4 | ipv6 ) unicast [ vrf &lt;vrf name&gt;] [ rcf &lt;function name&gt;() ] &lt;prefix&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy redistribute ipv4 unicast rcf REDISTRIBUTE_POLICY() 0.0.0.0/0</b>
+Path with NLRI 0.0.0.0/0, redistributed from Static
+<br />
+The path was allowed by the evaluation of REDISTRUBTE_POLICY().
+<br />
+code unit DEBUG
+1 function REDISTRIBUTE_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-and-l3-evpn-import">MPLS L3 VPN and L3 EVPN import</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy import ( vpn-route filter-rcf ( vpn-ipv4 | vpn-ipv6 ) | ( ipv4 unicast | ipv6 unicast ) ) [ vrf &lt;vrf name&gt;] [ rcf &lt;function name&gt;() ] &lt;prefix&gt; rd &lt;rd&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy import ipv4 unicast vrf RED rcf IMPORT_POLICY() 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI 0.0.0.0/0, imported from EVPN
+ 
+The path was allowed by the evaluation of IMPORT_POLICY().
+ 
+code unit DEBUG
+1 function IMPORT_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;
+ 
+<b>&gt; show bgp debug policy import vpn-route filter-rcf vpn-ipv4 vrf RED rcf IMPORT_FILTER_POLICY() 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, imported from VPN-IPv4
+ 
+The path was allowed by the evaluation of IMPORT_FILTER_POLICY().
+ 
+code unit DEBUG
+1 function IMPORT_FILTER_POLICY() {
+     T- T----------------------
+2    if local_preference is 100 {
+        T----- T---
+3       return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="mpls-l3-vpn-and-l3-evpn-export">MPLS L3 VPN and L3 EVPN export</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.1F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy export ( vrf-route filter-rcf ( ipv4 unicast | ipv6 unicast ) | ( evpn | vpn-ipv4 | vpn-ipv6 ) ) [ vrf &lt;vrf name&gt;] [ rcf &lt;function name&gt;() ] &lt;prefix&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy export vpn-ipv4 vrf RED rcf EXPORT_POLICY() 0.0.0.0/0</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, exported to VPN-IPv4
+ 
+The path was allowed by the evaluation of EXPORT_POLICY().
+ 
+code unit DEBUG
+1 function EXPORT_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;
+ 
+<b>&gt; show bgp debug policy export vrf-route filter-rcf ipv4 unicast vrf RED rcf EXPORT_FILTER_POLICY() 0.0.0.0/0</b>
+Path with NLRI 0.0.0.0/0, exported to VPN-IPv4
+ 
+The path was allowed by the evaluation of EXPORT_FILTER_POLICY().
+ 
+code unit DEBUG
+1 function EXPORT_FILTER_POLICY() {
+     T- T----------------------
+2    if local_preference is 100 {
+        T----- T---
+3       return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="evpn">EVPN</span></h3>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy inbound neighbor ( &lt;neighbor address&gt; | all ) evpn [ rcf &lt;function name&gt;() ] route-type ip-prefix &lt;prefix&gt; rd &lt;rd&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy inbound neighbor 192.168.0.1 evpn rcf INBOUND_POLICY() route-type ip-prefix 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, received from 192.168.0.1
+ 
+The path was allowed by the evaluation of INBOUND_POLICY().
+ 
+code unit DEBUG
+1 function INBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.29.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy outbound neighbor &lt;neighbor address&gt; evpn [ rcf &lt;function name&gt;() ] route-type ip-prefix &lt;prefix&gt; rd &lt;rd&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy outbound neighbor 192.168.0.1 evpn rcf OUTBOUND_POLICY() route-type ip-prefix 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, to 192.168.0.1
+ 
+The path was allowed by the evaluation of OUTBOUND_POLICY().
+ 
+code unit DEBUG
+1 function OUTBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="mpls-l3-vpn-ipv4-and-mpls-l3-vpn-ipv6">MPLS L3 VPN IPv4 and MPLS L3 VPN IPv6</span></h3>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy inbound neighbor ( &lt;neighbor address&gt; | all ) ( vpn-ipv4 | vpn-ipv6 ) [ rcf &lt;function name&gt;() ] &lt;prefix&gt; rd &lt;rd&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy inbound neighbor 192.168.0.1 vpn-ipv4 rcf INBOUND_POLICY() 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, received from 192.168.0.1
+ 
+The path was allowed by the evaluation of INBOUND_POLICY().
+ 
+code unit DEBUG
+1 function INBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th class="w30">Supported since</th>
+<th>EOS-4.30.0F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy outbound neighbor &lt;neighbor address&gt; ( vpn-ipv4 | vpn-ipv6 ) [ rcf &lt;function name&gt;() ] &lt;prefix&gt; rd &lt;rd&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><b>&gt; show bgp debug policy outbound neighbor 192.168.0.1 vpn-ipv4 rcf OUTBOUND_POLICY() 0.0.0.0/0 rd 64500:1</b>
+Path with NLRI RD: 64500:1 IPv4 prefix 0.0.0.0/0, to 192.168.0.1
+ 
+The path was allowed by the evaluation of OUTBOUND_POLICY().
+ 
+code unit DEBUG
+1 function OUTBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="flowspec">Flowspec</span></h3>
+<h4><span id="inbound-bgp-neighbor-application">Inbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Supported since</th>
+<th>EOS-4.30.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy inbound neighbor ( &lt;neighbor address&gt; | all ) flow-spec ( ipv4 | ipv6 ) [ vrf &lt;vrf name&gt;] [ rcf &lt;function name&gt;() ] rule &lt;flowspec_rule&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><strong>&gt; show bgp debug policy inbound neighbor 192.168.0.1 flow-spec ipv4 rule 192.168.224.1/32;*;</strong>
+Path with NLRI 192.168.224.1/32;*;, received from 192.168.0.1
+
+The path was allowed by the evaluation of INBOUND_POLICY().
+
+Unnamed code unit
+1 function INBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="outbound-bgp-neighbor-application">Outbound BGP neighbor application</span></h4>
+<table class="data-table">
+<tbody>
+<tr>
+<th>Supported since</th>
+<th>EOS-4.30.2F</th>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>
+<pre>show bgp debug policy outbound neighbor ( &lt;neighbor address&gt; | all ) flow-spec ( ipv4 | ipv6 ) [ vrf &lt;vrf name&gt;] [ rcf &lt;function name&gt;() ] rule &lt;flowspec_rule&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Example usage</td>
+<td>
+<pre><strong>&gt;show bgp debug policy outbound neighbor 192.168.0.1 flow-spec ipv4 rule 192.168.224.1/32;*;</strong>
+Path with NLRI 192.168.224.1/32;*;, received from 192.168.0.1
+
+The path was allowed by the evaluation of OUTBOUND_POLICY().
+
+Unnamed code unit
+1 function OUTBOUND_POLICY() {
+     --------
+2    med = 10;
+     T----- T---
+3    return true;
+
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="limitations">Limitations</span></h2>
+<ul>
+<li>Only one of either a route map or an RCF function may be applied to a BGP point of application. If both are configured, only the RCF function takes effect.</li>
+<li><code>bgp missing-policy direction … action …</code> configuration is ignored and is not supported for RCF functions.</li>
+<li><code>as_path prepend</code> operation does not take effect for IBGP peers.</li>
+<li>RCF is only supported in the multi-agent routing protocol model. There is no support for RCF in the ribd routing protocol model.</li>
+<li>BUG680521 - There is no PROTO value to use with source_protocol attribute to identify LDP and IS-IS SR redistributed paths into  BGP Labeled Unicast.</li>
+</ul>
+<h2 id="pageLink-1"><span id="resources">Resources</span></h2>
+<ul>
+<li><a href="/en/support/toi/eos-4-24-0f/14470-bgp-prefix-origin-validation-with-resource-public-key-infrastructure-rpki" target="_blank" rel="noopener noreferrer">BGP Prefix Origin Validation with RPKI TOI</a></li>
+<li><a href="/en/support/toi/eos-4-28-0f/15442-bgp-lu-ldp-is-is-sr-tunnel-redistribution" target="_blank" rel="noopener noreferrer">BGP-LU - LDP/IS-IS SR tunnel redistribution</a></li>
+<li><a href="/en/support/toi/eos-4-27-2f/15100-policy-debugging-cli" target="_blank" rel="noopener noreferrer">Policy Debugging CLI</a></li>
+<li><a href="/en/support/toi/eos-4-27-2f/15101-routing-control-functions-attribute-and-builtin-function-reference" target="_blank" rel="noopener noreferrer">Routing control functions - Attribute and built-in function reference</a></li>
+<li><a href="/en/support/toi/eos-4-27-2f/15102-routing-control-functions-language-and-configuration" target="_blank" rel="noopener noreferrer">Routing control functions - Language and configuration</a></li>
+<li><a href="/en/support/toi/eos-4-25-1f/14633-rfc-6368-ibgp-as-pe-ce-protocol-for-bgp-mpls-l3-vpns" target="_blank" rel="noopener noreferrer">RFC 6368 – iBGP as PE-CE Protocol for BGP/MPLS L3 VPNs</a></li>
+</ul></article>  
+    
+    
+    
+         
+</div>
+
+					<div class="clearfix"></div>
+					
+				</main>
+				<!-- /contentWrap -->
+			</div>
+			<!-- /dataWrap -->
+			
+		</div>
+		<!-- /dataArea -->
+	</div>
+	<!-- /dataContainer -->
+
+	<footer id="footerContainer">
+				<div id="footBarArea">
+			<label>Get In Touch Today</label>
+			<a href="/en/company/contact-us" class="btn-an btn-cta">Contact Us</a>
+		</div>
+		<!-- /footBarArea -->
+				<div id="footerWrap">
+						<div id="footSocial">
+				<div class="site-logo"><img src="/templates/arista_v2/img/logo_arista_blue.png" alt="Arista"></div>
+				
+
+<div class="custom"  >
+	<div class="social-icon"><a class="icon24-fb" href="https://www.facebook.com/AristaNW" target="_blank">Facebook</a> <a class="icon24-tw" href="https://twitter.com/@AristaNetworks" target="_blank">Twitter</a> <a class="icon24-in" href="http://www.linkedin.com/company/arista-networks-inc" target="_blank">LinkedIn</a></div></div>
+
+			</div>
+			<!-- /footSocial -->
+						<nav id="footNav" role="navigation">
+				
+<ul class="nav menu">
+    	<li class="fml-head-support deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Support</span></a>
+	<ul class="navChild">
+	<li class="fml-service-offerings"><a  href="/en/support/customer-support"><span>Support &amp; Services</span></a></li>
+	<li class="fml-training-partners nav-url"><a  href="https://www.sdn-pros.com" target="_blank"><span>Training Partners</span></a></li>
+	<li class="fml-documentation"><a  href="/en/support/product-documentation"><span>Product Documentation </span></a></li>
+	<li class="fml-downloads"><a  href="/en/support/software-download"><span>Software Downloads </span></a></li>
+</ul>
+</li>
+	<li class="fml-head-contacts deeper parent nav-heading">
+<a href="javascript:void(0);"><span>Contacts &amp; Help</span></a>
+	<ul class="navChild">
+	<li class="fml-contact-arista"><a  href="/en/company/contact-us"><span>Contact Arista</span></a></li>
+	<li class="fml-contact-technical-support"><a  href="/en/support/customer-support"><span>Contact Technical Support</span></a></li>
+	<li class="fml-order-status nav-url"><a  href="https://orders.arista.com" target="_blank"><span>Order Status</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-news deeper parent nav-heading">
+<a href="javascript:void(0);"><span>News</span></a>
+	<ul class="navChild">
+	<li class="fml-news-room"><a  href="/en/company/news/in-the-news"><span>News Room</span></a></li>
+	<li class="fml-events"><a  href="/en/company/news/events"><span>Events</span></a></li>
+	<li class="fml-blogs nav-url"><a  href="/blogs" target="_blank"><span>Blogs</span></a></li>
+</ul>
+</li>
+	<li class="fml-head-about-arista deeper parent nav-heading">
+<a href="javascript:void(0);"><span>About Arista</span></a>
+	<ul class="navChild">
+	<li class="fml-company"><a  href="/en/company/company-overview"><span>Company</span></a></li>
+	<li class="fml-management-team"><a  href="/en/company/management-team"><span>Management Team</span></a></li>
+	<li class="fml-careers"><a  href="/en/careers"><span>Careers</span></a></li>
+	<li class="fml-investor-relations nav-url"><a  href="http://investors.arista.com/"><span>Investor Relations</span></a></li>
+</ul>
+</li>
+</ul>
+<!-- /nav -->
+			</nav>
+			<!-- /footNav -->
+						<!-- /position-8 -->
+			<div class="clearfix"></div>
+						<div id="copyRight">
+				<label>&copy; 2023 Arista Networks, Inc. All rights reserved.</label>
+				
+<ul class="nav menu">
+    	<li class="terms-of-use nav-component"><a  href="/en/terms-of-use"><span>Terms of Use</span></a></li>
+	<li class="privacy-policy nav-component"><a  href="/en/privacy-policy"><span>Privacy Policy</span></a></li>
+	<li class="fraud-alert nav-component"><a  href="/en/fraud-alert"><span>Fraud Alert</span></a></li>
+	<li class="sitemap nav-component"><a  href="/en/sitemap"><span>Sitemap</span></a></li>
+</ul>
+<!-- /nav -->
+			</div>
+		</div>
+		<!-- /footerWrap -->
+	</footer>
+	<!-- /footerContainer -->
+</div>
+<!-- /bodyContainer -->
+<script type="text/javascript" src="https://customer.cludo.com/scripts/bundles/search-script.min.js"></script>
+<script>
+	var CludoSearch;
+	(function(){var cludoSettings = {customerId: 2013, engineId: '9664', searchUrl: 'https://www.arista.com/en/search-results/', language: 'en', searchInputs: ['cludo-search'], type: 'inline', disableAutocomplete: true, hideSearchFilters: true, searchApiUrl: 'https://api-eu1.cludo.com/api/v3'}; CludoSearch= new Cludo(cludoSettings); CludoSearch.init(); })();
+	var wifiId = "123036";
+</script>
+<div id="noSupportMsg" style="display:none;"></div>
+
+
+</body>
+</html>
