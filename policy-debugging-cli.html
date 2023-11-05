@@ -2,7 +2,7 @@
 <html lang="en-gb" dir="ltr">
 <head>
 <meta charset="utf-8" />
-	<base href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html" />
+	<base href="https://www.arista.com/en/support/toi/eos-4-27-2f/15100-policy-debugging-cli" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="author" content="David Cronin" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -189,20 +189,19 @@ jQuery(window).on('load',  function() {
     <ul id="tocList">
       <li>
         </li>
-<li>-- <a href="#description">Description</a>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#description">Description</a>
 <ul>
-<li>-- <a href="#platform-compatibility">Platform compatibility</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#platform-compatibility">Platform compatibility</a></li>
 </ul>
 </li>
-<li>-- <a href="#feature-history">Feature History</a>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#feature-history">Feature History</a>
 <ul>
-<li>-- <a href="#configuration">Configuration</a></li>
-<li>-- <a href="#show-commands">Show Commands</a></li>
-<li>-- <a href="#example-output">Example Output</a></li>
-<li>-- <a href="#troubleshooting">Troubleshooting</a></li>
-<li>-- <a href="#tracing">Tracing</a></li>
-<li>-- <a href="#limitations">Limitations</a></li>
-<li>-- <a href="#resources">Resources</a>      </li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#configuration">Configuration</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#show-commands">Show Commands</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#example-output">Example Output</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#troubleshooting">Troubleshooting</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#tracing">Tracing</a></li>
+<li>-- <a href="https://pmathy1.github.io/rcf-toi/policy-debugging-cli.html#limitations">Limitations</a></li>
     </ul>
   </div>
   <!-- /tocWrap -->
@@ -211,7 +210,7 @@ jQuery(window).on('load',  function() {
 <p>This document describes a new CLI command to help debug how and why policy permits and denies paths. The aim of this CLI command is for the user to debug a route map or RCF (Routing Control Functions) function by specifying as input a prefix for which BGP has reachability for, either via a BGP peer or a redistribute source. The path information for this prefix is then used in the evaluation of a route map or RCF function. The route map or RCF function can be specified by the user, but if none is specified the route map or RCF function applied at the point of application is used. Any route map or RCF function configured can be specified, even if it has not been applied to a point of application.</p>
 <p>The output is to help users understand the flow of the route map or RCF function as it is evaluated against a specified path.</p>
 <p>For route maps output will contain the sequences that were evaluated in the route map. Within each there will be information about the result of match clause evaluation, sub route map evaluation, set clauses that were applied to the path in this sequence, whether a continue statement was invoked in the sequence, and ultimately the result of the sequence on whether the path was permitted or denied.</p>
-<p>For RCF a textual representation explaining the control flow of a given evaluation of an RCF function is presented. <br /> Documents that cover the output of the CLI (“Routing control functions - Language and configuration”) can be found in the “Resources” section.</p>
+<p>For RCF a textual representation explaining the control flow of a given evaluation of an RCF function is presented.</p>
 <h3><span id="platform-compatibility">Platform compatibility</span></h3>
 <p>Multi Agent, Platform independent.</p>
 <h2><span id="feature-history">Feature History</span></h2>
